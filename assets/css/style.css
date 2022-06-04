@@ -1,0 +1,110 @@
+    /*=============== GOOGLE FONTS ===============*/
+
+    /*=============== VARIABLES CSS ===============*/
+   :root 
+    {
+    --header-height: 3.5rem; /*56px*/
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --primary-color-hue:352;
+    --dark-color-lightness:17%;
+    --light-color-lightness:92%;
+    --white-color-lightness:100%;
+
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
+    --color-light: hsl(252, 30%, var(--light-color-lightness));
+    --color-gray: hsl(252, 15%, 65%);
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Rubik', sans-serif;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 400;
+    --font-semi-bold: 600;
+  
+    /*========== Margenes Bottom ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --m-0-5: .5rem;
+    --m-0-75: .75rem;
+    --m-1: 1rem;
+    --m-1-5: 1.5rem;
+    --m-2: 2rem;
+    --m-2-5: 2.5rem;
+  
+    /*========== Card padding ==========*/
+    --card-padding:1.9rem 0.95rem;
+
+    /*========== Border radius ==========*/
+    --border-radius: 1.25rem;
+
+    /*========== Box shadow ==========*/
+    --box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+  }
+    /*========== Scroll Bar ==========*/
+    
+    /*========== Responsive Typography ==========*/
+    
+    /*========== Base ==========*/
+   
+    /*========== Layout ==========*/
+    
+    /*========== Reusable css classes ==========*/
+    
+    /*========== Buttons ==========*/
+    
+    /*========== Header ==========*/
+    
+    /*========== NAV ==========*/
+    
+    /*========== Home ==========*/
+    
+    /*========== About ==========*/
+    
+    /*========== Services ==========*/
+    
+    /*========== Experience ==========*/
+    
+    /*========== Pricing ==========*/
+    
+    /*========== Portfolio ==========*/
+    
+    /*========== Testimonial ==========*/
+    
+    /*========== Blog ==========*/
+    
+    /*========== Contact ==========*/
+    
+    /*========== Footer ==========*/
+    
+    /*========== Customize Theme ==========*/
+    
+    /*========== Media Queries ==========*/
+    @media only screen and (max-width:1200px)
+    {
+      
+    }
+    @media only screen and (max-width:968px)
+    {
+      
+    }
+    @media only screen and (max-width:768px)
+    {
+      
+    }
+    @media only screen and (max-width:576px)
+    {
+      
+    }
+    @media only screen and (max-width:320px)
+    {
+      
+    }
