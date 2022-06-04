@@ -437,8 +437,26 @@ h3 {
   font-size: var(--h2-font-size);
   color: var(--color-gray);
 }
-/*========== Services ==========*/
 
+/*========== Services ==========*/
+.services .service-item{
+  display: flex;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.services .service-item .service-item-inner{
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+  text-align: center;
+  transform: translateY(0);
+  transition: 0.3s;
+  color: var(--color-white);
+}
+
+.services .service-item .service-item-inner:hover{
+  transform: translateY(-0.625rem);
+}
 /*========== Experience ==========*/
 
 /*========== Pricing ==========*/
