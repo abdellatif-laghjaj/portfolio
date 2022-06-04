@@ -745,6 +745,98 @@ h3 {
 /*========== Blog ==========*/
 
 /*========== Contact ==========*/
+.contact-box{
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.contact-form{
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.contact-data{
+  display: grid;
+  row-gap: 2rem;
+}
+
+.contact-subtitle{
+  margin-bottom: var(--m-0-5);
+}
+
+.contact-description{
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.contact-icon{
+  font-size: 1.2rem;
+}
+
+.contact-inputs{
+  display: grid;
+  row-gap: 2rem;
+  margin-bottom: var(--m-2-5);
+}
+
+.contact-content{
+  position: relative;
+  height: 3rem;
+  border-bottom: 2px solid var(--color-gray);
+}
+
+.contact-content span{
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  content: "";
+  height: 2px;
+  width: 0;
+  transition: 0.5s;
+  background-color: var(--color-primary);
+}
+
+.contact-input:focus ~ span{
+  width: 100%;
+}
+
+.contact-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 0;
+  background: none;
+  color: #fff;
+  outline: none;
+  border: none;
+  z-index: 1;
+}
+
+.contact-label{
+  position: absolute;
+  top: 0.4rem;
+  width: 100%;
+  font-size: var(--small-font-size);
+  transition: 0.3s;
+}
+
+.contact-area{
+  height: 7rem;
+}
+
+.contact-area textarea{
+  resize: none;
+}
+
+.contact-input:focus + .contact-label{
+  top: -0.75rem;
+  left: 0;
+  z-index: 10;
+  color: var(--color-primary);
+}
 
 /*========== Footer ==========*/
 
