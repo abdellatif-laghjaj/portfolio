@@ -546,7 +546,70 @@ h3 {
   margin: var(--m-0-75) 0;
 }
 /*========== Pricing ==========*/
+.prices{
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
 
+.prices:nth-child(odd){
+  margin-top: 1.5rem; 
+}
+
+.prices:nth-child(1){
+  padding-left: 15px;
+}
+
+.prices:nth-child(3){
+  padding-right: 15px;
+}
+
+.price-item{
+  padding: var(--card-padding);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.price-item h3.plan{
+  margin: var(--m-0-75);
+}
+
+.prices p{
+  margin-bottom: 1rem;
+}
+
+.price-item .price{
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.price-item .price em{
+  font-style: normal;
+  font-size: var(--small-font-size);
+  margin-right: var(--m-0-5);
+  vertical-align: super;
+}
+
+.price-item .price span{
+  font-size: var(--normal-font-size);
+  margin-left: var(--m-0-5);
+}
+
+.price-item .btn{
+  margin-top: var(--m-1-5);
+}
+
+.price-item.best{
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  margin: 0 var(--m-0-75);
+}
+
+.price-item.best .btn{
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
 /*========== Portfolio ==========*/
 
 /*========== Testimonial ==========*/
