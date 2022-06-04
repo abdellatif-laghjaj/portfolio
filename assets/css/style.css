@@ -470,6 +470,16 @@ h3 {
 .services .service-item p{
   color: #fff;
 }
+
+.services .text{
+  text-align: center;
+  margin-top: var(--m-1-5);
+}
+
+.services .text a{
+  color: var(--color-primary)
+}
+
 /*========== Experience ==========*/
 
 /*========== Pricing ==========*/
