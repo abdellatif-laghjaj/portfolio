@@ -116,12 +116,26 @@ h3 {
   margin: auto;
 }
 
+.row{
+  display: flex;
+  flex-wrap: wrap
+}
+
+/*========== Reusable css classes ==========*/
 .padd-15 {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-/*========== Reusable css classes ==========*/
+.section .container {
+  padding-top: 3.75rem;
+  padding-bottom: 4.75rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  margin-left: var(--m-0-75);
+}
 
 /*========== Buttons ==========*/
 .btn{
@@ -349,6 +363,15 @@ h3 {
 }
 
 /*========== About ==========*/
+.about-img{
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.about-content{
+  flex: 0 0 75%;
+  max-width: 75%;
+}
 
 /*========== Services ==========*/
 
