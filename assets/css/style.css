@@ -135,6 +135,7 @@ h3 {
 .section-title {
   font-size: 2.25rem;
   margin-left: var(--m-0-75);
+  margin-bottom: var(--m-2-5);
 }
 
 /*========== Buttons ==========*/
@@ -373,6 +374,69 @@ h3 {
   max-width: 75%;
 }
 
+.about-content .about-text,
+.about-content .skills{
+  flex:  0 0 50%;
+  max-width: 50%;
+}
+
+.rounded{
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+}
+
+.about-text p{
+  text-align: justify;
+  margin-bottom: var(--m-1);
+}
+
+.about-content .skills .skill-item{
+  flex: 0 0 100%;
+  max-width: 100%; 
+}
+
+.about-content .skills .skill-item h4{
+  margin-bottom: var(--m-0-75);
+}
+
+.about-content .skills .skill-item .progress{
+  background-color: var(--color-light);
+  height: 0.45rem;
+  width: 100%;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.about-content .skills .skill-item:not(:last-child){
+  margin-bottom: var(--m-1-5);
+}
+
+.about-content .skills .skill-item .progress .progress-in{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: var(--border-radius);
+}
+
+.about-content .skills .skill-item .skill-percent{
+  position: absolute;
+  right: 0;
+  top: -2.5rem;
+}
+
+.fact-item{
+  flex: 0 0 25%;
+  max-width: 25%;
+  margin-top: var(--m-2-5);
+  text-align: center;
+}
+
+.fact-item i{
+  font-size: var(--h2-font-size);
+  color: var(--color-gray);
+}
 /*========== Services ==========*/
 
 /*========== Experience ==========*/
