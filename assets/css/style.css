@@ -113,9 +113,7 @@ h3 {
 
 .container {
   max-width: 968px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
+  margin: auto;
 }
 
 .padd-15 {
@@ -126,6 +124,41 @@ h3 {
 /*========== Reusable css classes ==========*/
 
 /*========== Buttons ==========*/
+.btn{
+  width: 180px;
+  text-align: center;
+  padding: 00.75rem 2rem;
+  line-height: 1;
+  border-radius: var(--border-radius);
+}
+
+.btn:focus{
+  outline: 0;
+}
+
+@keyframes button-push {
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-default{
+  color: #fff;
+  vertical-align: middle;
+  display: inline-block;
+  background-color: var(--color-primary);
+  transform: perspective(1px) translateZ(0);
+}
+
+.btn-default:hover{
+  animation-name: button-push;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
 
 /*========== Header ==========*/
 .header {
@@ -229,8 +262,91 @@ h3 {
 }
 
 /*========== Home ==========*/
+.home{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  min-height: 100vh;
+}
 
+.home .intro{
+  max-width: 540px;
+  text-align: center;
+}
 
+.home .intro img{
+  margin-bottom: var(--m-1);
+}
+
+.home .intro .social-icons{
+  margin-top: var(--m-1-5);
+  margin-bottom: var(--m-2);
+}
+
+.home .intro .social-icons li{
+  display: inline-block;
+}
+
+.home .intro .social-icons li:not(:last-child){
+   margin-right: var(--m-1-5);
+}
+
+.home .intro .social-icons a{
+  font-size: var(--h3-font-size);
+}
+
+.scroll-down{
+  position: absolute;
+  bottom: var(--m-2-5);
+  left: 0;
+  width: 100%;
+}
+
+.mouse-wrapper{
+  font-size: var(--small-font-size);
+  display: block;
+  margin: auto;
+  max-width: 100px;
+  text-align: center;
+}
+
+@keyframes ani-mouse {
+  0% {
+    top: 29%;
+  }
+  15% {
+    top: 50%;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 29%;
+  }
+}
+
+.mouse{
+  border: 2px solid var(--color-dark);
+  display: block;
+  height: 1.75rem;
+  width: 1.25rem;
+  margin-top: var(--m-0-75);
+  margin: auto;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.mouse .wheel{
+  background-color: var(--color-dark);
+  border-radius: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  position: absolute;
+  top: var(--m-0-5);
+  left: 40%;
+  display: block;
+  animation: ani-mouse 2s linear infinite;
+}
 
 /*========== About ==========*/
 
