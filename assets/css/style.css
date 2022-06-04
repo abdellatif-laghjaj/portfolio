@@ -839,6 +839,13 @@ h3 {
 }
 
 /*========== Footer ==========*/
+.footer{
+  padding: 60px 0;
+}
+
+.footer-text{
+  text-align: center;
+}
 
 /*========== Customize Theme ==========*/
 
