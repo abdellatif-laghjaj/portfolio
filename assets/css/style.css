@@ -604,11 +604,30 @@ h3 {
   background-color: var(--color-primary);
   color: var(--color-white);
   margin: 0 var(--m-0-75);
+  padding: 3.25rem 2.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.price-item.best .badge{
+  position: absolute;
+  left: 0;
+  top: 2.6rem;
+  color: var(--color-primary);
+  background-color: #fff;
+  transform: rotate(-90deg);
+  padding: 0.4rem 0.75rem;
+  font-size: var(--small-font-size);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .price-item.best .btn{
   background-color: var(--color-white);
   color: var(--color-primary);
+  font-weight: var(--font-semi-bold);
 }
 /*========== Portfolio ==========*/
 
