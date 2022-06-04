@@ -443,6 +443,7 @@ h3 {
   display: flex;
   flex: 0 0 33.33%;
   max-width: 33.33%;
+  
 }
 
 .services .service-item .service-item-inner{
@@ -451,11 +452,23 @@ h3 {
   text-align: center;
   transform: translateY(0);
   transition: 0.3s;
-  color: var(--color-white);
 }
 
 .services .service-item .service-item-inner:hover{
   transform: translateY(-0.625rem);
+}
+
+.services .service-item img{
+  margin-bottom: var(--m-0-75);
+}
+
+.services .service-item h3{
+  margin-bottom: var(--m-0-5);
+  color: #fff;
+}
+
+.services .service-item p{
+  color: #fff;
 }
 /*========== Experience ==========*/
 
