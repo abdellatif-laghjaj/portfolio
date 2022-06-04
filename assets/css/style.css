@@ -481,7 +481,70 @@ h3 {
 }
 
 /*========== Experience ==========*/
+.education{
+  flex: 0 0 50%;
+  max-width: 50%;
+}
 
+.experience{
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.timeline-box{
+  flex: 0 0 100%;
+  max-width: 100%; 
+}
+
+.timeline{
+  background-color: var(--color-white);
+  padding: 1.9rem 0.95rem;
+  border-radius: var(--border-radius);
+  width: 100%;
+  position: relative;
+}
+
+.timeline .timeline-item{
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 1.9rem;
+}
+
+.timeline .timeline-item:last-child{
+  padding-bottom: 0;
+}
+
+.timeline .timeline-item::before{
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: var(--m-0-5);
+  background-color: var(--color-primary);
+}
+
+.timeline .timeline-icon{
+  position: absolute;
+  top: 0;
+  left: -0.25rem;
+  font-size: 1.5rem;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.timeline .timeline-date{
+  font-size: var(--small-font-size);
+  color: var(--color-gray);
+}
+
+.timeline .timeline-date .lni{
+  margin-right: 0.3rem;
+}
+
+.timeline .timeline-title{
+  margin: var(--m-0-75) 0;
+}
 /*========== Pricing ==========*/
 
 /*========== Portfolio ==========*/
