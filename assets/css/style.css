@@ -68,6 +68,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body,
 button,
@@ -191,6 +194,7 @@ h3 {
   top: 0;
   left: 0;
   z-index: 100;
+  transition: 0.3s;
 }
 /*========== NAV ==========*/
 .nav {
@@ -291,6 +295,10 @@ h3 {
   height: 0.4rem;
   background-color: var(--color-primary);
   border-radius: 50%;
+}
+
+.scroll-header{
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 /*========== Home ==========*/
@@ -661,6 +669,7 @@ h3 {
   margin: 0 var(--m-0-75);
   cursor: pointer;
   white-space: nowrap;
+  color: var(--color-dark);
   transition: 0.3s;
 }
 
@@ -994,8 +1003,8 @@ h3 {
 }
 
 .customize-theme .choose-bg .bg-1 {
-  background: var(--color-light);
-  color: var(--color-dark);
+  background: hsl(252, 30%, 92%);
+  color: hsl(252, 30%, 17%);
 }
 
 .customize-theme .choose-bg .bg-2 {
@@ -1089,10 +1098,10 @@ h3 {
   .nav-menu{
     position: fixed;
     background: var(--color-white);
-    width: 80%;
+    width: 60%;
     height: 100%;
     top: 0;
-    right: 100%;
+    right: -100%;
     padding: 4rem 0 0 3rem;
     border-radius: 1rem 0 0 1rem;
     z-index: 100;
