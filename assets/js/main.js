@@ -44,6 +44,21 @@ window.addEventListener("scroll", scrollHeader);
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 /*=============== PORTFOLIO ITEM FILTER ===============*/
+const filterContainer = document.querySelector(".portfolio-filter-inner"),
+  filterBtns = filterContainer.children,
+  totalFilterBtns = filterBtns.length,
+  portfolioItems = document.querySelectorAll(".portfolio-item"),
+  totalPortfolioItems = portfolioItems.length;
+
+for (let i = 0; i < totalFilterBtns; i++) {
+  filterBtns[i].addEventListener("click", function () {
+    filterContainer.querySelector(".active").classList.remove("active");
+    this.classList.add("active");
+
+    const filterValue = this.getAttribute("data-filter");
+    console.log(filterValue);
+  });
+}
 
 /*=============== THEME/DISPLAY CUSTOMIZATION ===============*/
 const theme = document.getElementById("theme-button");

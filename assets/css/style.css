@@ -695,6 +695,26 @@ h3 {
   margin-bottom: var(--m-1-5);
 }
 
+.portfolio-item.hide{
+  display: none;
+}
+
+.portfolio-item.show{
+  display: block;
+  animation: showItem 0.5s ease;
+}
+
+@keyframes showItem{
+  0%{
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .portfolio-item-inner {
   position: relative;
   overflow: hidden;
