@@ -48,18 +48,18 @@ const sections = document.querySelectorAll("section[id]");
 //add event listener for scroll
 window.addEventListener("scroll", navHighlighter);
 
-const navHighlighter = () => {
+function navHighlighter(){
   //get the current scroll position
   let scrollY = window.pageYOffset;
 
   //loop through all the sections and get the height, top and id of each section
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 100;
+    const sectionTop = current.offsetTop - 58;
     const sectionId = current.getAttribute("id");
 
     //if the scroll position is greater than the section top and less than the section height + top
-    if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       //add the active class to the section
       document.querySelector(`a[href="#${sectionId}"]`).classList.add("active-link");
     }else{

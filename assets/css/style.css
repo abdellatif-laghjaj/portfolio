@@ -50,6 +50,21 @@
   --box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
 }
 /*========== Scroll Bar ==========*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background: var(--color-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 0.5rem;
+} 
+
+/*for firefox*/
+html{
+  scrollbar-color: var(--color-primary) var(--color-white);
+  scrollbar-width: 0.6rem;
+}
 
 /*========== Responsive Typography ==========*/
 @media screen and (max-width: 992px) {
@@ -139,7 +154,7 @@ h3 {
 }
 
 .section .container {
-  padding-top: 3.75rem;
+  padding-top: 3.9rem;
   padding-bottom: 4.75rem;
 }
 
