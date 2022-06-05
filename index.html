@@ -12,17 +12,41 @@
 <body>
     <div class="profile-container">
         <img src="assets/img/avatar-1.svg">
-        <h2 class="name">Abdellatif<span> L</span>aghjaj</2>
-        <div class="swipe-containehr"></div>
-
-        <div class="lottie-container">
+        <h2 class="name">Abdellatif<span class="primary-span"> L</span>aghjaj</2>
+        <div class="lottie">
             <lord-icon src="assets/anim/lottie.json" trigger="loop">
             </lord-icon>
         </div>
-    </div>
+
+        <!---=============== DATE ===============-->
+        <div class="date-time">
+            <div class="date-container">
+                <div class="date">
+                    <span class="day">Monday</span>
+                    <span class="month">July</span>
+                    <span class="year">2020</span>
+                </div>
+                <div class="time">
+                    <span class="hours">12</span>
+                    <span class="minutes">30</span>
+                    <span class="seconds">00</span>
+                </div>
+            </div>
     
+            <div class="weather">
+                <div class="weather-icon">
+                    <ion-icon name="rainy-outline"></ion-icon>
+                </div>
+                <div class="weather-info">
+                    <span class="temperature">25°C</span>
+                    <span class="description">Sunny</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--=============== JS ================-->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
