@@ -70,6 +70,31 @@ function navHighlighter(){
 };
 
 /*=============== PORTFOLIO ITEM FILTER ===============*/
+const portfolio_items_container = document.querySelector(".portfolio-items-container");
+
+console.log(portfolio_items_data);
+
+//loop through all the portfolio items and add them to the DOM
+portfolio_items_data.forEach((item) => {
+  const portfolio_item = document.createElement("div");
+  portfolio_item.classList.add("portfolio-item");
+  portfolio_item.classList.add("padd-15");
+  portfolio_item.setAttribute("data-category", item.category);
+  portfolio_item.innerHTML = `
+    <div class="portfolio-item-inner">
+      <div class="portfolio-item-thumbnail">
+        <img src="${item.img}" alt="${item.title}">
+        <div class="mask"></div>
+      </div>
+      <span class="term">${item.category}</span>
+      <h3 class="portfolio-item-title">${item.title}</h3>
+      <span href="${item.url}" class="more-button">&hellip;</span>
+    </div>
+  `;
+
+  portfolio_items_container.appendChild(portfolio_item);
+});
+
 const filterContainer = document.querySelector(".portfolio-filter-inner"),
   filterBtns = filterContainer.children,
   totalFilterBtns = filterBtns.length,
