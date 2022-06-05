@@ -10,6 +10,16 @@ setTimeout(() => {
   preloader.style.display = "none";
 }, 3000);
 
+/*=============== AUTO TYPING ===============*/
+const infoText = document.querySelector(".info-text");
+var options = {
+  strings: ['Web Developer', 'Mobile App Developer', 'Dekstop App Developer', 'UI/UX Designer'],
+  typeSpeed: 100,
+  backSpeed: 100,
+};
+
+var typed = new Typed(infoText, options);
+
 /*=============== SHOW MENU ===============*/
 if (navToggle) {
   navToggle.addEventListener("click", function () {

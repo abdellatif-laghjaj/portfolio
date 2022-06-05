@@ -352,6 +352,11 @@ h3 {
   margin-bottom: var(--m-1);
 }
 
+.home .intro .info-text{
+  color: var(--color-primary);
+  font-weight: var(--font-semi-bold);
+}
+
 .home .intro .social-icons {
   margin-top: var(--m-1-5);
   margin-bottom: var(--m-2);
