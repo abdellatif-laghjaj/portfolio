@@ -1,6 +1,15 @@
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close");
+
+/*=============== PRELOADER ===============*/
+const preloader = document.getElementById("preloader");
+
+//wait after 3 seconds to show the preloader
+setTimeout(() => {
+  preloader.style.display = "none";
+}, 3000);
+
 /*=============== SHOW MENU ===============*/
 if (navToggle) {
   navToggle.addEventListener("click", function () {
