@@ -58,10 +58,10 @@
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
   border-radius: 0.5rem;
-} 
+}
 
 /*for firefox*/
-html{
+html {
   scrollbar-color: var(--color-primary) var(--color-white);
   scrollbar-width: 0.6rem;
 }
@@ -83,7 +83,7 @@ html{
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -256,7 +256,7 @@ h3 {
   color: var(--color-primary);
 }
 
-.nav-close{
+.nav-close {
   font-size: 1rem;
   position: absolute;
   top: 1rem;
@@ -285,14 +285,14 @@ h3 {
   display: none;
 }
 
-.active-link{
+.active-link {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-radius: 6px;
   padding: 4px 20px;
 }
 
-.active-link:hover{
+.active-link:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
@@ -312,7 +312,7 @@ h3 {
   border-radius: 50%;
 } */
 
-.scroll-header{
+.scroll-header {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -712,21 +712,21 @@ h3 {
   margin-bottom: var(--m-1-5);
 }
 
-.portfolio-item.hide{
+.portfolio-item.hide {
   display: none;
 }
 
-.portfolio-item.show{
+.portfolio-item.show {
   display: block;
   animation: showItem 0.5s ease;
 }
 
-@keyframes showItem{
-  0%{
+@keyframes showItem {
+  0% {
     opacity: 0;
     transform: scale(0.6);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -1063,7 +1063,7 @@ h3 {
 
 /*========== Media Queries ==========*/
 @media only screen and (max-width: 1200px) {
-  .customize-theme .card{
+  .customize-theme .card {
     width: 50vw;
   }
 }
@@ -1074,65 +1074,65 @@ h3 {
     max-width: 100%;
   }
 
-  .about-img{
+  .about-img {
     text-align: center;
     margin-bottom: var(--m-2-5);
   }
   .prices,
-  .services .service-item{
+  .services .service-item {
     flex: 0 0 50%;
     max-width: 50%;
     margin-bottom: var(--m-2-5);
   }
 
-  .price-item.best{
+  .price-item.best {
     padding: var(--card-padding);
   }
 
-  .prices:nth-child(odd){
+  .prices:nth-child(odd) {
     margin-top: 0;
   }
 
-  .prices:nth-child(1){
+  .prices:nth-child(1) {
     padding-right: 15px;
   }
 
-  .prices:nth-child(2){
+  .prices:nth-child(2) {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  .prices:nth-child(3){
+  .prices:nth-child(3) {
     padding-left: 15px;
   }
 
-  .prices{
+  .prices {
     display: flex;
   }
 
-  .customize-theme .card{
+  .customize-theme .card {
     width: 58vw;
   }
 }
 @media only screen and (max-width: 768px) {
-  body{
+  body {
     margin: var(--header-height) 0 0 0;
   }
 
-  .container{
+  .container {
     max-width: 568px;
   }
 
-  .nav{
+  .nav {
     height: var(--header-height);
   }
 
-  .nav-list{
+  .nav-list {
     flex-direction: column;
     row-gap: 1.5rem;
   }
 
-  .nav-menu{
+  .nav-menu {
     position: fixed;
     background: var(--color-white);
     width: 60%;
@@ -1142,17 +1142,16 @@ h3 {
     padding: 4rem 0 0 3rem;
     border-radius: 1rem 0 0 1rem;
     z-index: 100;
-    transition: .3s;
+    transition: 0.3s;
   }
 
   /*show menu*/
-  .show-menu{
+  .show-menu {
     right: 0;
-
   }
 
   .nav-close,
-  .nav-toggle{
+  .nav-toggle {
     display: inline-flex;
   }
 
@@ -1163,69 +1162,69 @@ h3 {
   .experience,
   .services .service-item,
   .about-content .about-text,
-  .about-content .skills{
+  .about-content .skills {
     flex: 0 0 100%;
     max-width: 100%;
   }
 
-  .prices{
+  .prices {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .price-item.best{
+  .price-item.best {
     margin-right: 0;
     margin-left: 0;
   }
 
   .fact-item,
-  .portfolio-item{
+  .portfolio-item {
     flex: 0 0 50%;
     max-width: 50%;
-  } 
+  }
 
-  .about-content .about-text{
+  .about-content .about-text {
     margin-bottom: var(--m-1-5);
   }
 
   .contact-data,
-  .education{
+  .education {
     margin-bottom: var(--m-2-5);
   }
 
-  .customize-theme .card{
+  .customize-theme .card {
     width: 75vw;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .portfolio-item{
+  .portfolio-item {
     flex: 0 0 100%;
     max-width: 100%;
   }
 
-  .portfolio-item-inner{
+  .portfolio-item-inner {
     max-width: 380px;
     margin: 0 auto;
   }
 
-  .timeline{
+  .timeline {
     padding: 25px 20px;
   }
 
-  .timeline .timeline-item{
+  .timeline .timeline-item {
     padding-left: 35px;
     padding-bottom: 20px;
   }
 
-  .customize-theme .card{
+  .customize-theme .card {
     width: 96vw;
     padding: 1rem;
   }
 }
 @media only screen and (max-width: 320px) {
-  .fact-item{
+  .fact-item {
     flex: 0 0 100%;
     max-width: 100%;
   }
