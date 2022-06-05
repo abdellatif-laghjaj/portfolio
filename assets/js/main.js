@@ -42,6 +42,32 @@ window.addEventListener("scroll", scrollHeader);
 /*=============== TESTIMONIAL SWIPER ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+//get all sections that have and id defined
+const sections = document.querySelectorAll("section[id]");
+
+//add event listener for scroll
+window.addEventListener("scroll", navHighlighter);
+
+const navHighlighter = () => {
+  //get the current scroll position
+  let scrollY = window.pageYOffset;
+
+  //loop through all the sections and get the height, top and id of each section
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 100;
+    const sectionId = current.getAttribute("id");
+
+    //if the scroll position is greater than the section top and less than the section height + top
+    if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
+      //add the active class to the section
+      document.querySelector(`a[href="#${sectionId}"]`).classList.add("active-link");
+    }else{
+      //remove the active class from the section
+      document.querySelector(`a[href="#${sectionId}"]`).classList.remove("active-link");
+    }
+  });
+};
 
 /*=============== PORTFOLIO ITEM FILTER ===============*/
 const filterContainer = document.querySelector(".portfolio-filter-inner"),
@@ -56,7 +82,22 @@ for (let i = 0; i < totalFilterBtns; i++) {
     this.classList.add("active");
 
     const filterValue = this.getAttribute("data-filter");
-    console.log(filterValue);
+    
+    for (let i = 0; i < totalPortfolioItems; i++) {
+
+      if (filterValue === "all") {
+        portfolioItems[i].classList.remove("hide");
+        portfolioItems[i].classList.add("show");
+      } else {
+        if(filterValue === portfolioItems[i].getAttribute("data-category")){
+          portfolioItems[i].classList.remove("hide");
+          portfolioItems[i].classList.add("show");
+        } else {
+          portfolioItems[i].classList.remove("show");
+          portfolioItems[i].classList.add("hide");
+        }
+      }
+    }
   });
 }
 
