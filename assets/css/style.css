@@ -877,6 +877,7 @@ h3 {
   text-align: center;
   place-items: center;
   font-size: var(--small-font-size);
+  display: none;
 }
 
 .customize-theme .card {
@@ -1016,6 +1017,9 @@ h3 {
 
 /*========== Media Queries ==========*/
 @media only screen and (max-width: 1200px) {
+  .customize-theme .card{
+    width: 50vw;
+  }
 }
 @media only screen and (max-width: 968px) {
   .about-content,
@@ -1058,6 +1062,10 @@ h3 {
 
   .prices{
     display: flex;
+  }
+
+  .customize-theme .card{
+    width: 58vw;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1139,6 +1147,10 @@ h3 {
   .education{
     margin-bottom: var(--m-2-5);
   }
+
+  .customize-theme .card{
+    width: 75vw;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -1159,6 +1171,11 @@ h3 {
   .timeline .timeline-item{
     padding-left: 35px;
     padding-bottom: 20px;
+  }
+
+  .customize-theme .card{
+    width: 96vw;
+    padding: 1rem;
   }
 }
 @media only screen and (max-width: 320px) {
