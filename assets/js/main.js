@@ -88,7 +88,9 @@ portfolio_items_data.forEach((item) => {
       </div>
       <span class="term">${item.category}</span>
       <h3 class="portfolio-item-title">${item.title}</h3>
-      <span href="${item.url}" class="more-button">&hellip;</span>
+      <a href="${item.url}" target="_blank">
+        <span class="more-button">&hellip;</span>
+      </a>
     </div>
   `;
 
