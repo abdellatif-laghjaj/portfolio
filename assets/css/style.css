@@ -135,6 +135,25 @@ h3 {
   font-size: var(--h3-font-size);
 }
 
+/*========== Preloader ==========*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-white);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader .lottie{
+  width: 200px;
+  height: 200px;
+}
+
 /*========== Layout ==========*/
 
 .container {
