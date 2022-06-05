@@ -57,8 +57,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  background: #fafafa;
+  font-size: 1rem;
+  height: 100vh;
+  color: #fff;
 }
 
 .profile-container {
@@ -67,17 +68,21 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  text-align: center;
 }
 
-.profile-container .name{
-    font-size: 1.4rem;
-    font-weight: var(--font-semi-bold);
-    margin: var(--m-1-5) 0;
+.profile-container .name {
+  font-size: 1.4rem;
+  font-weight: var(--font-semi-bold);
+  margin: var(--m-1-5) 0;
 }
 
-span{
-    color: var(--color-primary);
+#particles-js {
+  height: 100vh;
+  background: var(--color-primary);
+}
+
+span {
+  color: var(--color-primary);
 }
 
 .lottie-container {
