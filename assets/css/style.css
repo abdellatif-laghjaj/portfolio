@@ -645,7 +645,6 @@ h3 {
 .price-item .price em {
   font-style: normal;
   font-size: var(--small-font-size);
-  margin-right: var(--m-0-5);
   vertical-align: super;
 }
 
