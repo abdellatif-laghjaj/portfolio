@@ -350,6 +350,8 @@ h3 {
 
 .home .intro img {
   margin-bottom: var(--m-1);
+  border-radius: 50%;
+  width: 200px;
 }
 
 .home .intro .info-text{
