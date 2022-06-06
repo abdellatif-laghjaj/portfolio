@@ -434,6 +434,10 @@ h3 {
   max-width: 25%;
 }
 
+.about-img img{
+  border-radius: 50%;
+}
+
 .about-content {
   flex: 0 0 75%;
   max-width: 75%;
