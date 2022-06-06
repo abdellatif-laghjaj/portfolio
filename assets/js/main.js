@@ -14,8 +14,9 @@ setTimeout(() => {
 const infoText = document.querySelector(".info-text");
 var options = {
   strings: ['Web Developer', 'Mobile App Developer', 'Dekstop App Developer', 'UI/UX Designer'],
-  typeSpeed: 100,
-  backSpeed: 100,
+  typeSpeed: 80,
+  backSpeed: 60,
+  loop: true
 };
 
 var typed = new Typed(infoText, options);
