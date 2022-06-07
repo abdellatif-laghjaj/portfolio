@@ -900,7 +900,7 @@ h3 {
   height: 100%;
   padding: 1rem 1rem 1rem 0;
   background: none;
-  color: #fff;
+  color: var(--color-dark);
   outline: none;
   border: none;
   z-index: 1;
