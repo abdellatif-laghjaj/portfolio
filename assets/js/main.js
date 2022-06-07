@@ -22,6 +22,14 @@ var options = {
 
 var typed = new Typed(infoText, options);
 
+/*=============== DOWNLOAD CV ===============*/
+const cvDownloadBtn = document.querySelector(".cv-download-btn");
+cvDownloadBtn.addEventListener("click", () => {
+  new Noty({
+    text: "Notification text"
+  }).show();
+});
+
 /*=============== SHOW MENU ===============*/
 if (navToggle) {
   navToggle.addEventListener("click", function () {
