@@ -635,6 +635,10 @@ h3 {
   padding-right: 15px;
 }
 
+.basic-btn, .advanced-btn, .premium-btn {
+  cursor: pointer;
+}
+
 .price-item {
   padding: var(--card-padding);
   background-color: var(--color-white);

@@ -26,10 +26,27 @@ const cvDownloadBtn = document.querySelector(".cv-download-btn");
 cvDownloadBtn.addEventListener("click", () => {
   swal.fire({
     title: "Download CV",
-    text: "CV is not available yet!...I'm working on it",
+    text: "CV is not available yet!\nI'm working on it",
     icon: "info",
     confirmButtonText: "OK"
   });
+});
+
+/*=============== PRICING ===============*/
+const basicBtn = document.querySelector(".basic-btn");
+const advancedBtn = document.querySelector(".advanced-btn");
+const premiumBtn = document.querySelector(".premium-btn");
+
+basicBtn.addEventListener("click", () => {
+  window.open("https://wa.me/212657735082?text=Hello, I would like to hire you for a basic project", "_blank");
+});
+
+advancedBtn.addEventListener("click", () => {
+  window.open("https://wa.me/212657735082?text=Hello, I would like to hire you for an advanced project", "_blank");
+});
+
+premiumBtn.addEventListener("click", () => {
+  window.open("https://wa.me/212657735082?text=Hello, I would like to hire you for a premium project", "_blank");
 });
 
 /*=============== SHOW MENU ===============*/
