@@ -929,6 +929,12 @@ h3 {
   color: var(--color-primary);
 }
 
+.contact-form button{
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
 /*========== Footer ==========*/
 .footer {
   padding: 40px 0;
