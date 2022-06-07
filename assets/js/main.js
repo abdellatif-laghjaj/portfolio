@@ -25,9 +25,12 @@ var typed = new Typed(infoText, options);
 /*=============== DOWNLOAD CV ===============*/
 const cvDownloadBtn = document.querySelector(".cv-download-btn");
 cvDownloadBtn.addEventListener("click", () => {
-  new Noty({
-    text: "Notification text"
-  }).show();
+  swal.fire({
+    title: "Download CV",
+    text: "CV is not available yet!...I'm working on it",
+    icon: "info",
+    confirmButtonText: "OK"
+  });
 });
 
 /*=============== SHOW MENU ===============*/
