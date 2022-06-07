@@ -5,11 +5,10 @@ const navMenu = document.getElementById("nav-menu"),
 /*=============== PRELOADER ===============*/
 const preloader = document.getElementById("preloader");
 
-//wait until the document is loaded
-window.addEventListener("load", () => {
-  //hide preloader
+//wait 3 seconds and remove the preloader
+setTimeout(() => {
   preloader.style.display = "none";
-});
+}, 3000);
 
 /*=============== AUTO TYPING ===============*/
 const infoText = document.querySelector(".info-text");
