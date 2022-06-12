@@ -263,12 +263,13 @@ h3 {
 
 .nav-list {
   display: flex;
-  column-gap: 3rem;
+  column-gap: 1rem;
 }
 
 .nav-link {
   font-weight: var(--font-medium);
   transition: 0.3s;
+  padding: 4px 20px;
 }
 
 .nav-link:hover {
@@ -308,7 +309,6 @@ h3 {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-radius: 6px;
-  padding: 4px 20px;
 }
 
 .active-link:hover {
@@ -719,6 +719,7 @@ h3 {
   text-transform: capitalize;
   margin: 0 var(--m-0-75);
   cursor: pointer;
+  padding: 0.2rem 0.8rem;
   white-space: nowrap;
   color: var(--color-dark);
   transition: 0.3s;
@@ -726,7 +727,6 @@ h3 {
 
 .portfolio .portfolio-filter button.active {
   background: var(--color-primary);
-  padding: 0.2rem 0.8rem;
   border-radius: 6px;
   color: var(--color-white);
 }
