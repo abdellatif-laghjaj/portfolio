@@ -43,4 +43,11 @@ const portfolio_items_data = [
     img: "assets/img/calculator.svg",
     url: "https://github.com/abdellatif-laghjaj/Simple-Calculator",
   },
+  {
+    id: 7,
+    title: "Quotes Generator",
+    category: "web",
+    img: "assets/img/quotes_generator.svg",
+    url: "https://github.com/abdellatif-laghjaj/quotes-generator",
+  }
 ];
