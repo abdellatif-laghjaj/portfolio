@@ -47,7 +47,7 @@ const portfolio_items_data = [
     id: 7,
     title: "Quotes Generator",
     category: "web",
-    img: "assets/img/quotes_generator.svg",
+    img: "assets/img/quotes_generater.svg",
     url: "https://github.com/abdellatif-laghjaj/quotes-generator",
   }
 ];
