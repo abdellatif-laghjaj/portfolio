@@ -26,9 +26,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "Nikhil Rajput",
-    description:
-        "Nikhil Rajput is a proficient Software Engineer and Full Stack Developer from India, skilled in front-end and back-end development using modern tech stacks.",
+    title: "Abdellatif Laghjaj",
+    description: "Abdellatif Laghjaj is a big data and artificial intelligence master's student at the Polydisciplinary Faculty of Taroudant. He is a full-stack developer and a data scientist.",
     robots: {
         index: true,
         follow: true,
@@ -49,16 +48,15 @@ export const metadata: Metadata = {
         },
     ],
     keywords: [
-        "nikhil rajput",
-        "nikhil",
-        "nixrajput",
-        "nikhil-rajput",
-        "rajput nikhil",
-        "founder of nixlab",
-        "nixlab founder",
-        "full stack developer",
-        "indian developer",
-        "nixrajput github",
+        "Abdellatif Laghjaj",
+        "Abdellatif",
+        "Laghjaj",
+        "big data",
+        "artificial intelligence",
+        "master's student",
+        "Polydisciplinary Faculty of Taroudant",
+        "full-stack developer",
+        "data scientist",
     ],
 };
 
