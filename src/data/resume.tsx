@@ -181,7 +181,7 @@ export const DATA = {
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
-            image: "",
+            image: "/projects/visioncraft.png",
             video: "",
         },
         {
@@ -204,7 +204,7 @@ export const DATA = {
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
-            image: "",
+            image: "/projects/rentahome.jpg",
             video: "",
         },
         {
