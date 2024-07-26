@@ -1,7 +1,7 @@
 class Strings {
     static telegram = "Telegram";
-    static telegramLink = "https://telegram.me/nixrajput";
-    static telegramUsername = "nixrajput";
+    static telegramLink = "https://telegram.me/akameshoto";
+    static telegramUsername = "akameshoto";
 
     static whatsapp = "WhatsApp";
     static whatsappLink = "https://wa.me/212636208825"
@@ -20,8 +20,8 @@ class Strings {
     static instagramUsername = "abdellatif.laghjaj";
 
     static twitter = "Twitter";
-    static twitterLink = "https://www.twitter.com/nixrajput07";
-    static twitterUsername = "nixrajput07";
+    static twitterLink = "https://www.twitter.com/abdellatif_kira";
+    static twitterUsername = "abdellatif_kira";
 
     static email = "Email";
     static primaryEmailLink = "mailto:abdelatiflaghjaj@gmail.com";
