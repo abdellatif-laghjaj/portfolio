@@ -57,7 +57,7 @@ export const DATA = {
                 name: "X",
                 url: "https://www.twitter.com/abdellatif_kira",
                 icon: Icons.x,
-                navbar: true,
+                navbar: false,
             },
             WhatsApp: {
                 name: "WhatsApp",
