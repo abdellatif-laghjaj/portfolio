@@ -272,7 +272,8 @@ export const Icons = {
         </svg>
     ),
     stars: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path d="M17.5 17.5L21.5 21.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                   strokeLinejoin="round"/>
             <path
@@ -281,7 +282,8 @@ export const Icons = {
         </svg>
     ),
     followers: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path
                 d="M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z"
                 stroke="currentColor" strokeWidth="1.5"/>
@@ -295,7 +297,8 @@ export const Icons = {
         </svg>
     ),
     birthday: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path
                 d="M13.5 4.5C13.5 5.32843 12.8284 6 12 6C11.1716 6 10.5 5.32843 10.5 4.5C10.5 3.67157 12 2 12 2C12 2 13.5 3.67157 13.5 4.5Z"
                 stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -309,7 +312,8 @@ export const Icons = {
         </svg>
     ),
     repository: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path
                 d="M6 19.6231C5.31093 19.4279 4.76772 19.1317 4.31802 18.682C3 17.364 3 15.2426 3 11C3 6.75736 3 4.63604 4.31802 3.31802C5.63604 2 7.75736 2 12 2C16.2426 2 18.364 2 19.682 3.31802C21 4.63604 21 6.75736 21 11C21 15.2426 21 17.364 19.682 18.682C19.2323 19.1317 18.6891 19.4279 18 19.6231"
                 stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -321,7 +325,8 @@ export const Icons = {
         </svg>
     ),
     views: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path
                 d="M4.75 2.75L7 5L7 8M4.75 3.5C5.16421 3.5 5.5 3.16421 5.5 2.75C5.5 2.33579 5.16421 2 4.75 2C4.33579 2 4 2.33579 4 2.75C4 3.16421 4.33579 3.5 4.75 3.5Z"
                 stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -339,7 +344,8 @@ export const Icons = {
         </svg>
     ),
     time: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path d="M12 8V12L13.5 13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                   strokeLinejoin="round"/>
             <path
