@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import ResponsiveBox from "@/components/core/ResponsiveBox";
-import ConstraintedBox from "@/components/core/ConstraintedBox";
+import ConstrainedBox from "@/components/core/ConstrainedBox";
 import { getProjectDetails } from "@/data/projects";
 
 const ProjectsSection2 = ({ id }: Readonly<{ id?: string }>) => {
@@ -11,9 +11,9 @@ const ProjectsSection2 = ({ id }: Readonly<{ id?: string }>) => {
 
   return (
     <ResponsiveBox id={id}>
-      <ConstraintedBox classNames="p-4">
+      <ConstrainedBox classNames="p-4">
         <p>{description}</p>
-      </ConstraintedBox>
+      </ConstrainedBox>
     </ResponsiveBox>
   );
 };

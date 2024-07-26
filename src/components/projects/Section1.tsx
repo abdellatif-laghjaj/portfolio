@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import ResponsiveBox from "@/components/core/ResponsiveBox";
-import ConstraintedBox from "@/components/core/ConstraintedBox";
+import ConstrainedBox from "@/components/core/ConstrainedBox";
 import Row from "@/components/core/Row";
 import Column from "@/components/core/Column";
 import AppBar from "@/components/common/AppBar";
@@ -33,7 +33,7 @@ const ProjectsSection1 = ({ id }: Readonly<{ id?: string }>) => {
 
   return (
     <ResponsiveBox classNames="bg-[var(--dialogColor)]" id={id}>
-      <ConstraintedBox classNames="p-4">
+      <ConstrainedBox classNames="p-4">
         <AppBar>
           {project ? (
             <Row classNames="items-center gap-2">
@@ -64,7 +64,7 @@ const ProjectsSection1 = ({ id }: Readonly<{ id?: string }>) => {
         {project && project.sceenshots && project.sceenshots.length > 0 ? (
           <ScreenshotGallery imageList={project.sceenshots} />
         ) : null}
-      </ConstraintedBox>
+      </ConstrainedBox>
     </ResponsiveBox>
   );
 };

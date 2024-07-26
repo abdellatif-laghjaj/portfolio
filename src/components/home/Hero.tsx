@@ -4,7 +4,7 @@ import React from 'react';
 import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Column from "@/components/core/Column";
-import ConstraintedBox from "@/components/core/ConstraintedBox";
+import ConstrainedBox from "@/components/core/ConstrainedBox";
 import ResponsiveBox from "@/components/core/ResponsiveBox";
 import Row from "@/components/core/Row";
 import socialLinks from "@/data/socialLinks";
@@ -29,7 +29,7 @@ const useMediaQuery = (query: string) => {
     return matches;
 };
 
-const HomeSection1 = ({id}: Readonly<{ id: string }>) => {
+const Hero = ({id}: Readonly<{ id: string }>) => {
     const isMobile = useMediaQuery('(max-width: 767px)');
 
     return (
@@ -37,7 +37,7 @@ const HomeSection1 = ({id}: Readonly<{ id: string }>) => {
             classNames="dark:bg-[var(--bgColor)] bg-[var(--bgColor)] dark:bg-grid-small-white/[0.2] bg-grid-small-white/[0.2] min-h-screen items-center justify-center relative overflow-hidden rounded-md"
             id={id}
         >
-            <ConstraintedBox classNames="px-4 py-8 pt-16 z-20 items-center justify-center">
+            <ConstrainedBox classNames="px-4 py-8 pt-16 z-20 items-center justify-center">
                 <Column classNames="w-full items-center justify-center">
                     <div
                         className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-center justify-center text-center`}>
@@ -80,9 +80,9 @@ const HomeSection1 = ({id}: Readonly<{ id: string }>) => {
                         })}
                     </Row>
                 </div>
-            </ConstraintedBox>
+            </ConstrainedBox>
         </ResponsiveBox>
     );
 };
 
-export default HomeSection1;
+export default Hero;
