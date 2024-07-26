@@ -14,10 +14,10 @@ interface Item {
 const calculateAge = (birthDate: Date) => {
     const ageDifMs = Date.now() - birthDate.getTime();
     const ageDate = new Date(ageDifMs);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+    return Math.abs(ageDate.getUTCFullYear() - 1970 + ageDate.getUTCMonth() / 12 + ageDate.getUTCDate() / 365);
 };
 
-const birthDate = new Date('2006-09-17');
+const birthDate = new Date('2002-08-11');
 
 const Stat = ({name, value, icon, color}: Item) => {
     return (
