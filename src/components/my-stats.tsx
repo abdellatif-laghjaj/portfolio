@@ -3,6 +3,7 @@
 import React, {useEffect, useState} from "react";
 import {cn} from "@/lib/utils";
 import {EyeIcon, FolderIcon, StarIcon, TimerIcon, UserIcon, UsersIcon} from "lucide-react";
+import {DATA} from "@/data/resume";
 
 interface Item {
     name: string;
@@ -17,7 +18,7 @@ const calculateAge = (birthDate: Date) => {
     return Math.abs(ageDate.getUTCFullYear() - 1970 + ageDate.getUTCMonth() / 12 + ageDate.getUTCDate() / 365);
 };
 
-const birthDate = new Date('2002-08-11');
+const birthDate = new Date(DATA.birthDate);
 
 const Stat = ({name, value, icon, color}: Item) => {
     return (
