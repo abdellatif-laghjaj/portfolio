@@ -1,9 +1,7 @@
 import {Icons} from "@/components/icons";
 import {
-    CodeIcon,
     HomeIcon,
     NotebookIcon,
-    PencilLine,
 } from "lucide-react";
 
 export const DATA = {
@@ -28,8 +26,16 @@ export const DATA = {
     softSkills: ["Teamwork", "Self-Motivation", "Fast Learning"],
     languages: ["Arabic", "English", "French"],
     navbar: [
-        {href: "/", icon: HomeIcon, label: "Home"},
-        {href: "/blog", icon: NotebookIcon, label: "Blog"},
+        {
+            href: "/",
+            icon: Icons.home,
+            label: "Home"
+        },
+        {
+            href: "/blog",
+            icon: Icons.notebook,
+            label: "Blog"
+        },
     ],
     contact: {
         email: "abdelatiflaghjaj@gmail.com",
@@ -58,6 +64,12 @@ export const DATA = {
                 url: "https://wa.me/212636208825",
                 icon: Icons.whatsapp,
                 navbar: false,
+            },
+            Instagram: {
+                name: "Instagram",
+                url: "https://www.instagram.com/abdellatif.laghjaj/",
+                icon: Icons.instagram,
+                navbar: true,
             },
             email: {
                 name: "Send Email",
