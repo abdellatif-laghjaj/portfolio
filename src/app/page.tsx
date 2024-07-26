@@ -151,10 +151,31 @@ export default function Page() {
                             </BlurFade>
                         ))}
                     </div>
+
+                    <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full">
+                        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+                            <div className="space-y-3">
+                                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                                    Want to see more?
+                                </h2>
+                                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                                    Check out my{" "}
+                                    <Link
+                                        href={DATA.contact.social.GitHub.url}
+                                        target="_blank"
+                                        className="text-blue-500 hover:underline"
+                                    >
+                                        GitHub profile
+                                    </Link>{" "}
+                                    for more projects.
+                                </p>
+                            </div>
+                        </BlurFade>
+                    </div>
                 </div>
             </section>
             <section id="contact">
-                <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+                <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pb-12">
                     <BlurFade delay={BLUR_FADE_DELAY * 16}>
                         <div className="space-y-3">
                             <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
