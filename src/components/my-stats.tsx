@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import {cn} from "@/lib/utils";
 import {EyeIcon, FolderIcon, StarIcon, TimerIcon, UserIcon, UsersIcon} from "lucide-react";
 import {DATA} from "@/data/resume";
+import {motion, useAnimation} from "framer-motion";
 
 interface Item {
     name: string;
