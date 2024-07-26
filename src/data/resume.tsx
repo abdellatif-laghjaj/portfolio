@@ -177,7 +177,7 @@ export const DATA = {
                 {
                     type: "Source",
                     href: "#",
-                    icon: <Icons.github className="size-3"/>,
+                    icon: <Icons.source className="size-3"/>,
                 },
             ],
             image: "",
@@ -200,7 +200,7 @@ export const DATA = {
                 {
                     type: "Source",
                     href: "#",
-                    icon: <Icons.github className="size-3"/>,
+                    icon: <Icons.source className="size-3"/>,
                 },
             ],
             image: "",
@@ -223,7 +223,7 @@ export const DATA = {
                 {
                     type: "Source",
                     href: "#",
-                    icon: <Icons.github className="size-3"/>,
+                    icon: <Icons.source className="size-3"/>,
                 },
             ],
             image: "",
@@ -250,7 +250,7 @@ export const DATA = {
                 {
                     type: "Source",
                     href: "#",
-                    icon: <Icons.github className="size-3"/>,
+                    icon: <Icons.source className="size-3"/>,
                 },
             ],
             image: "",
