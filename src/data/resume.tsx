@@ -1,8 +1,4 @@
 import {Icons} from "@/components/icons";
-import {
-    HomeIcon,
-    NotebookIcon,
-} from "lucide-react";
 
 export const DATA = {
     name: "LAGHJAJ ABDELLATIF",
@@ -16,6 +12,7 @@ export const DATA = {
         "As a first-year master's student in Big Data and Artificial Intelligence, I bring a strong foundation in full-stack development, specializing in Vue.js, Laravel, and Flutter, along with expertise in database management. My passion lies in crafting innovative solutions that drive efficiency and enhance user experiences.  Beyond my technical skills, I am a highly motivated individual with a proven ability to quickly adapt to new technologies and collaborate effectively in team environments.",
     keywords: "Abdellatif Laghjaj, Abdellatif, Laghjaj, abdelatif-laghjaj, Abdellatif Laghjaj Portfolio, Abdellatif Laghjaj Blog, Abdellatif Laghjaj Resume, Abdellatif Laghjaj CV, Abdellatif Laghjaj Projects, Abdellatif Laghjaj Contact, Abdellatif Laghjaj About, Abdellatif Laghjaj Home, Abdellatif Laghjaj Skills, Abdellatif Laghjaj Education, Abdellatif Laghjaj Work, AbdelLatif Laghjaj Experience, abdelatif, laghjaj, Full Stack Developer",
     avatarUrl: "/me.jpg",
+    birthDate: "2002-08-11",
     skills: [
         "Vue.js", "React.js", "Next.js",
         "Laravel", "Express.js",
