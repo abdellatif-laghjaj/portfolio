@@ -108,7 +108,7 @@ export const DATA = {
     education: [
         {
             school: "Multidisciplinary Faculty of Taroudant",
-            href: "#",
+            href: "http://www.fpt.ac.ma/",
             degree: "Research Master's Degree in Big Data and Artificial Intelligence",
             logoUrl: "/fpt.png",
             start: "2023",
@@ -116,7 +116,7 @@ export const DATA = {
         },
         {
             school: "Multidisciplinary Faculty of Taroudant",
-            href: "#",
+            href: "http://www.fpt.ac.ma/",
             degree: "Professional Bachelor's Degree in Computer Engineering",
             logoUrl: "/fpt.png",
             start: "2022",
@@ -124,7 +124,7 @@ export const DATA = {
         },
         {
             school: "Multidisciplinary Faculty of Taroudant",
-            href: "#",
+            href: "http://www.fpt.ac.ma/",
             degree:
                 "Diploma of Professional University Studies (DEUP) in Computer Engineering",
             logoUrl: "/fpt.png",
