@@ -1,9 +1,10 @@
-import {GlobeIcon} from "lucide-react";
+import {Github, GlobeIcon} from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
     globe: (props: IconProps) => <GlobeIcon {...props} />,
+    source: (props: IconProps) => <Github {...props} />,
     email: (props: IconProps) => (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
             <path d="M7 8.5L9.94202 10.2394C11.6572 11.2535 12.3428 11.2535 14.058 10.2394L17 8.5" stroke="currentColor"
