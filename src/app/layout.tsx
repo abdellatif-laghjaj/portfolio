@@ -1,96 +1,73 @@
-import "./globals.scss";
-import {Poppins} from "next/font/google";
-import {ReactNode} from "react";
-import {Metadata} from "next";
-import Script from "next/script";
-import LocalConfig from "@/constants/config";
-import {WebVitals} from "@/components/common/WebVitals";
+import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { DATA } from "@/data/resume";
+import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { Inter as FontSans } from "next/font/google";
+import "./globals.css";
 
-const poppins = Poppins({
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-    style: ["normal", "italic"],
-    subsets: ["latin", "latin-ext"],
-    display: "swap",
-    preload: true,
-    fallback: [
-        "system-ui",
-        "arial",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Oxygen",
-        "Ubuntu",
-        "Fira Sans",
-        "Droid Sans",
-    ],
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-    title: "Abdellatif Laghjaj",
-    description: "Abdellatif Laghjaj is a big data and artificial intelligence master's student at the Polydisciplinary Faculty of Taroudant. He is a full-stack developer and a data scientist.",
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
+  metadataBase: new URL(DATA.url),
+  title: {
+    default: DATA.name,
+    template: `%s | ${DATA.name}`,
+  },
+  description: DATA.description,
+  openGraph: {
+    title: `${DATA.name}`,
+    description: DATA.description,
+    url: DATA.url,
+    siteName: `${DATA.name}`,
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    icons: [
-        {
-            url: "/favicon.ico",
-            rel: "icon",
-            sizes: "any",
-            type: "image/svg+xml",
-        },
-    ],
-    keywords: [
-        "Abdellatif Laghjaj",
-        "Abdellatif",
-        "Laghjaj",
-        "big data",
-        "artificial intelligence",
-        "master's student",
-        "Polydisciplinary Faculty of Taroudant",
-        "full-stack developer",
-        "data scientist",
-    ],
+  },
+  twitter: {
+    title: `${DATA.name}`,
+    card: "summary_large_image",
+  },
+  verification: {
+    google: "",
+    yandex: "",
+  },
 };
 
-const RootLayout = ({children}: Readonly<{ children: ReactNode }>) => {
-    return (
-        <html lang="en" className={poppins.className}>
-        <head>
-            <Script
-                strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${LocalConfig.values.NEXT_PUBLIC_GTAG_ID}`}
-            />
-
-            <Script id="google-analytics" strategy="afterInteractive">
-                {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${LocalConfig.values.NEXT_PUBLIC_GTAG_ID}', {
-            page_path: window.location.pathname,
-          });
-        `}
-            </Script>
-        </head>
-
-        <body
-            className={
-                process.env.NODE_ENV === "development" ? "debug-screens" : ""
-            }
-        >
-        {process.env.NODE_ENV === "development" ? <WebVitals/> : null}
-        <main>{children}</main>
-        </body>
-        </html>
-    );
-};
-
-export default RootLayout;
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          fontSans.variable
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <TooltipProvider delayDuration={0}>
+            {children}
+            <Navbar />
+          </TooltipProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
