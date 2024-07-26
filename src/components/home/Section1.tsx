@@ -41,12 +41,12 @@ const HomeSection1 = ({id}: Readonly<{ id: string }>) => {
                 <Column classNames="w-full items-center justify-center">
                     <div
                         className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-center justify-center text-center`}>
-                        <p className="text-xl/normal sm:text-2xl/normal md:text-3xl/normal lg:text-4xl/normal xl:text-5xl/normal dark:text-[var(--textColor)] text-[var(--textColor)] font-bold">
+                        <p className="text-2xl/normal sm:text-3xl/normal md:text-4xl/normal lg:text-5xl/normal xl:text-6xl/normal dark:text-[var(--textColor)] text-[var(--textColor)] font-bold">
                             Hi there, I am
                         </p>
                         <FlipWords
                             words={["Abdellatif", "Master's Student", "AI Enthusiast"]}
-                            className={`text-xl/normal sm:text-2xl/normal md:text-3xl/normal lg:text-4xl/normal xl:text-5xl/normal dark:text-[var(--primaryColor)] text-[var(--primaryColor)] font-bold ${isMobile ? 'mt-2' : 'ml-2'} overflow-hidden text-ellipsis`}
+                            className={`text-2xl/normal sm:text-3xl/normal md:text-4xl/normal lg:text-5xl/normal xl:text-6xl/normal dark:text-[var(--primaryColor)] text-[var(--primaryColor)] font-bold ${isMobile ? 'mt-2' : 'ml-2'} overflow-hidden text-ellipsis`}
                         />
                     </div>
                     <p className="text-center text-sm/normal md:text-base/normal dark:text-[var(--textColorLight)] text-[var(--textColorLight)] mt-4 max-w-md">
