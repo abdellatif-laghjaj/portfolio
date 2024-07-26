@@ -135,7 +135,7 @@ export const DATA = {
             school: "El Irfane High School, Sebt El Guerdane",
             href: "#",
             degree: "Baccalaureat in Physical and Chemical Sciences",
-            logoUrl: "/high-school-logo.png",
+            logoUrl: "/lycee.jpg",
             start: "2020",
             end: "2021",
         },
