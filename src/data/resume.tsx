@@ -112,7 +112,7 @@ export const DATA = {
             degree: "Research Master's Degree in Big Data and Artificial Intelligence",
             logoUrl: "/fpt.png",
             start: "2023",
-            end: "Present",
+            end: "2025",
         },
         {
             school: "Multidisciplinary Faculty of Taroudant",
