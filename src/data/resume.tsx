@@ -53,6 +53,12 @@ export const DATA = {
                 icon: Icons.x,
                 navbar: true,
             },
+            WhatsApp: {
+                name: "WhatsApp",
+                url: "https://wa.me/212636208825",
+                icon: Icons.whatsapp,
+                navbar: false,
+            },
             email: {
                 name: "Send Email",
                 url: "mailto:abdelatiflaghjaj@gmail.com",
