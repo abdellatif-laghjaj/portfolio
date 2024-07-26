@@ -97,7 +97,7 @@ export const DATA = {
             href: "#",
             badges: [],
             location: "Taroudant",
-            title: "Full Stack Developer (Stage)",
+            title: "Full Stack Developer (Internship)",
             logoUrl: "/fpt.png",
             start: "July 2022",
             end: "September 2022",
