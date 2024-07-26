@@ -103,7 +103,7 @@ export function MyStats({
             name: "GitHub Followers",
             value: githubData.followers.toString(),
             icon: <UsersIcon size={24}/>,
-            color: "#FFB800",
+            color: "#1E86FF",
         },
         {
             name: "Coding Hours",
@@ -115,7 +115,7 @@ export function MyStats({
             name: "GitHub Stars",
             value: githubData.stars.toString(),
             icon: <StarIcon size={24}/>,
-            color: "#1E86FF",
+            color: "#FFB800",
         },
         {
             name: "GitHub Repos",
