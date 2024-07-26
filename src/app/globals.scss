@@ -26,8 +26,8 @@
 
 :root {
   --maxWidth: 1200px;
-  --borderRadius: 1.5rem;
-  --defaultRadius: 1.5rem;
+  --borderRadius: 1rem;
+  --defaultRadius: 1rem;
 
   --dialogColor10: rgba(18, 22, 27, 0.1);
   --dialogColor20: rgba(18, 22, 27, 0.2);
@@ -179,12 +179,12 @@
   --whiteColor: rgba(255, 255, 255, 1);
 
   --primaryGrad: linear-gradient(118.18deg,
-      var(--primaryColor) 0.99%,
-      var(--secondaryColor) 100%);
+          var(--primaryColor) 0.99%,
+          var(--secondaryColor) 100%);
 
   --boxShadow: 0px 4px 12px -6px rgba(0, 0, 0, 0.1),
-    0px -4px 12px -6px rgba(0, 0, 0, 0.1), -4px 0px 12px -6px rgba(0, 0, 0, 0.1),
-    4px 0px 12px -6px rgba(0, 0, 0, 0.1);
+  0px -4px 12px -6px rgba(0, 0, 0, 0.1), -4px 0px 12px -6px rgba(0, 0, 0, 0.1),
+  4px 0px 12px -6px rgba(0, 0, 0, 0.1);
 
   --navBarShadow: 0 0 10px 0 var(--blackColor10);
 }
@@ -205,8 +205,8 @@ body {
 body {
   background-color: var(--bgColor);
   font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
+  Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+  sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
