@@ -226,7 +226,7 @@ export const DATA = {
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
-            image: "",
+            image: "/projects/absentify.png",
             video: "",
         },
         {
