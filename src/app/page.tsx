@@ -8,6 +8,7 @@ import {Badge} from "@/components/ui/badge";
 import {DATA} from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import {MyStats} from "@/components/my-stats";
 
 const BLUR_FADE_DELAY = 0.04;
 export default function Page() {
@@ -172,6 +173,29 @@ export default function Page() {
                             </div>
                         </BlurFade>
                     </div>
+                </div>
+            </section>
+            <section id="activity">
+                <div className="space-y-12 w-full py-12">
+                    <BlurFade delay={BLUR_FADE_DELAY * 15}>
+                        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                            <div className="space-y-2">
+                                <div
+                                    className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                                    Recent Activity
+                                </div>
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                                    What I've Been Up To
+                                </h2>
+                                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                                    Here's a live feed of my recent development activities and achievements.
+                                </p>
+                            </div>
+                        </div>
+                    </BlurFade>
+                    <BlurFade delay={BLUR_FADE_DELAY * 16}>
+                        <MyStats className="max-w-[800px] mx-auto"/>
+                    </BlurFade>
                 </div>
             </section>
             <section id="contact">
