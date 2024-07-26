@@ -230,7 +230,7 @@ export const DATA = {
             video: "",
         },
         {
-            title: "AQUANOVA",
+            title: "NUVAQUA",
             href: "#",
             dates: "2024 - Present",
             active: true,
@@ -253,7 +253,7 @@ export const DATA = {
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
-            image: "",
+            image: "/projects/nuvaqua.png",
             video: "",
         },
     ],
