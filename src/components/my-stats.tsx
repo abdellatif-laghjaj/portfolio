@@ -2,9 +2,8 @@
 
 import React, {useEffect, useState} from "react";
 import {cn} from "@/lib/utils";
-import {EyeIcon, FolderIcon, StarIcon, TimerIcon, UserIcon, UsersIcon} from "lucide-react";
 import {DATA} from "@/data/resume";
-import {motion, useAnimation} from "framer-motion";
+import {Icons} from "@/components/icons";
 
 interface Item {
     name: string;
@@ -97,37 +96,37 @@ export function MyStats({
         {
             name: "My age",
             value: age.toFixed(9),
-            icon: <UserIcon size={24}/>,
+            icon: <Icons.birthday/>,
             color: "#00C9A7",
         },
         {
             name: "GitHub Followers",
             value: githubData.followers.toString(),
-            icon: <UsersIcon size={24}/>,
+            icon: <Icons.followers/>,
             color: "#1E86FF",
         },
         {
             name: "Coding Hours",
             value: "890 hrs",
-            icon: <TimerIcon size={24}/>,
+            icon: <Icons.time/>,
             color: "#FF3D71",
         },
         {
             name: "GitHub Stars",
             value: githubData.stars.toString(),
-            icon: <StarIcon size={24}/>,
+            icon: <Icons.stars/>,
             color: "#FFB800",
         },
         {
             name: "GitHub Repos",
             value: githubData.repos.toString(),
-            icon: <FolderIcon size={24}/>,
+            icon: <Icons.repository/>,
             color: "#8A2BE2",
         },
         {
             name: "Site Views",
             value: "52",
-            icon: <EyeIcon size={24}/>,
+            icon: <Icons.views/>,
             color: "#FF4500",
         },
     ];
