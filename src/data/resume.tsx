@@ -74,7 +74,7 @@ export const DATA = {
             badges: [],
             location: "Taroudant",
             title: "Full Stack Developer (Internship)",
-            logoUrl: "/accesspoint-logo.png",
+            logoUrl: "/accesspoint.png",
             start: "June 2023",
             end: "September 2023",
             description:
@@ -86,7 +86,7 @@ export const DATA = {
             badges: [],
             location: "Taroudant",
             title: "Full Stack Developer (Internship PFE)",
-            logoUrl: "/accesspoint-logo.png",
+            logoUrl: "/accesspoint.png",
             start: "April 2023",
             end: "June 2023",
             description:
@@ -98,7 +98,7 @@ export const DATA = {
             badges: [],
             location: "Taroudant",
             title: "Full Stack Developer (Stage)",
-            logoUrl: "/faculty-logo.png",
+            logoUrl: "/fpt.png",
             start: "July 2022",
             end: "September 2022",
             description:
@@ -110,7 +110,7 @@ export const DATA = {
             school: "Multidisciplinary Faculty of Taroudant",
             href: "#",
             degree: "Research Master's Degree in Big Data and Artificial Intelligence",
-            logoUrl: "/faculty-logo.png",
+            logoUrl: "/fpt.png",
             start: "2023",
             end: "Present",
         },
@@ -118,7 +118,7 @@ export const DATA = {
             school: "Multidisciplinary Faculty of Taroudant",
             href: "#",
             degree: "Professional Bachelor's Degree in Computer Engineering",
-            logoUrl: "/faculty-logo.png",
+            logoUrl: "/fpt.png",
             start: "2022",
             end: "2023",
         },
@@ -127,7 +127,7 @@ export const DATA = {
             href: "#",
             degree:
                 "Diploma of Professional University Studies (DEUP) in Computer Engineering",
-            logoUrl: "/faculty-logo.png",
+            logoUrl: "/fpt.png",
             start: "2020",
             end: "2022",
         },
