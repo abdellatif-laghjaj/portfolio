@@ -23,7 +23,8 @@ export function MyStats({
     const [githubData, setGithubData] = useState({
         followers: 0,
         stars: 0,
-        repos: 0
+        repos: 0,
+        forks: 0,
     });
 
     useEffect(() => {
@@ -39,6 +40,13 @@ export function MyStats({
                     followers: data.followers,
                     repos: data.public_repos
                 }));
+            })
+            .catch(() => {
+                setGithubData(prevState => ({
+                    ...prevState,
+                    followers: 0,
+                    repos: 0
+                }));
             });
 
         fetch('https://api.github.com/users/abdellatif-laghjaj/repos')
@@ -48,6 +56,29 @@ export function MyStats({
                 setGithubData(prevState => ({
                     ...prevState,
                     stars: stars
+                }));
+            })
+            .catch(() => {
+                setGithubData(prevState => ({
+                    ...prevState,
+                    stars: 0
+                }));
+            });
+
+        fetch('https://api.github-star-counter.workers.dev/user/abdellatif-laghjaj')
+            .then(response => response.json())
+            .then(data => {
+                setGithubData(prevState => ({
+                    ...prevState,
+                    stars: data.stars,
+                    forks: data.forks
+                }));
+            })
+            .catch(() => {
+                setGithubData(prevState => ({
+                    ...prevState,
+                    stars: 0,
+                    forks: 0
                 }));
             });
 
@@ -86,9 +117,9 @@ export function MyStats({
             color: "#8A2BE2",
         },
         {
-            name: "Site Views",
+            name: "GitHub Forks",
             value: "52",
-            icon: <Icons.views/>,
+            icon: <Icons.fork/>,
             color: "#FF4500",
         },
     ];
