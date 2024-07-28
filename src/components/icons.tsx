@@ -344,7 +344,8 @@ export const Icons = {
         </svg>
     ),
     fork: (props: IconProps) => (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill={"none"}
+             color={"#ffffff"}>
             <path
                 d="M6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6C4 7.10457 4.89543 8 6 8Z"
                 stroke="currentColor" strokeWidth="1.5"/>
