@@ -14,6 +14,7 @@ const BLUR_FADE_DELAY = 0.04;
 export default function Page() {
     return (
         <main className="flex flex-col min-h-[100dvh] space-y-10">
+            {/* Hero */}
             <section id="hero">
                 <div className="mx-auto w-full max-w-2xl space-y-8">
                     <div className="gap-2 flex justify-between">
@@ -39,6 +40,8 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+
+            {/* About */}
             <section id="about">
                 <BlurFade delay={BLUR_FADE_DELAY * 3}>
                     <h2 className="text-xl font-bold">About</h2>
@@ -50,6 +53,8 @@ export default function Page() {
                     </Markdown>
                 </BlurFade>
             </section>
+
+            {/* Work Experience */}
             <section id="work">
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -75,6 +80,8 @@ export default function Page() {
                     ))}
                 </div>
             </section>
+
+            {/* Education */}
             <section id="education">
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -98,6 +105,8 @@ export default function Page() {
                     ))}
                 </div>
             </section>
+
+            {/* Skills */}
             <section id="skills">
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -112,6 +121,8 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+
+            {/* Projects */}
             <section id="projects">
                 <div className="space-y-12 w-full py-12">
                     <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -175,6 +186,8 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+
+            {/* Activities */}
             <section id="activity">
                 <div className="space-y-12 w-full py-12">
                     <BlurFade delay={BLUR_FADE_DELAY * 15}>
@@ -198,6 +211,8 @@ export default function Page() {
                     </BlurFade>
                 </div>
             </section>
+
+            {/* Contact */}
             <section id="contact">
                 <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pb-12">
                     <BlurFade delay={BLUR_FADE_DELAY * 16}>
