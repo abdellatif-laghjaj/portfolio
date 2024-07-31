@@ -297,4 +297,15 @@ export const DATA = {
             video: "",
         },
     ],
+    hackathons: [
+        {
+            title: "Healthteach Metaverse Hackathon",
+            dates: "Mai 24th - 26th, 2024",
+            location: "Agadir, Morocco",
+            description: "Healthteach Metaverse Hackathon is a 48-hour event that brings together developers, designers, and entrepreneurs to create innovative solutions that address the challenges of the healthcare industry. Participants will have the opportunity to collaborate with industry experts and mentors to develop cutting-edge solutions that improve patient care, streamline operations, and enhance the overall healthcare experience.",
+            image: "/hackathons/healthteach-metaverse.jpg",
+            mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
+            links: [],
+        },
+    ],
 } as const;
