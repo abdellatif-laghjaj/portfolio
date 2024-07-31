@@ -1,4 +1,8 @@
-import {Icons} from "@/components/icons";
+import {Icons} from "@/components/icons"
+import {FaVuejs, FaReact, FaNodeJs, FaDocker, FaPython, FaJs, FaDatabase} from 'react-icons/fa';
+import {SiDart, SiMysql, SiFigma, SiTypescript, SiLaravel, SiPostgresql, SiMongodb, SiKotlin} from "react-icons/si";
+import {TbBrandFirebase, TbBrandFlutter} from "react-icons/tb";
+import {RiSupabaseLine} from "react-icons/ri";
 
 export const DATA = {
     name: "LAGHJAJ ABDELLATIF",
@@ -13,14 +17,52 @@ export const DATA = {
     keywords: "Abdellatif Laghjaj, Abdellatif, Laghjaj, abdelatif-laghjaj, Abdellatif Laghjaj Portfolio, Abdellatif Laghjaj Blog, Abdellatif Laghjaj Resume, Abdellatif Laghjaj CV, Abdellatif Laghjaj Projects, Abdellatif Laghjaj Contact, Abdellatif Laghjaj About, Abdellatif Laghjaj Home, Abdellatif Laghjaj Skills, Abdellatif Laghjaj Education, Abdellatif Laghjaj Work, AbdelLatif Laghjaj Experience, abdelatif, laghjaj, Full Stack Developer",
     avatarUrl: "/me.jpg",
     birthDate: "2002-08-11",
-    skills: [
-        "Vue.js", "React.js", "Next.js",
-        "Laravel", "Express.js",
-        "MySQL", "PostgreSQL", "Firebase", "Supabase", "MongoDB",
-        "Flutter", "Kotlin",
-        "Git", "Docker", "Figma",
-        "Python",
-    ],
+    skills: {
+        frontend: {
+            label: "Frontend",
+            skills: [
+                {name: "Vue.js", icon: <FaVuejs/>},
+                {name: "React.js", icon: <FaReact/>},
+                {name: "Next.js", icon: <FaReact/>},
+                {name: "Flutter", icon: <TbBrandFlutter/>},
+            ]
+        },
+        backend: {
+            label: "Backend",
+            skills: [
+                {name: "Laravel", icon: <SiLaravel/>},
+                {name: "Express.js", icon: <FaNodeJs/>},
+            ]
+        },
+        databases: {
+            label: "Databases",
+            skills: [
+                {name: "MySQL", icon: <SiMysql/>},
+                {name: "PostgreSQL", icon: <SiPostgresql/>},
+                {name: "Firebase", icon: <TbBrandFirebase/>},
+                {name: "Supabase", icon: <RiSupabaseLine/>},
+                {name: "MongoDB", icon: <SiMongodb/>},
+            ]
+        },
+        tools: {
+            label: "Tools",
+            skills: [
+                {name: "Git", icon: <FaJs/>},
+                {name: "Docker", icon: <FaDocker/>},
+                {name: "Figma", icon: <SiFigma/>},
+            ]
+        },
+        programmingLanguages: {
+            label: "Programming Languages",
+            skills: [
+                {name: "Python", icon: <FaPython/>},
+                {name: "JavaScript", icon: <FaJs/>},
+                {name: "TypeScript", icon: <SiTypescript/>},
+                {name: "Dart", icon: <SiDart/>},
+                {name: "Kotlin", icon: <SiKotlin/>},
+            ]
+        },
+    },
     softSkills: ["Teamwork", "Self-Motivation", "Fast Learning"],
     languages: ["Arabic", "English", "French"],
     navbar: [
