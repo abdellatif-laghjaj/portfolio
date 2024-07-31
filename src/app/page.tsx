@@ -1,3 +1,4 @@
+import Hackathons from "@/components/views/hackathons";
 import {lazy} from "react";
 
 // Lazy-loaded components
@@ -27,6 +28,9 @@ export default function Page() {
 
             {/* Skills */}
             <Skills/>
+
+            {/* Hackathons */}
+            <Hackathons/>
 
             {/* Projects */}
             <Projects/>
