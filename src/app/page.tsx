@@ -3,6 +3,8 @@
 import Hackathons from "@/components/views/hackathons";
 import {lazy, useRef, useEffect, useState} from "react";
 import confetti from "canvas-confetti";
+import Marquee from "@/components/magicui/marquee";
+import BlurFade from "@/components/magicui/blur-fade";
 
 // Lazy-loaded components
 const Hero = lazy(() => import('@/components/views/hero'));
@@ -16,6 +18,7 @@ const Contact = lazy(() => import('@/components/views/contact'));
 
 export default function Page() {
     const [showConfetti, setShowConfetti] = useState(false);
+    const [showMarquee, setShowMarquee] = useState(false);
 
     const isBirthday = () => {
         const today = new Date();
@@ -24,8 +27,9 @@ export default function Page() {
     };
 
     const fireConfetti = () => {
-        const end = Date.now() + 10 * 1000; // 10 seconds
-        const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"];
+        // 30 seconds
+        const end = Date.now() + 30 * 1000;
+        const colors = ["#a786ff", "#fd8bbc", "#ffb220", "#f36d23"];
 
         const frame = () => {
             if (Date.now() > end) {
@@ -59,6 +63,7 @@ export default function Page() {
     useEffect(() => {
         if (isBirthday()) {
             setShowConfetti(true);
+            setShowMarquee(true);
             fireConfetti();
         }
     }, []);
@@ -67,6 +72,17 @@ export default function Page() {
         <main className="flex flex-col min-h-[100dvh] space-y-10 relative">
             {showConfetti && (
                 <div className="fixed inset-0 pointer-events-none z-50"/>
+            )}
+
+            {showMarquee && (
+                <BlurFade>
+                    <Marquee
+                        className="py-2 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold rounded-lg">
+                        <div className="text-2xl mx-4">🎉 Happy Birthday Abdellatif! 🎂</div>
+                        <div className="text-2xl mx-4">🎈 Wishing you an amazing day! 🎁</div>
+                        <div className="text-2xl mx-4">🥳 May all your dreams come true! 🌟</div>
+                    </Marquee>
+                </BlurFade>
             )}
 
             {/* Hero */}
