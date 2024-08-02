@@ -22,7 +22,7 @@ export default function Page() {
 
     const isBirthday = () => {
         const today = new Date();
-        const birthday = new Date(today.getFullYear(), 7, 2);
+        const birthday = new Date(today.getFullYear(), 7, 11);
         return today.getMonth() === birthday.getMonth() && today.getDate() === birthday.getDate();
     };
 
