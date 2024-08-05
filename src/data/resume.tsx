@@ -45,6 +45,15 @@ export const DATA = {
                 {name: "MongoDB", icon: <SiMongodb/>},
             ]
         },
+        machineLearning: {
+            label: "Machine Learning",
+            skills: [
+                {name: "Python", icon: <FaPython/>},
+                {name: "Hadoop", icon: <FaDatabase/>},
+                {name: "Apache Kafka", icon: <FaDatabase/>},
+                {name: "Apache Spark", icon: <FaDatabase/>},
+            ]
+        },
         tools: {
             label: "Tools",
             skills: [
@@ -211,13 +220,8 @@ export const DATA = {
             ],
             links: [
                 {
-                    type: "Website",
-                    href: "#",
-                    icon: <Icons.globe className="size-3"/>,
-                },
-                {
                     type: "Source",
-                    href: "#",
+                    href: "https://github.com/abdellatif-laghjaj/big-data-project",
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
@@ -234,13 +238,8 @@ export const DATA = {
             technologies: ["Java", "Spring Boot", "Vue.js", "Daisy UI", "MySQL"],
             links: [
                 {
-                    type: "Website",
-                    href: "#",
-                    icon: <Icons.globe className="size-3"/>,
-                },
-                {
                     type: "Source",
-                    href: "#",
+                    href: "https://github.com/MaryamBouchhar/rentahome",
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
@@ -257,13 +256,8 @@ export const DATA = {
             technologies: ["Kotlin", "Android", "Firebase", "Figma"],
             links: [
                 {
-                    type: "Website",
-                    href: "#",
-                    icon: <Icons.globe className="size-3"/>,
-                },
-                {
                     type: "Source",
-                    href: "#",
+                    href: "https://github.com/abdellatif-laghjaj/absence-management-app",
                     icon: <Icons.source className="size-3"/>,
                 },
             ],
@@ -285,13 +279,8 @@ export const DATA = {
             links: [
                 {
                     type: "Website",
-                    href: "#",
+                    href: "nuvaqua.vercel.app",
                     icon: <Icons.globe className="size-3"/>,
-                },
-                {
-                    type: "Source",
-                    href: "#",
-                    icon: <Icons.source className="size-3"/>,
                 },
             ],
             image: "/projects/nuvaqua.png",
