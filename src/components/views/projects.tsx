@@ -3,13 +3,11 @@ import {DATA} from "@/data/resume";
 import {ProjectCard} from "@/components/project-card";
 import Link from "next/link";
 
-const BLUR_FADE_DELAY = 0.04;
-
 export default function Projects() {
     return (
         <section id="projects">
             <div className="space-y-12 w-full py-12">
-                <BlurFade delay={BLUR_FADE_DELAY * 11}>
+                <BlurFade delay={DATA.BLUR_FADE_DELAY * 11}>
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                         <div className="space-y-2">
                             <div
@@ -31,7 +29,7 @@ export default function Projects() {
                     {DATA.projects.map((project, id) => (
                         <BlurFade
                             key={project.title}
-                            delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                            delay={DATA.BLUR_FADE_DELAY * 12 + id * 0.05}
                         >
                             <ProjectCard
                                 href={project.href}
@@ -49,7 +47,7 @@ export default function Projects() {
                 </div>
 
                 <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full">
-                    <BlurFade delay={BLUR_FADE_DELAY * 16}>
+                    <BlurFade delay={DATA.BLUR_FADE_DELAY * 16}>
                         <div className="space-y-3">
                             <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
                                 Want to see more?

@@ -6,6 +6,7 @@ import {RiSupabaseLine} from "react-icons/ri";
 
 export const DATA = {
     name: "LAGHJAJ ABDELLATIF",
+    BLUR_FADE_DELAY: 0.02,
     initials: "LA",
     url: "https://your-portfolio-website.com",
     location: "Sebt El Guerdane, Taroudant, Morocco",

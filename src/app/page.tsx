@@ -1,20 +1,23 @@
 "use client";
 
-import Hackathons from "@/components/views/hackathons";
-import {lazy, useRef, useEffect, useState} from "react";
+import {Suspense, lazy, useEffect, useState} from "react";
+import dynamic from 'next/dynamic';
 import confetti from "canvas-confetti";
 import Marquee from "@/components/magicui/marquee";
 import BlurFade from "@/components/magicui/blur-fade";
 
-// Lazy-loaded components
-const Hero = lazy(() => import('@/components/views/hero'));
-const About = lazy(() => import('@/components/views/about'));
-const Experience = lazy(() => import('@/components/views/experience'));
-const Education = lazy(() => import('@/components/views/education'));
-const Skills = lazy(() => import('@/components/views/skills'));
-const Projects = lazy(() => import('@/components/views/projects'));
-const Activities = lazy(() => import('@/components/views/activities'));
-const Contact = lazy(() => import('@/components/views/contact'));
+// Use Next.js dynamic imports for better SSR support
+const Hero = dynamic(() => import('@/components/views/hero'), {ssr: true});
+const About = dynamic(() => import('@/components/views/about'), {ssr: true});
+const Experience = dynamic(() => import('@/components/views/experience'), {ssr: true});
+const Education = dynamic(() => import('@/components/views/education'), {ssr: true});
+const Skills = dynamic(() => import('@/components/views/skills'), {ssr: true});
+const Projects = dynamic(() => import('@/components/views/projects'), {ssr: true});
+const Activities = dynamic(() => import('@/components/views/activities'), {ssr: true});
+const Contact = dynamic(() => import('@/components/views/contact'), {ssr: true});
+
+// Keep Hackathons component as a regular import since it's used directly
+import Hackathons from "@/components/views/hackathons";
 
 export default function Page() {
     const [showConfetti, setShowConfetti] = useState(false);
@@ -27,7 +30,6 @@ export default function Page() {
     };
 
     const fireConfetti = () => {
-        // 30 seconds
         const end = Date.now() + 30 * 1000;
         const colors = ["#a786ff", "#fd8bbc", "#ffb220", "#f36d23"];
 
@@ -85,32 +87,34 @@ export default function Page() {
                 </BlurFade>
             )}
 
-            {/* Hero */}
-            <Hero/>
+            <Suspense fallback={<div>Loading...</div>}>
+                {/* Hero */}
+                <Hero/>
 
-            {/* About */}
-            <About/>
+                {/* About */}
+                <About/>
 
-            {/* Experience */}
-            <Experience/>
+                {/* Experience */}
+                <Experience/>
 
-            {/* Education */}
-            <Education/>
+                {/* Education */}
+                <Education/>
 
-            {/* Skills */}
-            <Skills/>
+                {/* Skills */}
+                <Skills/>
 
-            {/* Hackathons */}
-            <Hackathons/>
+                {/* Hackathons */}
+                <Hackathons/>
 
-            {/* Projects */}
-            <Projects/>
+                {/* Projects */}
+                <Projects/>
 
-            {/* Activities */}
-            <Activities/>
+                {/* Activities */}
+                <Activities/>
 
-            {/* Contact */}
-            <Contact/>
+                {/* Contact */}
+                <Contact/>
+            </Suspense>
         </main>
     );
 }

@@ -2,13 +2,11 @@ import BlurFade from "@/components/magicui/blur-fade";
 import {DATA} from "@/data/resume";
 import {HackathonCard} from "@/components/hackathon-card";
 
-const BLUR_FADE_DELAY = 0.04;
-
 export default function Hackathons() {
     return (
         <section id="hackathons">
             <div className="space-y-12 w-full py-12">
-                <BlurFade delay={BLUR_FADE_DELAY * 13}>
+                <BlurFade delay={DATA.BLUR_FADE_DELAY * 13}>
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                         <div className="space-y-2">
                             <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
@@ -26,12 +24,12 @@ export default function Hackathons() {
                         </div>
                     </div>
                 </BlurFade>
-                <BlurFade delay={BLUR_FADE_DELAY * 14}>
+                <BlurFade delay={DATA.BLUR_FADE_DELAY * 14}>
                     <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
                         {DATA.hackathons.map((project, id) => (
                             <BlurFade
                                 key={project.title + project.dates}
-                                delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                                delay={DATA.BLUR_FADE_DELAY * 15 + id * 0.05}
                             >
                                 <HackathonCard
                                     title={project.title}

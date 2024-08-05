@@ -1,13 +1,12 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import {MyStats} from "@/components/my-stats";
-
-const BLUR_FADE_DELAY = 0.04;
+import {DATA} from "@/data/resume";
 
 export default function Activities() {
     return (
         <section id="activity">
             <div className="space-y-12 w-full py-12">
-                <BlurFade delay={BLUR_FADE_DELAY * 15}>
+                <BlurFade delay={DATA.BLUR_FADE_DELAY * 15}>
                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
                         <div className="space-y-2">
                             <div
@@ -23,7 +22,7 @@ export default function Activities() {
                         </div>
                     </div>
                 </BlurFade>
-                <BlurFade delay={BLUR_FADE_DELAY * 16}>
+                <BlurFade delay={DATA.BLUR_FADE_DELAY * 16}>
                     <MyStats className="max-w-[800px] mx-auto"/>
                 </BlurFade>
             </div>
