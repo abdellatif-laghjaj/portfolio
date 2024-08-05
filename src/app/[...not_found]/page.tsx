@@ -1,6 +1,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import {getBlogPosts} from "@/data/blog";
-import Link from "next/link";
+import {DATA} from "@/data/resume";
 
 export const metadata = {
     title: "Page Not Found",
