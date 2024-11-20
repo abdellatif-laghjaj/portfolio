@@ -149,6 +149,18 @@ export const DATA = {
   },
   work: [
     {
+      company: "Haut Commissariat au Plan",
+      href: "https://www.hcp.ma/",
+      badges: [],
+      location: "Taroudant",
+      title: "Enumerator - 2024 Census",
+      logoUrl: "/hcp.png",
+      start: "August 2024",
+      end: "September 2024",
+      description:
+        "We collected demographic and socio-economic data from households while ensuring data confidentiality, managing census rounds by planning routes and coordinating with local authorities for optimal geographic coverage. Additionally, we addressed field challenges such as absenteeism and refusal to cooperate, while raising public awareness about the importance of the census for national development.",
+    },
+    {
       company: "Accesspoint IT Solutions",
       href: "#",
       badges: [],
