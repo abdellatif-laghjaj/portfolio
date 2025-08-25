@@ -26,7 +26,6 @@ app
 └── page.tsx
 ```
 
-
 Your custom 404 page (you can add anything you want to it):
 
 ```tsx
@@ -40,7 +39,7 @@ General 404 route handler on every 404 action this page would be called:
 
 ```tsx
 // app/[locale]/[...not_found]/page.tsx
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
 export default function NotFoundCatchAll() {
   notFound();

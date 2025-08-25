@@ -24,16 +24,16 @@ Vue.js is known for its simplicity and flexibility. Let's start with a basic Vue
 export default {
   data() {
     return {
-      title: 'Hello Vue!',
-      counter: 0
-    }
+      title: "Hello Vue!",
+      counter: 0,
+    };
   },
   methods: {
     incrementCounter() {
-      this.counter++
-    }
-  }
-}
+      this.counter++;
+    },
+  },
+};
 </script>
 ```
 
@@ -88,16 +88,12 @@ By following these steps, you can build modern web applications that leverage th
 Here's an example of how to use a Vue component in a Blade template:
 
 ```html
-@extends('layouts.app')
-
-@section('content')
-    <div id="app">
-        <example-component></example-component>
-    </div>
-@endsection
-
-@push('scripts')
-    <script src="{{ mix('js/app.js') }}"></script>
+@extends('layouts.app') @section('content')
+<div id="app">
+  <example-component></example-component>
+</div>
+@endsection @push('scripts')
+<script src="{{ mix('js/app.js') }}"></script>
 @endpush
 ```
 
