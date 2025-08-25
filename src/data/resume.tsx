@@ -207,7 +207,7 @@ export const DATA = {
   },
   work: [
     {
-      company: "Ibn Zohr University R&D",
+      company: "Ibn Zohr University",
       href: "http://www.fpt.ac.ma/",
       badges: [],
       location: "Taroudant, Morocco",
@@ -257,7 +257,7 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Ibn Zohr University, Multidisciplinary Faculty of Taroudant",
+      school: "Ibn Zohr University, Taroudant",
       href: "http://www.fpt.ac.ma/",
       degree: "Master of Science in Big Data and Artificial Intelligence",
       logoUrl: "/fpt.png",
@@ -265,7 +265,7 @@ export const DATA = {
       end: "2025",
     },
     {
-      school: "Ibn Zohr University, Multidisciplinary Faculty of Taroudant",
+      school: "Ibn Zohr University, Taroudant",
       href: "http://www.fpt.ac.ma/",
       degree: "Bachelor of Science in Computer Engineering",
       logoUrl: "/fpt.png",
@@ -303,7 +303,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/abdellatif-laghjaj",
+          href: "https://github.com/abdellatif-laghjaj/hespress-comments-analysis",
           icon: <Icons.source className="size-3" />,
         },
       ],
@@ -328,7 +328,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/abdellatif-laghjaj",
+          href: "https://github.com/abdellatif-laghjaj/tomato-sorting-using-CNN",
           icon: <Icons.source className="size-3" />,
         },
       ],
@@ -354,7 +354,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/abdellatif-laghjaj",
+          href: "https://github.com/abdellatif-laghjaj/salary-scope-predictor",
           icon: <Icons.source className="size-3" />,
         },
       ],
@@ -455,18 +455,21 @@ export const DATA = {
       issuer: "Simplilearn",
       date: "December 2024",
       href: "#",
+      logoUrl: "/simplilearn.jpg",
     },
     {
       name: "Web Scraping with Beautiful Soup",
       issuer: "Simplilearn",
       date: "July 2022",
       href: "#",
+      logoUrl: "/simplilearn.jpg",
     },
     {
       name: "Computer Networking Fundamentals",
       issuer: "Google",
       date: "December 2021",
       href: "#",
+      logoUrl: "/google.jpg",
     },
   ],
   hackathons: [

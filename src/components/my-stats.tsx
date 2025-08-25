@@ -26,6 +26,8 @@ export function MyStats({ className }: { className?: string }) {
     stars: 0,
     repos: 0,
     forks: 0,
+    commits: 0,
+    languages: 0,
   });
 
   useEffect(() => {
@@ -57,25 +59,19 @@ export function MyStats({ className }: { className?: string }) {
           (acc: number, repo: any) => acc + repo.stargazers_count,
           0,
         );
+        const forks = data.reduce(
+          (acc: number, repo: any) => acc + repo.forks_count,
+          0,
+        );
+        const languages = new Set(
+          data.map((repo: any) => repo.language).filter(Boolean),
+        ).size;
+
         setGithubData((prevState) => ({
           ...prevState,
           stars: stars,
-        }));
-      })
-      .catch(() => {
-        setGithubData((prevState) => ({
-          ...prevState,
-          stars: 0,
-        }));
-      });
-
-    fetch("https://api.github-star-counter.workers.dev/user/abdellatif-laghjaj")
-      .then((response) => response.json())
-      .then((data) => {
-        setGithubData((prevState) => ({
-          ...prevState,
-          stars: data.stars,
-          forks: data.forks,
+          forks: forks,
+          languages: languages,
         }));
       })
       .catch(() => {
@@ -83,6 +79,7 @@ export function MyStats({ className }: { className?: string }) {
           ...prevState,
           stars: 0,
           forks: 0,
+          languages: 0,
         }));
       });
 
@@ -92,7 +89,7 @@ export function MyStats({ className }: { className?: string }) {
   const stats = [
     {
       name: "My age",
-      value: age.toFixed(9),
+      value: age.toFixed(2),
       icon: <Icons.birthday />,
       color: "#00C9A7",
     },
@@ -101,12 +98,6 @@ export function MyStats({ className }: { className?: string }) {
       value: githubData.followers.toString(),
       icon: <Icons.followers />,
       color: "#1E86FF",
-    },
-    {
-      name: "Coding Hours",
-      value: "890 hrs",
-      icon: <Icons.time />,
-      color: "#FF3D71",
     },
     {
       name: "GitHub Stars",
@@ -122,9 +113,15 @@ export function MyStats({ className }: { className?: string }) {
     },
     {
       name: "GitHub Forks",
-      value: "52",
+      value: githubData.forks.toString(),
       icon: <Icons.fork />,
       color: "#FF4500",
+    },
+    {
+      name: "Languages Used",
+      value: githubData.languages.toString(),
+      icon: <Icons.source />,
+      color: "#32CD32",
     },
   ];
 

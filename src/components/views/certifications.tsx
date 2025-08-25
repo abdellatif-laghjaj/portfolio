@@ -17,7 +17,7 @@ export default function Certifications() {
             <ResumeCard
               key={cert.name}
               href={cert.href}
-              logoUrl=""
+              logoUrl={cert.logoUrl || ""}
               altText={cert.name}
               title={cert.name}
               subtitle={cert.issuer}
