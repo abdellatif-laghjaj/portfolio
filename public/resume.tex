@@ -1,0 +1,442 @@
+\documentclass[10pt, letterpaper]{article}
+
+% ==================== PACKAGES ====================
+\usepackage[
+    ignoreheadfoot,
+    top=1cm,
+    bottom=1cm,
+    left=1cm,
+    right=1cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Abdellatif Laghjaj Resume},
+    pdfauthor={Abdellatif Laghjaj},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% ==================== COLOR DEFINITIONS ====================
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\definecolor{accentColor}{RGB}{45, 55, 72}
+\definecolor{lightGray}{RGB}{128, 128, 128}
+
+% ==================== FONT SETUP ====================
+% Ensure that generated PDF is machine readable/ATS parsable
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% ==================== CIRCULAR IMAGE COMMAND ====================
+\newcommand{\roundedimage}[2][3cm]{%
+    \begin{tikzpicture}
+        \clip (0,0) circle (#1/2);
+        \node[anchor=center] at (0,0) {\includegraphics[width=#1,height=#1,keepaspectratio]{#2}};
+    \end{tikzpicture}%
+}
+
+% ==================== DOCUMENT SETTINGS ====================
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+% ==================== SECTION FORMATTING ====================
+\titleformat{\section}{
+    \needspace{4\baselineskip}\bfseries\large
+}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+% ==================== LIST FORMATTING ====================
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Custom highlights environment
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+% ==================== COLUMN ENVIRONMENTS ====================
+% Single column entry
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.00001cm}{0.00001cm}
+}{
+    \end{adjustwidth}
+}
+
+% Two column entry with optional first parameter
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.2cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+% Header environment with image support
+\newenvironment{modernheader}{
+    \setlength{\topsep}{0pt}\par\kern\topsep
+}{
+    \par\kern\topsep
+}
+
+% ==================== CUSTOM COMMANDS ====================
+\let\hrefWithoutArrow\href
+\newcommand{\AND}{\unskip\hskip 0.4em | \hskip 0.4em\ignorespaces}
+
+% ==================== DOCUMENT CONTENT ====================
+\begin{document}
+
+% ==================== MODERN HEADER SECTION ====================
+\begin{modernheader}
+    \begin{minipage}[t]{0.68\textwidth}
+        \raggedright
+        \fontsize{22pt}{22pt}\selectfont 
+        \textbf{Abdellatif Laghjaj}
+        
+        \vspace{4pt}
+        
+        \fontsize{14pt}{14pt}\selectfont
+        \textcolor{accentColor}{AI Engineer | Software Developer}
+        
+        \vspace{6pt}
+        
+        \normalsize
+        \begin{minipage}[t]{0.48\textwidth}
+            \faMapMarker*\hspace{0.2em}El Guerdane, Taroudant, Morocco\\[2pt]
+            \faEnvelope\hspace{0.2em}\hrefWithoutArrow{mailto:abdelatiflaghjaj@gmail.com}{abdelatiflaghjaj@gmail.com}\\[2pt]
+            \faPhone\hspace{0.2em}\hrefWithoutArrow{tel:+212636208825}{+212 636 208 825}
+        \end{minipage}%
+        \hfill%
+        \begin{minipage}[t]{0.48\textwidth}
+            \faGlobe\hspace{0.2em}\hrefWithoutArrow{https://abdellatif.vercel.app/}{abdellatif.vercel.app}\\[2pt]
+            \faLinkedin\hspace{0.2em}\hrefWithoutArrow{https://linkedin.com/in/abdellatif-laghjaj}{linkedin.com/in/abdellatif-laghjaj}\\[2pt]
+            \faGithub\hspace{0.2em}\hrefWithoutArrow{https://github.com/abdellatif-laghjaj}{github.com/abdellatif-laghjaj}
+        \end{minipage}
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{0.28\textwidth}
+        \raggedleft
+        \vspace{-25pt}
+        \roundedimage[3.2cm]{profile.jpg}
+    \end{minipage}
+\end{modernheader}
+\vspace{-4pt}
+
+% ==================== PROFESSIONAL SUMMARY ====================
+\section{Professional Summary}
+
+\begin{onecolentry}
+    AI Engineer and Full-Stack Developer with expertise in machine learning, big data processing, and cloud-native applications. Proven track record of delivering AI-powered DevOps solutions, reducing operational costs by 40\% and improving system performance by 50\%. Experienced in end-to-end product development from research to deployment across web, mobile, and IoT platforms.
+\end{onecolentry}
+
+% ==================== PROFESSIONAL EXPERIENCE ====================
+\section{Professional Experience}
+% Research Developer Position
+\begin{twocolentry}{Feb 2025 – Jun 2025}
+    \textbf{Research Developer}, Ibn Zohr University R\&D -- Taroudant, Morocco
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Architected AI-powered team performance monitoring platform with Git, Jenkins, Discord and Google Docs integration
+        \item Built LLM agents using OpenAI/Gemini APIs, reducing project management effort by 40\%
+        \item Engineered scalable microservices with Flask, Next.js, PostgreSQL achieving 50\% faster processing
+        \item Led end-to-end product development achieving SUS score of 77 through user-centered design
+    \end{highlights}
+\end{onecolentry}
+\vspace{0.1cm}
+% Data Enumerator Position
+\begin{twocolentry}{Aug 2024 – Sep 2024}
+    \textbf{Data Enumerator}, Haut-Commissariat au Plan -- Morocco
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Managed high-volume demographic data collection ensuring 100\% quality compliance
+        \item Optimized survey routes and coordinated with authorities improving coverage efficiency
+    \end{highlights}
+\end{onecolentry}
+\vspace{0.1cm}
+% Full Stack Developer Intern - Summer 2023
+\begin{twocolentry}{Jun 2023 – Sep 2023}
+    \textbf{Full Stack Developer Intern}, Accesspoint IT Solutions -- Taroudant, Morocco
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed comprehensive business management system across desktop, mobile, web platforms
+        \item Built e-commerce functionality using Vue.js, Laravel, MySQL delivering scalable solutions
+        \item Collaborated in Agile environment contributing to sprint planning and code reviews
+    \end{highlights}
+\end{onecolentry}
+\vspace{0.1cm}
+% Full Stack Developer Intern - Spring 2023
+\begin{twocolentry}{Apr 2023 – Jun 2023}
+    \textbf{Full Stack Developer Intern}, Accesspoint IT Solutions -- Taroudant, Morocco
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed restaurant management and POS system improving operational efficiency by 25\%
+        \item Implemented Flutter mobile app, Vue.js web interface, Laravel API with seamless integration
+        \item Designed real-time inventory tracking and analytics enhancing business intelligence
+    \end{highlights}
+\end{onecolentry}
+
+% ==================== EDUCATION ====================
+\section{Education}
+
+% Master's Degree
+\begin{twocolentry}{2023 – 2025}
+    \textbf{Master of Science in Big Data and Artificial Intelligence}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    Ibn Zohr University, Multidisciplinary Faculty of Taroudant, Morocco
+    
+    \textit{Key Coursework:} Machine Learning, Deep Learning, Data Mining, Big Data Analytics, Natural Language Processing, Advanced Algorithms
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% Bachelor's Degree
+\begin{twocolentry}{2020 – 2023}
+    \textbf{Bachelor of Science in Computer Engineering}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    Ibn Zohr University, Multidisciplinary Faculty of Taroudant, Morocco
+    
+    \textit{Key Coursework:} Software Engineering, Database Systems, Data Structures, Algorithms, Computer Networks, System Design
+\end{onecolentry}
+
+% ==================== TECHNICAL SKILLS ====================
+\section{Technical Skills}
+
+\begin{onecolentry}
+    \textbf{Programming Languages:} Python, JavaScript, TypeScript, PHP, SQL, Java
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+    \textbf{Frontend Technologies:} React, Next.js, Vue.js, HTML5, CSS3, Tailwind CSS, Bootstrap, Streamlit, Shadcn/UI
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+    \textbf{Backend \& APIs:} Node.js, Express.js, Laravel, FastAPI, Flask, Spring Boot, REST APIs
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+    \textbf{AI/ML Technologies:} TensorFlow, PyTorch, Scikit-Learn, Pandas, NumPy, OpenAI API, Gemini API, LLM Agents, NLP, RAG
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+    \textbf{Databases \& Cloud:} PostgreSQL, MySQL, MongoDB, Firebase, Supabase, Redis, Cloud Architecture
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+    \textbf{DevOps \& Big Data:} Git/GitHub, Docker, Jenkins, CI/CD, Linux, Apache Kafka, Apache Spark, Hadoop, ETL Pipelines
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+    \textbf{Mobile Development:} Flutter, React Native, Android Development, Cross-platform Solutions
+\end{onecolentry}
+
+% ==================== KEY PROJECTS ====================
+\section{Key Projects}
+
+% Hespress Sentiment Analysis
+\begin{twocolentry}{}
+    \textbf{Hespress Comment Sentiment Analysis} | \textit{Big Data, NLP, Real-time Processing}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Architected big data pipeline using Apache Kafka, Spark, HDFS, and MongoDB for real-time sentiment analysis
+        \item Trained deep learning model with LSTM and BiLSTM achieving optimal accuracy on Arabic text classification
+        \item Built Flask dashboard with live analytics providing insights into public opinion trends and engagement metrics
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% Cherry Tomato Sorting
+\begin{twocolentry}{}
+    \textbf{Cherry Tomato Sorting System} | \textit{Computer Vision, YOLOv11, Real-time Detection}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed intelligent computer vision system for automated tomato sorting by ripeness and size using YOLOv11
+        \item Implemented real-time IP camera integration with Streamlit dashboard for continuous monitoring
+        \item Created multi-class classification system (Unripe/Semi-ripe/Ripe) with live analytics and performance metrics
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% Salary Scope Predictor
+\begin{twocolentry}{}
+    \textbf{Salary Scope Predictor} | \textit{Machine Learning, Data Science, Web Application}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Built end-to-end ML application predicting software developer salaries using Stack Overflow survey data
+        \item Developed interactive Streamlit interface with Random Forest model achieving high prediction accuracy
+        \item Implemented automated data preprocessing pipeline with real-time predictions and confidence indicators
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% AQUANOVA Project
+\begin{twocolentry}{}
+    \textbf{AQUANOVA IoT Water Monitoring} | \textit{IoT, ESP32, Real-time Analytics}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Designed IoT water monitoring system with ESP32 sensors and cloud-connected analytics dashboard
+        \item Built Next.js/Express.js application reducing water waste by 30\% through actionable insights
+        \item Implemented real-time data collection and wireless sensor integration for environmental monitoring
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% VisioCraft
+\begin{twocolentry}{}
+    \textbf{VisioCraft Educational Platform} | \textit{Big Data, Image Processing, Distributed Systems}
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Engineered educational analytics platform using Hadoop and Apache Spark for large-scale data processing
+        \item Integrated Apache Kafka for real-time streaming and advanced computer vision for educational insights
+        \item Developed distributed architecture supporting scalable image processing and analytics capabilities
+    \end{highlights}
+\end{onecolentry}
+
+% ==================== CERTIFICATIONS ====================
+\section{Certifications}
+
+\begin{twocolentry}{Dec 2024}
+    \textbf{Introduction to Artificial Intelligence} -- Simplilearn
+\end{twocolentry}
+
+\vspace{0.1cm}
+
+\begin{twocolentry}{Jul 2022}
+    \textbf{Web Scraping with Beautiful Soup} -- Simplilearn
+\end{twocolentry}
+
+\vspace{0.1cm}
+
+\begin{twocolentry}{Dec 2021}
+    \textbf{Computer Networking Fundamentals} -- Google
+\end{twocolentry}
+
+% ==================== PROFESSIONAL ACTIVITIES ====================
+\section{Professional Activities \& Leadership}
+
+% Hackathon Participation
+\begin{twocolentry}{2024}
+    \textbf{HealthTech Metaverse Hackathon} -- Participant
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Competed in 48-hour healthcare innovation challenge, developing patient care improvement solutions
+        \item Collaborated with multidisciplinary team to address critical healthcare industry challenges using emerging technologies
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% BDIA Club
+\begin{twocolentry}{2024}
+    \textbf{BDIA Club Member} -- Big Data \& AI Community
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Participated in AI and IoT conferences, staying current with emerging technologies and industry trends
+        \item Engaged in collaborative activities with fellow students to explore big data and artificial intelligence applications
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+% GDSC Membership
+\begin{twocolentry}{2023}
+    \textbf{Google Developer Student Club (GDSC)} -- Member
+\end{twocolentry}
+\vspace{0.05cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Participated in technology events and developer community activities
+        \item Collaborated with peers on various projects and coding initiatives
+    \end{highlights}
+\end{onecolentry}
+
+% ==================== LANGUAGES ====================
+\section{Languages}
+
+\begin{onecolentry}
+    \textbf{Arabic:} Native \AND \textbf{English:} Professional Working Proficiency \AND \textbf{French:} Intermediate
+\end{onecolentry}
+
+\end{document}
