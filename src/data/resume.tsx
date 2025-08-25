@@ -272,6 +272,14 @@ export const DATA = {
       start: "2020",
       end: "2023",
     },
+    {
+      school: "El Irfane High School, Sebt El Guerdane",
+      href: "#",
+      degree: "Baccalaureat in Physical and Chemical Sciences",
+      logoUrl: "/lycee.jpg",
+      start: "2020",
+      end: "2021",
+    },
   ],
   projects: [
     {
@@ -299,7 +307,7 @@ export const DATA = {
           icon: <Icons.source className="size-3" />,
         },
       ],
-      image: "/projects/visioncraft.png",
+      image: "/projects/hespress_comment_analysis_1.png",
       video: "",
     },
     {
@@ -324,7 +332,7 @@ export const DATA = {
           icon: <Icons.source className="size-3" />,
         },
       ],
-      image: "/projects/visioncraft.png",
+      image: "/projects/cherry_tomato_clasification_1.png",
       video: "",
     },
     {
@@ -350,7 +358,7 @@ export const DATA = {
           icon: <Icons.source className="size-3" />,
         },
       ],
-      image: "/projects/visioncraft.png",
+      image: "/projects/salary_predection_1.png",
       video: "",
     },
     {
