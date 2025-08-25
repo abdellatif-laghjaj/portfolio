@@ -13,7 +13,7 @@ export default function Skills() {
           ([category, { label, skills }], index) => (
             <div key={category}>
               <BlurFade delay={DATA.BLUR_FADE_DELAY * (10 + index)}>
-                <h6 className="text-lg font-semibold">{label}</h6>
+                <h6 className="text-md font-semibold mb-1">{label}</h6>
               </BlurFade>
               <div className="flex flex-wrap gap-1">
                 {skills.map(({ name, icon }, id) => (
@@ -21,7 +21,11 @@ export default function Skills() {
                     key={name}
                     delay={DATA.BLUR_FADE_DELAY * (10 + id * 0.05)}
                   >
-                    <Badge key={name} className="flex items-center gap-2">
+                    <Badge
+                      key={name}
+                      variant="secondary"
+                      className="flex items-center gap-2  hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                    >
                       {icon}
                       {name}
                     </Badge>
@@ -29,7 +33,7 @@ export default function Skills() {
                 ))}
               </div>
             </div>
-          ),
+          )
         )}
       </div>
     </section>
