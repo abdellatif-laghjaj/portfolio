@@ -53,7 +53,7 @@ export const DATA = {
     "AI Engineer and Full-Stack Developer with expertise in machine learning, big data processing, and cloud-native applications. Proven track record of delivering AI-powered DevOps solutions, reducing operational costs by 40% and improving system performance by 50%. Experienced in end-to-end product development from research to deployment across web, mobile, and IoT platforms.",
   keywords:
     "Abdellatif Laghjaj, Abdellatif, Laghjaj, abdelatif-laghjaj, Abdellatif Laghjaj Portfolio, Abdellatif Laghjaj Blog, Abdellatif Laghjaj Resume, Abdellatif Laghjaj CV, Abdellatif Laghjaj Projects, Abdellatif Laghjaj Contact, Abdellatif Laghjaj About, Abdellatif Laghjaj Home, Abdellatif Laghjaj Skills, Abdellatif Laghjaj Education, Abdellatif Laghjaj Work, AbdelLatif Laghjaj Experience, abdelatif, laghjaj, AI Engineer, Software Developer, Machine Learning, Big Data, Artificial Intelligence, Full Stack Developer, Python, JavaScript, React, Vue.js, Laravel, IoT, Computer Vision, NLP",
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/icons/me.jpg",
   birthDate: "2002-08-11",
   skills: {
     programmingLanguages: {
@@ -212,7 +212,7 @@ export const DATA = {
       badges: [],
       location: "Taroudant, Morocco",
       title: "Research Developer",
-      logoUrl: "/fpt.png",
+      logoUrl: "/icons/fpt.png",
       start: "February 2025",
       end: "June 2025",
       description:
@@ -224,7 +224,7 @@ export const DATA = {
       badges: [],
       location: "Morocco",
       title: "Data Enumerator",
-      logoUrl: "/hcp.png",
+      logoUrl: "/icons/hcp.png",
       start: "August 2024",
       end: "September 2024",
       description:
@@ -236,7 +236,7 @@ export const DATA = {
       badges: [],
       location: "Taroudant, Morocco",
       title: "Full Stack Developer Intern",
-      logoUrl: "/accesspoint.png",
+      logoUrl: "/icons/accesspoint.png",
       start: "June 2023",
       end: "September 2023",
       description:
@@ -248,7 +248,7 @@ export const DATA = {
       badges: [],
       location: "Taroudant, Morocco",
       title: "Full Stack Developer Intern",
-      logoUrl: "/accesspoint.png",
+      logoUrl: "/icons/accesspoint.png",
       start: "April 2023",
       end: "June 2023",
       description:
@@ -260,7 +260,7 @@ export const DATA = {
       school: "Ibn Zohr University, Taroudant",
       href: "http://www.fpt.ac.ma/",
       degree: "Master of Science in Big Data and Artificial Intelligence",
-      logoUrl: "/fpt.png",
+      logoUrl: "/icons/fpt.png",
       start: "2023",
       end: "2025",
     },
@@ -268,7 +268,7 @@ export const DATA = {
       school: "Ibn Zohr University, Taroudant",
       href: "http://www.fpt.ac.ma/",
       degree: "Bachelor of Science in Computer Engineering",
-      logoUrl: "/fpt.png",
+      logoUrl: "/icons/fpt.png",
       start: "2020",
       end: "2023",
     },
@@ -455,21 +455,21 @@ export const DATA = {
       issuer: "Simplilearn",
       date: "December 2024",
       href: "#",
-      logoUrl: "/simplilearn.jpg",
+      logoUrl: "/icons/simplilearn.jpg",
     },
     {
       name: "Web Scraping with Beautiful Soup",
       issuer: "Simplilearn",
       date: "July 2022",
       href: "#",
-      logoUrl: "/simplilearn.jpg",
+      logoUrl: "/icons/simplilearn.jpg",
     },
     {
       name: "Computer Networking Fundamentals",
       issuer: "Google",
       date: "December 2021",
       href: "#",
-      logoUrl: "/google.jpg",
+      logoUrl: "/icons/google.jpg",
     },
   ],
   hackathons: [
