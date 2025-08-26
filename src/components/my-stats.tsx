@@ -35,7 +35,10 @@ export function MyStats({ className }: { className?: string }) {
       setAge(calculateAge(birthDate));
     }, 50);
 
-    fetch("https://api.github.com/users/abdellatif-laghjaj")
+    fetch("https://api.github.com/users/abdellatif-laghjaj", { 
+      cache: 'force-cache',
+      next: { revalidate: 3600 } // Cache for 1 hour
+    })
       .then((response) => response.json())
       .then((data) => {
         setGithubData((prevState) => ({
@@ -52,7 +55,10 @@ export function MyStats({ className }: { className?: string }) {
         }));
       });
 
-    fetch("https://api.github.com/users/abdellatif-laghjaj/repos")
+    fetch("https://api.github.com/users/abdellatif-laghjaj/repos", { 
+      cache: 'force-cache',
+      next: { revalidate: 3600 } // Cache for 1 hour
+    })
       .then((response) => response.json())
       .then((data) => {
         const stars = data.reduce(
