@@ -100,8 +100,8 @@ export default async function Blog({
       */}
       <article
         className="prose dark:prose-invert"
-        dangerouslySetInnerHTML={{ 
-          __html: post.source 
+        dangerouslySetInnerHTML={{
+          __html: post.source,
         }}
       ></article>
     </section>

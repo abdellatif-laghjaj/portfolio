@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { CONFIG } from '@/config/constants';
+import { NextRequest, NextResponse } from "next/server";
+import { CONFIG } from "@/config/constants";
 
 export interface GitHubStats {
   followers: number;
@@ -25,13 +25,13 @@ export async function GET(request: NextRequest) {
     // Fetch user data
     const userResponse = await fetch(CONFIG.GITHUB_API.USER_URL, {
       headers: {
-        'User-Agent': CONFIG.GITHUB_API.USER_AGENT,
+        "User-Agent": CONFIG.GITHUB_API.USER_AGENT,
       },
       next: { revalidate: CONFIG.GITHUB_STATS_CACHE_DURATION },
     });
 
     if (!userResponse.ok) {
-      throw new Error('Failed to fetch user data');
+      throw new Error("Failed to fetch user data");
     }
 
     const userData: GitHubUser = await userResponse.json();
@@ -39,13 +39,13 @@ export async function GET(request: NextRequest) {
     // Fetch repositories data
     const reposResponse = await fetch(CONFIG.GITHUB_API.REPOS_URL, {
       headers: {
-        'User-Agent': CONFIG.GITHUB_API.USER_AGENT,
+        "User-Agent": CONFIG.GITHUB_API.USER_AGENT,
       },
       next: { revalidate: CONFIG.GITHUB_STATS_CACHE_DURATION },
     });
 
     if (!reposResponse.ok) {
-      throw new Error('Failed to fetch repositories data');
+      throw new Error("Failed to fetch repositories data");
     }
 
     const reposData: GitHubRepo[] = await reposResponse.json();
@@ -73,8 +73,8 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(stats);
   } catch (error) {
-    console.error('Error fetching GitHub stats:', error);
-    
+    console.error("Error fetching GitHub stats:", error);
+
     // Return fallback data on error
     const fallbackStats: GitHubStats = {
       followers: 0,

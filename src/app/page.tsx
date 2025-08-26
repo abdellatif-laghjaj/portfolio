@@ -11,43 +11,43 @@ import {
 } from "@/components/skeletons";
 
 // Use Next.js dynamic imports for better SSR support
-const Hero = dynamic(() => import("@/components/views/hero"), { 
+const Hero = dynamic(() => import("@/components/views/hero"), {
   ssr: true,
-  loading: () => <HeroSkeleton />
+  loading: () => <HeroSkeleton />,
 });
-const About = dynamic(() => import("@/components/views/about"), { 
+const About = dynamic(() => import("@/components/views/about"), {
   ssr: true,
-  loading: () => <AboutSkeleton />
+  loading: () => <AboutSkeleton />,
 });
 const Experience = dynamic(() => import("@/components/views/experience"), {
   ssr: true,
-  loading: () => <ExperienceSkeleton />
+  loading: () => <ExperienceSkeleton />,
 });
 const Education = dynamic(() => import("@/components/views/education"), {
   ssr: true,
-  loading: () => <ExperienceSkeleton />
+  loading: () => <ExperienceSkeleton />,
 });
 const Skills = dynamic(() => import("@/components/views/skills"), {
   ssr: true,
-  loading: () => <SkillsSkeleton />
+  loading: () => <SkillsSkeleton />,
 });
 const Projects = dynamic(() => import("@/components/views/projects"), {
   ssr: true,
-  loading: () => <ProjectsSkeleton />
+  loading: () => <ProjectsSkeleton />,
 });
 const Activities = dynamic(() => import("@/components/views/activities"), {
   ssr: true,
-  loading: () => <ExperienceSkeleton />
+  loading: () => <ExperienceSkeleton />,
 });
 const Contact = dynamic(() => import("@/components/views/contact"), {
   ssr: true,
-  loading: () => <ContactSkeleton />
+  loading: () => <ContactSkeleton />,
 });
 const Certifications = dynamic(
   () => import("@/components/views/certifications"),
-  { 
+  {
     ssr: true,
-    loading: () => <ExperienceSkeleton />
+    loading: () => <ExperienceSkeleton />,
   },
 );
 

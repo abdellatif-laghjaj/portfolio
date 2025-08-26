@@ -76,7 +76,10 @@ export function SkillsSkeleton({ className }: { className?: string }) {
             <div className="h-5 bg-muted rounded w-40 animate-pulse" />
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="h-16 bg-muted rounded-lg animate-pulse" />
+                <div
+                  key={i}
+                  className="h-16 bg-muted rounded-lg animate-pulse"
+                />
               ))}
             </div>
           </div>
@@ -101,7 +104,10 @@ export function ProjectsSkeleton({ className }: { className?: string }) {
             </div>
             <div className="flex gap-2">
               {Array.from({ length: 3 }).map((_, j) => (
-                <div key={j} className="h-6 w-16 bg-muted rounded animate-pulse" />
+                <div
+                  key={j}
+                  className="h-6 w-16 bg-muted rounded animate-pulse"
+                />
               ))}
             </div>
           </div>

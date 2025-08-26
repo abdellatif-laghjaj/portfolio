@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import type { MDXComponents } from 'mdx/types';
+import type { MDXComponents } from "mdx/types";
 
 interface TableData {
   headers: string[];
@@ -30,7 +30,7 @@ function Table({ data }: { data: TableData }) {
   );
 }
 
-function CustomLink(props: React.ComponentProps<'a'>) {
+function CustomLink(props: React.ComponentProps<"a">) {
   const { href, children, ...restProps } = props;
 
   if (!href) {
@@ -46,10 +46,18 @@ function CustomLink(props: React.ComponentProps<'a'>) {
   }
 
   if (href.startsWith("#")) {
-    return <a href={href} {...restProps}>{children}</a>;
+    return (
+      <a href={href} {...restProps}>
+        {children}
+      </a>
+    );
   }
 
-  return <a href={href} target="_blank" rel="noopener noreferrer" {...restProps}>{children}</a>;
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" {...restProps}>
+      {children}
+    </a>
+  );
 }
 
 function RoundedImage(props: React.ComponentProps<typeof Image>) {
@@ -69,7 +77,9 @@ function slugify(str: string) {
 }
 
 function createHeading(level: number) {
-  const Heading = (props: React.ComponentProps<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>) => {
+  const Heading = (
+    props: React.ComponentProps<"h1" | "h2" | "h3" | "h4" | "h5" | "h6">,
+  ) => {
     const { children, ...restProps } = props;
     let slug = slugify(children as string);
     return React.createElement(
