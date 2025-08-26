@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { DATA } from "@/data/resume";
 import { Icons } from "@/components/icons";
 import StatCard from "@/components/stat-card";
+import type { GitHubStats } from "@/app/api/github-stats/route";
 
 const calculateAge = (birthDate: Date) => {
   const ageDifMs = Date.now() - birthDate.getTime();
@@ -21,12 +22,11 @@ const birthDate = new Date(DATA.birthDate);
 
 export function MyStats({ className }: { className?: string }) {
   const [age, setAge] = useState(calculateAge(birthDate));
-  const [githubData, setGithubData] = useState({
+  const [githubData, setGithubData] = useState<GitHubStats>({
     followers: 0,
     stars: 0,
     repos: 0,
     forks: 0,
-    commits: 0,
     languages: 0,
   });
 
@@ -35,52 +35,21 @@ export function MyStats({ className }: { className?: string }) {
       setAge(calculateAge(birthDate));
     }, 50);
 
-    fetch("https://api.github.com/users/abdellatif-laghjaj")
+    // Fetch GitHub stats from our API route
+    fetch("/api/github-stats")
       .then((response) => response.json())
-      .then((data) => {
-        setGithubData((prevState) => ({
-          ...prevState,
-          followers: data.followers,
-          repos: data.public_repos,
-        }));
+      .then((data: GitHubStats) => {
+        setGithubData(data);
       })
-      .catch(() => {
-        setGithubData((prevState) => ({
-          ...prevState,
+      .catch((error) => {
+        console.error("Failed to fetch GitHub stats:", error);
+        setGithubData({
           followers: 0,
-          repos: 0,
-        }));
-      });
-
-    fetch("https://api.github.com/users/abdellatif-laghjaj/repos")
-      .then((response) => response.json())
-      .then((data) => {
-        const stars = data.reduce(
-          (acc: number, repo: any) => acc + repo.stargazers_count,
-          0,
-        );
-        const forks = data.reduce(
-          (acc: number, repo: any) => acc + repo.forks_count,
-          0,
-        );
-        const languages = new Set(
-          data.map((repo: any) => repo.language).filter(Boolean),
-        ).size;
-
-        setGithubData((prevState) => ({
-          ...prevState,
-          stars: stars,
-          forks: forks,
-          languages: languages,
-        }));
-      })
-      .catch(() => {
-        setGithubData((prevState) => ({
-          ...prevState,
           stars: 0,
+          repos: 0,
           forks: 0,
           languages: 0,
-        }));
+        });
       });
 
     return () => clearInterval(timer);

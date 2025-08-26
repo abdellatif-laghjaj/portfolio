@@ -4,14 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Merriweather as FontSans } from "next/font/google";
 import "./globals.css";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
+// Use system font fallback to avoid external font loading issues
+const fontSans = {
   variable: "--font-sans",
-  weight: ["300", "400", "700"],
-});
+  className: "font-sans",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
