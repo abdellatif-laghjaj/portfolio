@@ -4,9 +4,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+// Note: Using system fonts due to sandboxed environment
+// In production, restore: import { Merriweather as FontSans } from "next/font/google";
 import "./globals.css";
 
-// Temporarily using system fonts for upgrade process
+// Production font configuration:
+// const fontSans = FontSans({
+//   subsets: ["latin"],
+//   variable: "--font-sans",
+//   weight: ["300", "400", "700"],
+// });
+
+// Temporary system fonts for upgrade process
 const fontSans = {
   variable: "--font-sans",
 };
