@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { CONFIG } from '@/config/constants';
 
 export interface GitHubStats {
   followers: number;
@@ -8,47 +9,58 @@ export interface GitHubStats {
   languages: number;
 }
 
+interface GitHubUser {
+  followers: number;
+  public_repos: number;
+}
+
+interface GitHubRepo {
+  stargazers_count: number;
+  forks_count: number;
+  language: string | null;
+}
+
 export async function GET(request: NextRequest) {
   try {
     // Fetch user data
-    const userResponse = await fetch('https://api.github.com/users/abdellatif-laghjaj', {
+    const userResponse = await fetch(CONFIG.GITHUB_API.USER_URL, {
       headers: {
-        'User-Agent': 'Portfolio-Website',
+        'User-Agent': CONFIG.GITHUB_API.USER_AGENT,
       },
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: CONFIG.GITHUB_STATS_CACHE_DURATION },
     });
 
     if (!userResponse.ok) {
       throw new Error('Failed to fetch user data');
     }
 
-    const userData = await userResponse.json();
+    const userData: GitHubUser = await userResponse.json();
 
     // Fetch repositories data
-    const reposResponse = await fetch('https://api.github.com/users/abdellatif-laghjaj/repos', {
+    const reposResponse = await fetch(CONFIG.GITHUB_API.REPOS_URL, {
       headers: {
-        'User-Agent': 'Portfolio-Website',
+        'User-Agent': CONFIG.GITHUB_API.USER_AGENT,
       },
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: CONFIG.GITHUB_STATS_CACHE_DURATION },
     });
 
     if (!reposResponse.ok) {
       throw new Error('Failed to fetch repositories data');
     }
 
-    const reposData = await reposResponse.json();
+    const reposData: GitHubRepo[] = await reposResponse.json();
 
     // Calculate aggregated stats
     const stars = reposData.reduce(
-      (acc: number, repo: any) => acc + repo.stargazers_count,
+      (acc: number, repo: GitHubRepo) => acc + repo.stargazers_count,
       0,
     );
     const forks = reposData.reduce(
-      (acc: number, repo: any) => acc + repo.forks_count,
+      (acc: number, repo: GitHubRepo) => acc + repo.forks_count,
       0,
     );
     const languages = new Set(
-      reposData.map((repo: any) => repo.language).filter(Boolean),
+      reposData.map((repo: GitHubRepo) => repo.language).filter(Boolean),
     ).size;
 
     const stats: GitHubStats = {

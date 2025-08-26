@@ -43,6 +43,7 @@ export async function getPost(slug: string) {
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
+    rawContent, // Add raw content for MDX rendering
     metadata,
     slug,
   };

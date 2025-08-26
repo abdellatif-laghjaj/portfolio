@@ -6,6 +6,7 @@ import { DATA } from "@/data/resume";
 import { Icons } from "@/components/icons";
 import StatCard from "@/components/stat-card";
 import type { GitHubStats } from "@/app/api/github-stats/route";
+import { CONFIG } from "@/config/constants";
 
 const calculateAge = (birthDate: Date) => {
   const ageDifMs = Date.now() - birthDate.getTime();
@@ -33,7 +34,7 @@ export function MyStats({ className }: { className?: string }) {
   useEffect(() => {
     const timer = setInterval(() => {
       setAge(calculateAge(birthDate));
-    }, 50);
+    }, CONFIG.AGE_UPDATE_INTERVAL);
 
     // Fetch GitHub stats from our API route
     fetch("/api/github-stats")

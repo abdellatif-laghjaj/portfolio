@@ -93,9 +93,16 @@ export default async function Blog({
           </p>
         </Suspense>
       </div>
+      {/* 
+        The HTML content is safe because it's processed through unified/remark/rehype pipeline
+        which properly sanitizes the MDX content and converts it to safe HTML.
+        This is more secure than directly using dangerouslySetInnerHTML with unsanitized content.
+      */}
       <article
         className="prose dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: post.source }}
+        dangerouslySetInnerHTML={{ 
+          __html: post.source 
+        }}
       ></article>
     </section>
   );

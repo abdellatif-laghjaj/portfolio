@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import type { MDXComponents } from 'mdx/types';
 
-function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
+interface TableData {
+  headers: string[];
+  rows: string[][];
+}
+
+function Table({ data }: { data: TableData }) {
   let headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ));
@@ -24,26 +30,30 @@ function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   );
 }
 
-function CustomLink(props: any) {
-  let href = props.href;
+function CustomLink(props: React.ComponentProps<'a'>) {
+  const { href, children, ...restProps } = props;
+
+  if (!href) {
+    return <a {...restProps}>{children}</a>;
+  }
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} {...props}>
-        {props.children}
+      <Link href={href} {...restProps}>
+        {children}
       </Link>
     );
   }
 
   if (href.startsWith("#")) {
-    return <a {...props} />;
+    return <a href={href} {...restProps}>{children}</a>;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return <a href={href} target="_blank" rel="noopener noreferrer" {...restProps}>{children}</a>;
 }
 
-function RoundedImage(props: any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function RoundedImage(props: React.ComponentProps<typeof Image>) {
+  return <Image className="rounded-lg" {...props} />;
 }
 
 // This replaces rehype-slug
@@ -59,11 +69,12 @@ function slugify(str: string) {
 }
 
 function createHeading(level: number) {
-  const Heading = ({ children }: { children: React.ReactNode }) => {
+  const Heading = (props: React.ComponentProps<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>) => {
+    const { children, ...restProps } = props;
     let slug = slugify(children as string);
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      { id: slug, ...restProps },
       [
         React.createElement("a", {
           href: `#${slug}`,
@@ -78,7 +89,7 @@ function createHeading(level: number) {
   return Heading;
 }
 
-export const globalComponents = {
+export const globalComponents: MDXComponents = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),

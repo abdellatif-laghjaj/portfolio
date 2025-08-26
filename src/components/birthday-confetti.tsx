@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
 import Marquee from "@/components/magicui/marquee";
 import BlurFade from "@/components/magicui/blur-fade";
+import { CONFIG } from "@/config/constants";
 
 export function BirthdayConfetti() {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -19,8 +20,7 @@ export function BirthdayConfetti() {
   };
 
   const fireConfetti = () => {
-    const end = Date.now() + 30 * 1000;
-    const colors = ["#a786ff", "#fd8bbc", "#ffb220", "#f36d23"];
+    const end = Date.now() + CONFIG.CONFETTI_DURATION;
 
     const frame = () => {
       if (Date.now() > end) {
@@ -34,7 +34,7 @@ export function BirthdayConfetti() {
         spread: 55,
         startVelocity: 60,
         origin: { x: 0, y: 0.5 },
-        colors: colors,
+        colors: [...CONFIG.CONFETTI_COLORS],
       });
       confetti({
         particleCount: 2,
@@ -42,7 +42,7 @@ export function BirthdayConfetti() {
         spread: 55,
         startVelocity: 60,
         origin: { x: 1, y: 0.5 },
-        colors: colors,
+        colors: [...CONFIG.CONFETTI_COLORS],
       });
 
       requestAnimationFrame(frame);

@@ -53,7 +53,7 @@ export const DATA = {
     "AI Engineer and Full-Stack Developer with expertise in machine learning, big data processing, and cloud-native applications. Proven track record of delivering AI-powered DevOps solutions, reducing operational costs by 40% and improving system performance by 50%. Experienced in end-to-end product development from research to deployment across web, mobile, and IoT platforms.",
   keywords:
     "Abdellatif Laghjaj, Abdellatif, Laghjaj, abdelatif-laghjaj, Abdellatif Laghjaj Portfolio, Abdellatif Laghjaj Blog, Abdellatif Laghjaj Resume, Abdellatif Laghjaj CV, Abdellatif Laghjaj Projects, Abdellatif Laghjaj Contact, Abdellatif Laghjaj About, Abdellatif Laghjaj Home, Abdellatif Laghjaj Skills, Abdellatif Laghjaj Education, Abdellatif Laghjaj Work, AbdelLatif Laghjaj Experience, abdelatif, laghjaj, AI Engineer, Software Developer, Machine Learning, Big Data, Artificial Intelligence, Full Stack Developer, Python, JavaScript, React, Vue.js, Laravel, IoT, Computer Vision, NLP",
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/images/me.jpg",
   birthDate: "2002-08-11",
   skills: {
     programmingLanguages: {
