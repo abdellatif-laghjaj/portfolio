@@ -90,14 +90,14 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10 relative">
+    <main className="flex flex-col min-h-dvh space-y-10 relative">
       {showConfetti && (
         <div className="fixed inset-0 pointer-events-none z-50" />
       )}
 
       {showMarquee && (
         <BlurFade>
-          <Marquee className="py-2 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold rounded-lg">
+          <Marquee className="py-2 bg-linear-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold rounded-lg">
             <div className="text-2xl mx-4">
               🎉 Happy Birthday Abdellatif! 🎂
             </div>
