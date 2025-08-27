@@ -67,6 +67,9 @@ export function ProjectCard({
             width={400}
             height={200}
             className="h-40 w-full overflow-hidden object-cover object-top"
+            priority={false}
+            unoptimized={false}
+            suppressHydrationWarning
           />
         )}
       </Link>
