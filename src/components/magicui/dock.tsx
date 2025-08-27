@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -15,7 +16,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max h-full p-2 flex items-end rounded-full border",
+  "mx-auto w-max h-full p-2 flex items-end rounded-full border"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -27,26 +28,18 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       distance = DEFAULT_DISTANCE,
       ...props
     },
-    ref,
+    ref
   ) => {
     const mouseX = useMotionValue(Infinity);
 
     const renderChildren = () => {
       return React.Children.map(children, (child: any) => {
         if (React.isValidElement(child)) {
-          // Only pass dock props to DockIcon components
-          if (
-            child.type === DockIcon ||
-            child.type?.displayName === "DockIcon"
-          ) {
-            return React.cloneElement(child, {
-              mouseX,
-              magnification,
-              distance,
-            } as DockIconProps);
-          }
-          // Return other components (like Separator) unchanged
-          return child;
+          return React.cloneElement(child, {
+            mouseX,
+            magnification,
+            distance,
+          } as DockIconProps);
         }
         return child;
       });
@@ -63,7 +56,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         {renderChildren()}
       </motion.div>
     );
-  },
+  }
 );
 
 Dock.displayName = "Dock";
@@ -75,6 +68,7 @@ export interface DockIconProps {
   mouseX?: any;
   className?: string;
   children?: React.ReactNode;
+  props?: PropsWithChildren;
 }
 
 const DockIcon = ({
@@ -85,14 +79,10 @@ const DockIcon = ({
   className,
   children,
   ...props
-}: DockIconProps & React.HTMLAttributes<HTMLDivElement>) => {
+}: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  // Create a default motion value if mouseX is not provided
-  const defaultMouseX = useMotionValue(Infinity);
-  const effectiveMouseX = mouseX || defaultMouseX;
-
-  const distanceCalc = useTransform(effectiveMouseX, (val: number) => {
+  const distanceCalc = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
@@ -100,7 +90,7 @@ const DockIcon = ({
   let widthSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [40, magnification, 40],
+    [40, magnification, 40]
   );
 
   let width = useSpring(widthSync, {
@@ -109,24 +99,15 @@ const DockIcon = ({
     damping: 12,
   });
 
-  // Extract non-DOM props before spreading
-  const {
-    size: _size,
-    magnification: _magnification,
-    distance: _distance,
-    mouseX: _mouseX,
-    ...domProps
-  } = props;
-
   return (
     <motion.div
       ref={ref}
       style={{ width }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className,
+        className
       )}
-      {...domProps}
+      {...props}
     >
       {children}
     </motion.div>
