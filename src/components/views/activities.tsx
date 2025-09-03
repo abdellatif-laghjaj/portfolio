@@ -13,10 +13,10 @@ export default function Activities() {
                 Recent Activity
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                What I've Been Up To
+                What I&apos;ve Been Up To
               </h2>
               <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Here's a live feed of my recent development activities and
+                Here&apos;s a live feed of my recent development activities and
                 achievements.
               </p>
             </div>

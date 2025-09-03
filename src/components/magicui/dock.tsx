@@ -99,6 +99,19 @@ const DockIcon = ({
     damping: 12,
   });
 
+  // Remove mouseX, magnification, and distance from props to avoid passing them to DOM
+  const {
+    mouseX: _,
+    magnification: __,
+    distance: ___,
+    ...domProps
+  } = {
+    ...props,
+    mouseX,
+    magnification,
+    distance,
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -107,7 +120,7 @@ const DockIcon = ({
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
         className,
       )}
-      {...props}
+      {...domProps}
     >
       {children}
     </motion.div>
