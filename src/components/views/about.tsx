@@ -9,9 +9,9 @@ export default function About() {
         <h2 className="text-xl font-bold">About</h2>
       </BlurFade>
       <BlurFade delay={DATA.BLUR_FADE_DELAY * 4}>
-        <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-          {DATA.summary}
-        </Markdown>
+        <div className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+          <Markdown>{DATA.summary}</Markdown>
+        </div>
       </BlurFade>
     </section>
   );
