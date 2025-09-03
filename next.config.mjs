@@ -11,5 +11,18 @@ const nextConfig = {
   },
   bundlePagesRouterDependencies: true,
   outputFileTracingRoot: process.cwd(),
+  // Add webpack config to handle CSS processing issues
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Disable CSS optimization in webpack for production builds
+      const cssOptimizer = config.optimization.minimizer.find(
+        (minimizer) => minimizer.constructor.name === "CssMinimizerPlugin"
+      );
+      if (cssOptimizer) {
+        cssOptimizer.options.minify = false;
+      }
+    }
+    return config;
+  },
 };
 export default nextConfig;
