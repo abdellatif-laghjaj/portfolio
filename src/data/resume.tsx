@@ -115,6 +115,7 @@ export const DATA = {
         { name: "Firebase", icon: <TbBrandFirebase /> },
         { name: "Supabase", icon: <RiSupabaseLine /> },
         { name: "Redis", icon: <SiRedis /> },
+        { name: "Oracle Cloud Infrastructure", icon: <FaDatabase /> },
       ],
     },
     devops: {
