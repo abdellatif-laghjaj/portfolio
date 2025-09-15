@@ -451,7 +451,7 @@ export const DATA = {
   ],
   certifications: [
     {
-      name: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
+      name: "OCI 2025 Certified Data Science Professional",
       issuer: "Oracle",
       date: "September 2025",
       href: "#",
