@@ -22,7 +22,7 @@ export default function Hero() {
             />
           </div>
           <BlurFade delay={DATA.BLUR_FADE_DELAY}>
-            <Avatar className="size-28 border">
+            <Avatar className="size-28 border border-gray-300 dark:border-border/20">
               <AvatarImage
                 alt={DATA.name}
                 src={DATA.avatarUrl}

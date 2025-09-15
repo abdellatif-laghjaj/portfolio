@@ -115,6 +115,7 @@ export const DATA = {
         { name: "Firebase", icon: <TbBrandFirebase /> },
         { name: "Supabase", icon: <RiSupabaseLine /> },
         { name: "Redis", icon: <SiRedis /> },
+        { name: "Oracle Cloud Infrastructure", icon: <FaDatabase /> },
       ],
     },
     devops: {
@@ -450,6 +451,13 @@ export const DATA = {
     },
   ],
   certifications: [
+    {
+      name: "OCI 2025 Certified Data Science Professional",
+      issuer: "Oracle",
+      date: "September 2025",
+      href: "#",
+      logoUrl: "/icons/oracle.png",
+    },
     {
       name: "Introduction to Artificial Intelligence",
       issuer: "Simplilearn",
