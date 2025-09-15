@@ -451,6 +451,13 @@ export const DATA = {
   ],
   certifications: [
     {
+      name: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
+      issuer: "Oracle",
+      date: "September 2025",
+      href: "#",
+      logoUrl: "/icons/oracle.png",
+    },
+    {
       name: "Introduction to Artificial Intelligence",
       issuer: "Simplilearn",
       date: "December 2024",

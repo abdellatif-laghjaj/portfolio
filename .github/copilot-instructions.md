@@ -19,11 +19,17 @@ The `DATA` constant in `src/data/resume.tsx` is the heart of the application:
 export const DATA = {
   name: "ABDELLATIF LAGHJAJ",
   BLUR_FADE_DELAY: 0.02, // Animation timing constant
-  skills: { /* categorized with icons */ },
-  work: [/* experience objects */],
-  projects: [/* project objects with links/images */],
+  skills: {
+    /* categorized with icons */
+  },
+  work: [
+    /* experience objects */
+  ],
+  projects: [
+    /* project objects with links/images */
+  ],
   // ... other profile data
-}
+};
 ```
 
 **Critical**: Always update this central data source when modifying content, never hardcode values in components.
@@ -31,17 +37,20 @@ export const DATA = {
 ## Development Workflows
 
 ### Adding New Content
+
 1. **Projects**: Add to `DATA.projects` array with required fields: `title`, `description`, `technologies`, `links`, `image`
 2. **Experience**: Update `DATA.work` with `company`, `title`, `description`, `start`/`end` dates
 3. **Skills**: Extend `DATA.skills` categories, always include React icon components
 
 ### Blog System
+
 - MDX files in `/content/` directory
 - Frontmatter: `title`, `publishedAt`, `summary`, `image?`
 - Processing via unified/remark pipeline in `src/data/blog.ts`
 - Syntax highlighting with `rehype-pretty-code` (min-light/min-dark themes)
 
 ### Special Behaviors
+
 - **Birthday Detection**: Page shows confetti animation on August 11th
 - **Dynamic Imports**: All view components loaded via `dynamic()` for performance
 - **Theme System**: next-themes with light/dark mode toggle
@@ -49,12 +58,14 @@ export const DATA = {
 ## Tech Stack Specifics
 
 ### UI Components
+
 - **shadcn/ui**: New York style, configured in `components.json`
 - **Radix UI**: Headless components (Avatar, Tooltip, Separator)
 - **Tailwind CSS v4**: With custom CSS variables and animations
 - **Magic UI**: Custom animation components (`BlurFade`, `Marquee`, etc.)
 
 ### Development Tools
+
 - **Bun**: Package manager and runtime (see `bun.lockb`)
 - **Turbopack**: Dev server (`npm run dev --turbopack`)
 - **TypeScript**: Strict mode with Next.js types
@@ -62,6 +73,7 @@ export const DATA = {
 ## Project Conventions
 
 ### File Organization
+
 ```
 src/
 ├── app/           # Next.js App Router
@@ -74,11 +86,13 @@ src/
 ```
 
 ### Component Patterns
+
 - **BlurFade Animations**: Wrap content with `<BlurFade delay={DATA.BLUR_FADE_DELAY * index}>`
 - **Icon Usage**: Import from `react-icons` packages, stored in DATA with JSX
 - **Responsive Design**: Mobile-first with `sm:`, `md:` breakpoints
 
 ### CSS/Styling
+
 - **Utility-First**: Use Tailwind classes, avoid custom CSS
 - **CSS Variables**: Theme colors defined in `globals.css`
 - **Font**: Merriweather with custom weights (300, 400, 700)
@@ -86,11 +100,13 @@ src/
 ## Integration Points
 
 ### External Services
+
 - **GitHub**: Project links and source code references
 - **Vercel**: Deployment platform (URL in `DATA.url`)
 - **Social Media**: Contact links in `DATA.contact.social`
 
 ### Performance Optimizations
+
 - **Image Optimization**: Next.js Image component for avatars/project images
 - **Bundle Splitting**: Dynamic imports prevent large initial bundles
 - **CSS Issues**: Custom webpack config disables CSS optimization (build fix)
@@ -99,13 +115,14 @@ src/
 
 1. **Animation Consistency**: Always use `DATA.BLUR_FADE_DELAY` for timing
 2. **Type Safety**: Leverage `as const` assertion on DATA object
-3. **Icon Libraries**: Mix of react-icons (Fa*, Si*, Tb*) and custom Icons component
+3. **Icon Libraries**: Mix of react-icons (Fa*, Si*, Tb\*) and custom Icons component
 4. **Responsive Layout**: Max width 2xl, centered with padding
 5. **Error Handling**: Custom 404 page in `[...not_found]/page.tsx`
 
 ## Common Tasks
 
 ### Adding a New Project
+
 ```typescript
 // In src/data/resume.tsx, add to DATA.projects:
 {
@@ -120,7 +137,9 @@ src/
 ```
 
 ### Updating Skills
+
 Add to appropriate category in `DATA.skills` with React icon component.
 
 ### Blog Post Creation
+
 Create `.mdx` file in `content/` with required frontmatter, content processed automatically.
