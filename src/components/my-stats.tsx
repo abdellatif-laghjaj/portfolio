@@ -120,8 +120,8 @@ export function MyStats({ className }: { className?: string }) {
     {
       name: "Languages Used",
       value: githubData.languages.toString(),
-      icon: <Icons.source />,
-      color: "#32CD32",
+      icon: <Icons.languages />,
+      color: "#6366F1",
     },
   ];
 
