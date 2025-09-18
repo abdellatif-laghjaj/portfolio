@@ -284,9 +284,37 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Laravel Car Marketplace",
+      href: "https://github.com/abdellatif-laghjaj/laravel-car-marketplace",
+      dates: "2025",
+      active: true,
+      description:
+        "Comprehensive car marketplace web application built with Laravel 11 and Tailwind CSS. Features advanced search & filtering by make, model, year, and location, user authentication, favorites system, and responsive design. Includes image galleries, location-based listings, and soft deletes for safe data management.",
+      technologies: [
+        "Laravel",
+        "PHP",
+        "Tailwind CSS",
+        "SQLite",
+        "MySQL",
+        "Blade Templates",
+        "Vite",
+        "Pest PHP",
+        "Composer",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/abdellatif-laghjaj/laravel-car-marketplace",
+          icon: <Icons.source className="size-3" />,
+        },
+      ],
+      image: "/projects/car_marketplace.png",
+      video: "",
+    },
+    {
       title: "Hespress Comment Sentiment Analysis",
       href: "#",
-      dates: "2024 - Present",
+      dates: "2024",
       active: true,
       description:
         "Architected big data pipeline using Apache Kafka, Spark, HDFS, and MongoDB for real-time sentiment analysis. Trained deep learning model with LSTM and BiLSTM achieving optimal accuracy on Arabic text classification. Built Flask dashboard with live analytics providing insights into public opinion trends and engagement metrics.",
@@ -314,7 +342,7 @@ export const DATA = {
     {
       title: "Cherry Tomato Sorting System",
       href: "#",
-      dates: "2024 - Present",
+      dates: "2024",
       active: true,
       description:
         "Developed intelligent computer vision system for automated tomato sorting by ripeness and size using YOLOv11. Implemented real-time IP camera integration with Streamlit dashboard for continuous monitoring. Created multi-class classification system (Unripe/Semi-ripe/Ripe) with live analytics and performance metrics.",
@@ -339,7 +367,7 @@ export const DATA = {
     {
       title: "Salary Scope Predictor",
       href: "#",
-      dates: "2024 - Present",
+      dates: "2024",
       active: true,
       description:
         "Built end-to-end ML application predicting software developer salaries using Stack Overflow survey data. Developed interactive Streamlit interface with Random Forest model achieving high prediction accuracy. Implemented automated data preprocessing pipeline with real-time predictions and confidence indicators.",
@@ -365,7 +393,7 @@ export const DATA = {
     {
       title: "AQUANOVA IoT Water Monitoring",
       href: "#",
-      dates: "2024 - Present",
+      dates: "2024",
       active: true,
       description:
         "Designed IoT water monitoring system with ESP32 sensors and cloud-connected analytics dashboard. Built Next.js/Express.js application reducing water waste by 30% through actionable insights. Implemented real-time data collection and wireless sensor integration for environmental monitoring.",
@@ -390,7 +418,7 @@ export const DATA = {
     {
       title: "VisioCraft Educational Platform",
       href: "#",
-      dates: "2024 - Present",
+      dates: "2024",
       active: true,
       description:
         "Engineered educational analytics platform using Hadoop and Apache Spark for large-scale data processing. Integrated Apache Kafka for real-time streaming and advanced computer vision for educational insights. Developed distributed architecture supporting scalable image processing and analytics capabilities.",
@@ -416,7 +444,7 @@ export const DATA = {
     {
       title: "Rental Management System",
       href: "#",
-      dates: "2023 - Present",
+      dates: "2023",
       active: true,
       description:
         "Developed a robust Rental Management System to streamline the complexities of managing rental properties. The system efficiently handles tenant information, lease agreements, payments, and maintenance requests, ensuring a seamless experience for property owners and tenants alike.",
@@ -434,7 +462,7 @@ export const DATA = {
     {
       title: "Absence Management App",
       href: "#",
-      dates: "2023 - Present",
+      dates: "2023",
       active: true,
       description:
         "Designed and implemented a user-friendly mobile application that simplifies the often-tedious task of tracking student absences. This intuitive app empowers teachers to efficiently manage attendance records and generate comprehensive reports with ease.",
