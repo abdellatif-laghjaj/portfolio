@@ -25,6 +25,7 @@ interface Props {
     type: string;
     href: string;
   }[];
+  private?: boolean;
   className?: string;
 }
 
@@ -38,6 +39,7 @@ export function ProjectCard({
   image,
   video,
   links,
+  private: isPrivate,
   className,
 }: Props) {
   return (
@@ -75,7 +77,14 @@ export function ProjectCard({
       </Link>
       <CardHeader className="px-2">
         <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="mt-1 text-base">{title}</CardTitle>
+            {isPrivate && (
+              <Badge variant="outline" className="text-xs px-2 py-0">
+                Private
+              </Badge>
+            )}
+          </div>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
@@ -101,7 +110,7 @@ export function ProjectCard({
         )}
       </CardContent>
       <CardFooter className="px-2 pb-2">
-        {links && links.length > 0 && (
+        {!isPrivate && links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
               <Link href={link?.href} key={idx} target="_blank">
@@ -111,6 +120,23 @@ export function ProjectCard({
                 </Badge>
               </Link>
             ))}
+          </div>
+        )}
+        {isPrivate && (
+          <div className="flex items-center text-xs text-muted-foreground">
+            <svg
+              className="w-3 h-3 mr-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            This is a private project
           </div>
         )}
       </CardFooter>

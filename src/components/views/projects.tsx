@@ -39,6 +39,7 @@ export default function Projects() {
                 image={project.image}
                 video={project.video}
                 links={project.links}
+                private={project.private}
               />
             </BlurFade>
           ))}
