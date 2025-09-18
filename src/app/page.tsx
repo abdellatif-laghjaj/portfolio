@@ -29,7 +29,7 @@ const Contact = dynamic(() => import("@/components/views/contact"), {
 });
 const Certifications = dynamic(
   () => import("@/components/views/certifications"),
-  { ssr: true },
+  { ssr: true }
 );
 
 // Keep Hackathons component as a regular import since it's used directly
@@ -127,14 +127,14 @@ export default function Page() {
         {/* Skills */}
         <Skills />
 
+        {/* Projects */}
+        <Projects />
+
         {/* Certifications */}
         <Certifications />
 
         {/* Hackathons */}
         <Hackathons />
-
-        {/* Projects */}
-        <Projects />
 
         {/* Activities */}
         <Activities />
