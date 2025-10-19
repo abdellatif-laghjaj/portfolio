@@ -1,4 +1,4 @@
-\documentclass[10pt, letterpaper]{article}
+\documentclass[11pt, a4paper]{article}
 
 % ==================== PACKAGES ====================
 \usepackage[
@@ -7,7 +7,7 @@
     bottom=1cm,
     left=1cm,
     right=1cm,
-    footskip=1.0cm,
+    footskip=1cm
 ]{geometry}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -19,7 +19,6 @@
 \usepackage[
     pdftitle={Abdellatif Laghjaj Resume},
     pdfauthor={Abdellatif Laghjaj},
-    pdfcreator={LaTeX},
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref}
@@ -35,10 +34,10 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 
-% ==================== COLOR DEFINITIONS ====================
-\definecolor{primaryColor}{RGB}{0, 0, 0}
-\definecolor{accentColor}{RGB}{45, 55, 72}
-\definecolor{lightGray}{RGB}{128, 128, 128}
+% ==================== COLORS ====================
+\definecolor{primaryColor}{RGB}{46,46,46}
+\definecolor{accentColor}{RGB}{64,64,64}
+\definecolor{lightGray}{RGB}{120,120,120}
 
 % ==================== FONT SETUP ====================
 \ifPDFTeX
@@ -48,10 +47,9 @@
     \usepackage[utf8]{inputenc}
     \usepackage{lmodern}
 \fi
-
 \usepackage{charter}
 
-% ==================== CIRCULAR IMAGE COMMAND ====================
+% ==================== IMAGE COMMAND ====================
 \newcommand{\roundedimage}[2][3cm]{%
     \begin{tikzpicture}
         \clip (0,0) circle (#1/2);
@@ -59,7 +57,7 @@
     \end{tikzpicture}%
 }
 
-% ==================== DOCUMENT SETTINGS ====================
+% ==================== SETTINGS ====================
 \raggedright
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
@@ -69,17 +67,16 @@
 \setlength{\columnsep}{0.15cm}
 \pagenumbering{gobble}
 
-% ==================== SECTION FORMATTING ====================
+% ==================== SECTIONS ====================
 \titleformat{\section}{
-    \needspace{4\baselineskip}\bfseries\large
+    \needspace{4\baselineskip}\bfseries\large\color{primaryColor}
 }{}{0pt}{}[\vspace{1pt}\titlerule]
 
-\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+\titlespacing{\section}{-1pt}{0.35cm}{0.25cm}
 
-% ==================== LIST FORMATTING ====================
+% ==================== LISTS ====================
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
 
-% Custom highlights environment
 \newenvironment{highlights}{
     \begin{itemize}[
         topsep=0.10cm,
@@ -92,19 +89,17 @@
     \end{itemize}
 }
 
-% ==================== COLUMN ENVIRONMENTS ====================
-% Single column entry
+% ==================== COLUMN STRUCTURE ====================
 \newenvironment{onecolentry}{
     \begin{adjustwidth}{0.00001cm}{0.00001cm}
 }{
     \end{adjustwidth}
 }
 
-% Two column entry with optional first parameter
 \newenvironment{twocolentry}[2][]{
     \onecolentry
     \def\secondColumn{#2}
-    \setcolumnwidth{\fill, 3.8cm}
+    \setcolumnwidth{\fill, 4.2cm}
     \begin{paracol}{2}
 }{
     \switchcolumn \raggedleft \secondColumn
@@ -112,7 +107,6 @@
     \endonecolentry
 }
 
-% Header environment with image support
 \newenvironment{modernheader}{
     \setlength{\topsep}{0pt}\par\kern\topsep
 }{
@@ -123,190 +117,166 @@
 \let\hrefWithoutArrow\href
 \newcommand{\AND}{\unskip\hskip 0.4em | \hskip 0.4em\ignorespaces}
 
-% ==================== DOCUMENT CONTENT ====================
+% ==================== DOCUMENT ====================
 \begin{document}
 
-% ==================== MODERN HEADER SECTION ====================
+% ==================== HEADER ====================
 \begin{modernheader}
-    \begin{minipage}[t]{0.72\textwidth}
-        \raggedright
-        \fontsize{20pt}{20pt}\selectfont 
-        \textbf{Abdellatif Laghjaj}
-        
-        \vspace{3pt}
-        
-        \fontsize{12pt}{12pt}\selectfont
-        \textcolor{accentColor}{AI Engineer | Machine Learning Engineer}
-        
-        \vspace{4pt}
-        
-        \small
-        \begin{minipage}[t]{0.48\textwidth}
-            \faMapMarker*\hspace{0.2em}El Guerdane, Taroudant, Morocco\\[1pt]
-            \faEnvelope\hspace{0.2em}\hrefWithoutArrow{mailto:abdelatiflaghjaj@gmail.com}{abdelatiflaghjaj@gmail.com}\\[1pt]
-            \faPhone\hspace{0.2em}\hrefWithoutArrow{tel:+212636208825}{+212 636 208 825}
-        \end{minipage}%
-        \hfill%
-        \begin{minipage}[t]{0.48\textwidth}
-            \faGlobe\hspace{0.2em}\hrefWithoutArrow{https://abdellatif.vercel.app/}{abdellatif.vercel.app}\\[1pt]
-            \faLinkedin\hspace{0.2em}\hrefWithoutArrow{https://linkedin.com/in/abdellatif-laghjaj}{linkedin.com/in/abdellatif-laghjaj}\\[1pt]
-            \faGithub\hspace{0.2em}\hrefWithoutArrow{https://github.com/abdellatif-laghjaj}{github.com/abdellatif-laghjaj}
-        \end{minipage}
-    \end{minipage}%
-    \hfill%
-    \begin{minipage}[t]{0.25\textwidth}
-        \raggedleft
-        \vspace{-20pt}
-        \roundedimage[2.8cm]{profile.jpg}
-    \end{minipage}
+	\begin{minipage}[t]{0.72\textwidth}
+		\raggedright
+		\fontsize{20pt}{20pt}\selectfont
+		\textbf{Abdellatif Laghjaj}
+
+		\vspace{3pt}
+		\fontsize{12pt}{12pt}\selectfont
+		\textcolor{accentColor}{Junir AI Engineer \AND Machine Learning Engineer}
+
+		\vspace{4pt}
+		\small
+		\begin{minipage}[t]{0.48\textwidth}
+			\faMapMarker*\hspace{0.2em}El Guerdane, Taroudant, Morocco\\[1pt]
+			\faEnvelope\hspace{0.2em}\hrefWithoutArrow{mailto:abdelatiflaghjaj@gmail.com}{abdelatiflaghjaj@gmail.com}\\[1pt]
+			\faPhone\hspace{0.2em}\hrefWithoutArrow{tel:+212636208825}{+212 636 208 825}
+		\end{minipage}%
+		\hfill%
+		\begin{minipage}[t]{0.48\textwidth}
+			\faGlobe\hspace{0.2em}\hrefWithoutArrow{https://abdellatif.vercel.app/}{abdellatif.vercel.app}\\[1pt]
+			\faLinkedin\hspace{0.2em}\hrefWithoutArrow{https://linkedin.com/in/abdellatif-laghjaj}{linkedin.com/in/abdellatif-laghjaj}\\[1pt]
+			\faGithub\hspace{0.2em}\hrefWithoutArrow{https://github.com/abdellatif-laghjaj}{github.com/abdellatif-laghjaj}
+		\end{minipage}
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}[t]{0.25\textwidth}
+		\raggedleft
+		\vspace{-20pt}
+		\roundedimage[2.8cm]{profile.jpg}
+	\end{minipage}
 \end{modernheader}
+
 \vspace{-2pt}
 
-% ==================== PROFESSIONAL SUMMARY ====================
-\section{Professional Summary}
+% ==================== SUMMARY ====================
+\section{\MakeUppercase{Profile}}
 \begin{onecolentry}
-    AI Engineer with Master's in Big Data and AI, specializing in machine learning model development, LLM integration, and end-to-end AI system deployment. Delivered intelligent solutions reducing operational costs by 40\% and improving performance by 50\% through deep learning, computer vision, and natural language processing applications.
+	Master's graduate in Big Data and Artificial Intelligence specializing in machine learning model development, LLM integration, and AI system deployment. Experienced in building intelligent solutions using deep learning, computer vision, and NLP that deliver measurable performance improvements and operational efficiency.
 \end{onecolentry}
 
-% ==================== PROFESSIONAL EXPERIENCE ====================
-\section{Professional Experience}
+% ==================== EXPERIENCE ====================
+\section{\MakeUppercase{Experience}}
 
 \begin{twocolentry}{Feb 2025 – Jun 2025}
-    \textbf{Research Developer}, Ibn Zohr University R\&D
+	\textbf{Research Developer}, Ibn Zohr University R\&D
 \end{twocolentry}
 \vspace{0.02cm}
 \begin{onecolentry}
-    Built LLM-powered team analytics platform using GPT-4/Gemini APIs, reducing manual analysis effort by 40\% through intelligent agent orchestration and predictive modeling
+	Built LLM-powered team analytics platform using GPT-4/Gemini APIs with intelligent agent orchestration, reducing manual analysis effort by 40\%.
 \end{onecolentry}
 
-\vspace{0.08cm}
+\vspace{0.1cm}
 
 \begin{twocolentry}{Aug 2024 – Sep 2024}
-    \textbf{Data Collection Specialist}, Haut-Commissariat au Plan
+	\textbf{Data Enumerator}, Haut-Commissariat au Plan
 \end{twocolentry}
 \vspace{0.02cm}
 \begin{onecolentry}
-    Applied statistical sampling techniques and ML-driven data validation ensuring 100\% quality compliance across demographic datasets
+	Collected and validated large-scale demographic data, achieving $100\%$ accuracy and compliance.
 \end{onecolentry}
 
-\vspace{0.08cm}
+\vspace{0.1cm}
 
 \begin{twocolentry}{Apr 2023 – Sep 2023}
-    \textbf{Full Stack Developer Intern}, Accesspoint IT Solutions
+	\textbf{Full-Stack Developer Intern}, Accesspoint IT Solutions
 \end{twocolentry}
 \vspace{0.02cm}
 \begin{onecolentry}
-    Developed business intelligence features and predictive analytics dashboards improving operational decision-making by 25\%
+	Developed integrated business management and restaurant POS systems using Vue.js, Laravel, and Flutter, improving operational efficiency by 25\%.
 \end{onecolentry}
 
 % ==================== EDUCATION ====================
-\section{Education}
+\section{\MakeUppercase{Education}}
 
 \begin{twocolentry}{2023 – 2025}
-    \textbf{Master of Science in Big Data and AI}, Ibn Zohr University
+	\textbf{Master's in Big Data and Artificial Intelligence}, Ibn Zohr University
 \end{twocolentry}
 
 \vspace{0.05cm}
 
 \begin{twocolentry}{2020 – 2023}
-    \textbf{Bachelor of Science in Computer Engineering}, Ibn Zohr University
+	\textbf{Bachelor's in Computer Engineering}, Ibn Zohr University
 \end{twocolentry}
 
 % ==================== TECHNICAL SKILLS ====================
-\section{Technical Skills}
+\section{\MakeUppercase{Technical Skills}}
 
 \begin{onecolentry}
-    \textbf{Programming Languages:} Python, JavaScript, TypeScript, SQL, Java, C++
+	\textbf{Languages:} Python, JavaScript, TypeScript, SQL, Java, C++
 \end{onecolentry}
 
-\vspace{0.1cm}
-
+\vspace{0.05cm}
 \begin{onecolentry}
-    \textbf{Machine Learning \& AI:} TensorFlow, PyTorch, Scikit-Learn, XGBoost, OpenAI API, Gemini API, Hugging Face
+	\textbf{AI \& ML:} TensorFlow, PyTorch, Scikit-Learn, XGBoost, OpenAI API, Gemini API, Hugging Face, LLM Agents
 \end{onecolentry}
 
-\vspace{0.1cm}
-
+\vspace{0.05cm}
 \begin{onecolentry}
-    \textbf{Deep Learning \& NLP:} Neural Networks, CNN, RNN, LSTM, BERT, GPT, Computer Vision, YOLO, Transformers
+	\textbf{Frontend:} React, Next.js, Vue.js, HTML5, CSS3, Tailwind CSS, Bootstrap, Streamlit, Shadcn/UI
 \end{onecolentry}
 
-\vspace{0.1cm}
-
+\vspace{0.05cm}
 \begin{onecolentry}
-    \textbf{MLOps \& Deployment:} Docker, Flask, FastAPI, Model Deployment, Feature Engineering, A/B Testing
+	\textbf{Backend \& APIs:} Node.js, Express.js, Laravel, FastAPI, Flask, Spring Boot, REST APIs
 \end{onecolentry}
 
-\vspace{0.1cm}
-
+\vspace{0.05cm}
 \begin{onecolentry}
-    \textbf{Data Processing:} Pandas, NumPy, Apache Spark, Apache Kafka, ETL Pipelines, Real-time Processing
+	\textbf{Databases \& Cloud:} PostgreSQL, MySQL, MongoDB, Firebase, Supabase, Redis, OCI, Cloud Architecture
 \end{onecolentry}
 
-\vspace{0.1cm}
-
+\vspace{0.05cm}
 \begin{onecolentry}
-    \textbf{Cloud \& Infrastructure:} OCI, PostgreSQL, MongoDB, Redis, Git/GitHub, CI/CD, Microservices
+	\textbf{DevOps \& Big Data:} Git/GitHub, Docker, Jenkins, CI/CD, Linux, Apache Kafka, Apache Spark, Hadoop
 \end{onecolentry}
 
-% ==================== KEY PROJECTS ====================
-\section{Key Projects}
+% ==================== PROJECTS ====================
+\section{\MakeUppercase{Projects}}
 
 \begin{onecolentry}
-    \textbf{LLM Agent Orchestration Platform} | \textit{AI, Multi-Model Integration, DevOps Analytics}\\
-    Built intelligent monitoring system with GPT-4/Gemini agents achieving 92\% accuracy in performance predictions
-    
-    \vspace{0.1cm}
-    
-    \textbf{Arabic NLP Sentiment Engine} | \textit{Deep Learning, NLP, Real-time Processing}\\
-    Developed LSTM/BiLSTM models achieving 86\% accuracy on Arabic text classification with real-time processing
-    
-    \vspace{0.1cm}
-    
-    \textbf{Computer Vision Quality Control} | \textit{YOLOv11, Object Detection, Real-time Analytics}\\
-    Trained custom YOLOv11 model on 3K+ labeled images for automated quality classification system
-    
-    \vspace{0.1cm}
-    
-    \textbf{ML Salary Prediction System} | \textit{Ensemble Methods, Feature Engineering, Model Optimization}\\
-    Built ensemble ML pipeline analyzing 65K+ profiles with Random Forest achieving R² of 0.58
-    
-    \vspace{0.1cm}
-    
-    \textbf{Distributed ML Analytics Platform} | \textit{Big Data, Spark, Distributed Computing}\\
-    Architected Hadoop-based system for large-scale educational data processing with ML-driven insights
+	\textbf{AI-Powered Team Performance Analytics Platform} | \textit{AI, Multi-Model Integration, DevOps Analytics}\\
+	Developed an AI-driven Team Performance monitoring system with GPT-4/Gemini integration.
+
+	\vspace{0.1cm}
+	\textbf{Arabic NLP Sentiment Analysis} | \textit{Deep Learning, NLP, Real-time Processing}\\
+	Developed LSTM/BiLSTM models with $86\%$ accuracy on Arabic text classification with real-time Kafka pipeline.
+
+	\vspace{0.1cm}
+	\textbf{Computer Vision Quality Control} | \textit{YOLOv11, Object Detection, Real-time Analytics}\\
+	Trained custom YOLOv11 model on 3K+ labeled images for automated quality classification system.
+
+	\vspace{0.1cm}
+	\textbf{ML Salary Prediction System} | \textit{Ensemble Methods, Feature Engineering, Model Optimization}\\
+	Built ensemble ML pipeline with Random Forest analyzing 65K+ profiles achieving R² of 0.58.
+
+	\vspace{0.1cm}
+	\textbf{VisioCraft Educational Platform} | \textit{Big Data, Distributed Computing, ML Analytics}\\
+	Architected Hadoop-based system for large-scale educational data processing with ML-driven insights.
 \end{onecolentry}
 
 % ==================== CERTIFICATIONS ====================
-\section{Certifications}
+\section{\MakeUppercase{Certifications}}
 
 \begin{twocolentry}{Sep 2025}
-    \textbf{OCI 2025 Certified Data Science Professional} -- Oracle
+	\textbf{OCI 2025 Certified Data Science Professional} -- Oracle
 \end{twocolentry}
 
-\vspace{0.1cm}
-
-\begin{twocolentry}{Dec 2024}
-    \textbf{Introduction to Artificial Intelligence} -- Simplilearn
-\end{twocolentry}
-
-\vspace{0.1cm}
-
-\begin{twocolentry}{Jul 2022}
-    \textbf{Web Scraping with Beautiful Soup} -- Simplilearn
-\end{twocolentry}
-
-\vspace{0.1cm}
-
+\vspace{0.05cm}
 \begin{twocolentry}{Dec 2021}
-    \textbf{Computer Networking Fundamentals} -- Google
+	\textbf{Computer Networking Fundamentals} -- Google
 \end{twocolentry}
 
 % ==================== LANGUAGES ====================
-\section{Languages}
-
+\section{\MakeUppercase{Languages}}
 \begin{onecolentry}
-    \textbf{Arabic:} Native \AND \textbf{English:} Professional Working Proficiency \AND \textbf{French:} Intermediate
+	\textbf{Arabic:} Native \AND \textbf{English:} Professional Working Proficiency \AND \textbf{French:} Intermediate
 \end{onecolentry}
 
 \end{document}
