@@ -212,7 +212,7 @@ export const DATA = {
       href: "http://www.fpt.ac.ma/",
       badges: [],
       location: "Taroudant, Morocco",
-      title: "Research Developer",
+      title: "AI Developer",
       logoUrl: "/icons/fpt.webp",
       start: "February 2025",
       end: "June 2025",
