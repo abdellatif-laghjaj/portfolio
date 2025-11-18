@@ -70,6 +70,26 @@ export default function RootLayout({
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: DATA.name,
+              url: DATA.url,
+              jobTitle: DATA.description,
+              sameAs: Object.values(DATA.contact.social).map(
+                (social) => social.url,
+              ),
+              worksFor: {
+                "@type": "Organization",
+                name: DATA.work[0].company,
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );

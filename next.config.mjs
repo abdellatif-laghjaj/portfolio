@@ -7,7 +7,7 @@ const nextConfig = {
       static: 180,
     },
     // Add this to disable CSS optimization temporarily
-    optimizeCss: false,
+    optimizeCss: true,
   },
   bundlePagesRouterDependencies: true,
   outputFileTracingRoot: process.cwd(),
