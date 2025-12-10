@@ -1,12 +1,12 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 % ==================== PACKAGES ====================
 \usepackage[
     ignoreheadfoot,
-    top=1cm,
-    bottom=1cm,
-    left=1cm,
-    right=1cm,
+    top=0.8cm,
+    bottom=0.8cm,
+    left=0.8cm,
+    right=0.8cm,
     footskip=1cm
 ]{geometry}
 \usepackage{titlesec}
@@ -22,22 +22,17 @@
     colorlinks=true,
     urlcolor=primaryColor
 ]{hyperref}
-\usepackage[pscoord]{eso-pic}
 \usepackage{calc}
-\usepackage{bookmark}
-\usepackage{lastpage}
-\usepackage{changepage}
 \usepackage{paracol}
 \usepackage{ifthen}
-\usepackage{needspace}
 \usepackage{iftex}
 \usepackage{graphicx}
-\usepackage{tikz}
 
 % ==================== COLORS ====================
-\definecolor{primaryColor}{RGB}{46,46,46}
-\definecolor{accentColor}{RGB}{64,64,64}
-\definecolor{lightGray}{RGB}{120,120,120}
+\definecolor{primaryColor}{RGB}{20,20,20}
+\definecolor{accentColor}{RGB}{0,102,204}
+\definecolor{lightGray}{RGB}{100,100,100}
+\definecolor{sectionBg}{RGB}{245,245,245}
 
 % ==================== FONT SETUP ====================
 \ifPDFTeX
@@ -49,234 +44,167 @@
 \fi
 \usepackage{charter}
 
-% ==================== IMAGE COMMAND ====================
-\newcommand{\roundedimage}[2][3cm]{%
-    \begin{tikzpicture}
-        \clip (0,0) circle (#1/2);
-        \node[anchor=center] at (0,0) {\includegraphics[width=#1,height=#1,keepaspectratio]{#2}};
-    \end{tikzpicture}%
-}
-
 % ==================== SETTINGS ====================
 \raggedright
-\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
 \setlength{\topskip}{0pt}
-\setlength{\columnsep}{0.15cm}
+\setlength{\columnsep}{0.4cm}
 \pagenumbering{gobble}
 
-% ==================== SECTIONS ====================
+% ==================== SECTION FORMATTING ====================
 \titleformat{\section}{
-    \needspace{4\baselineskip}\bfseries\large\color{primaryColor}
-}{}{0pt}{}[\vspace{1pt}\titlerule]
+    \bfseries\large\color{accentColor}
+}{}{0pt}{}[\vspace{1pt}\color{accentColor}\titlerule]
 
-\titlespacing{\section}{-1pt}{0.35cm}{0.25cm}
-
-% ==================== LISTS ====================
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
-
-\newenvironment{highlights}{
-    \begin{itemize}[
-        topsep=0.10cm,
-        parsep=0.10cm,
-        partopsep=0pt,
-        itemsep=0pt,
-        leftmargin=0cm + 10pt
-    ]
-}{
-    \end{itemize}
-}
-
-% ==================== COLUMN STRUCTURE ====================
-\newenvironment{onecolentry}{
-    \begin{adjustwidth}{0.00001cm}{0.00001cm}
-}{
-    \end{adjustwidth}
-}
-
-\newenvironment{twocolentry}[2][]{
-    \onecolentry
-    \def\secondColumn{#2}
-    \setcolumnwidth{\fill, 4.2cm}
-    \begin{paracol}{2}
-}{
-    \switchcolumn \raggedleft \secondColumn
-    \end{paracol}
-    \endonecolentry
-}
-
-\newenvironment{modernheader}{
-    \setlength{\topsep}{0pt}\par\kern\topsep
-}{
-    \par\kern\topsep
-}
+\titlespacing{\section}{0pt}{0.3cm}{0.2cm}
 
 % ==================== CUSTOM COMMANDS ====================
 \let\hrefWithoutArrow\href
-\newcommand{\AND}{\unskip\hskip 0.4em | \hskip 0.4em\ignorespaces}
+\newcommand{\AND}{\unskip\hskip 0.3em\textbar\hskip 0.3em\ignorespaces}
+
+\newcommand{\experienceitem}[4]{%
+    \textbf{#1} \hfill {\small\color{lightGray}#3}\\
+    {\small\textit{#2}} \hfill {\small\color{lightGray}#4}\\[3pt]
+}
+
+\newcommand{\educationitem}[3]{%
+    \textbf{#1} \hfill {\small\color{lightGray}#3}\\
+    {\small\textit{#2}}\\[3pt]
+}
+
+\newcommand{\projectitem}[3]{%
+    \textbf{#1}\\
+    {\small\textit{\color{lightGray}#2}}\\
+    {\small #3}
+    \vspace{0.25cm}
+}
+
+\newcommand{\skillcategory}[2]{%
+    \textbf{#1:} {\small #2}\\[3pt]
+}
 
 % ==================== DOCUMENT ====================
 \begin{document}
 
 % ==================== HEADER ====================
-\begin{modernheader}
-	\begin{minipage}[t]{0.72\textwidth}
-		\raggedright
-		\fontsize{20pt}{20pt}\selectfont
-		\textbf{Abdellatif Laghjaj}
+\begin{center}
+    {\Huge\textbf{Abdellatif Laghjaj}}\\[6pt]
+    {\large\color{accentColor}Software Engineer \AND Full-Stack Developer}\\[8pt]
+    \small
+    \faMapMarker*\hspace{0.2em}Taroudant, Morocco \AND
+    \faEnvelope\hspace{0.2em}\hrefWithoutArrow{mailto:abdelatiflaghjaj@gmail.com}{abdelatiflaghjaj@gmail.com}\\[2pt]
+    \faPhone\hspace{0.2em}+212 636 208 825 \AND
+    \faGlobe\hspace{0.2em}\hrefWithoutArrow{https://abdellatif.vercel.app/}{abdellatif.vercel.app} \AND
+    \faLinkedin\hspace{0.2em}\hrefWithoutArrow{https://linkedin.com/in/abdellatif-laghjaj}{linkedin.com/in/abdellatif-laghjaj} \AND
+    \faGithub\hspace{0.2em}\hrefWithoutArrow{https://github.com/abdellatif-laghjaj}{github.com/abdellatif-laghjaj}
+\end{center}
 
-		\vspace{3pt}
-		\fontsize{12pt}{12pt}\selectfont
-		\textcolor{accentColor}{Software Engineer \AND Full-Stack Developer}
+\vspace{-0.2cm}
 
-		\vspace{4pt}
-		\small
-		\begin{minipage}[t]{0.48\textwidth}
-			\faMapMarker*\hspace{0.2em}El Guerdane, Taroudant, Morocco\\[1pt]
-			\faEnvelope\hspace{0.2em}\hrefWithoutArrow{mailto:abdelatiflaghjaj@gmail.com}{abdelatiflaghjaj@gmail.com}\\[1pt]
-			\faPhone\hspace{0.2em}\hrefWithoutArrow{tel:+212636208825}{+212 636 208 825}
-		\end{minipage}%
-		\hfill%
-		\begin{minipage}[t]{0.48\textwidth}
-			\faGlobe\hspace{0.2em}\hrefWithoutArrow{https://abdellatif.vercel.app/}{abdellatif.vercel.app}\\[1pt]
-			\faLinkedin\hspace{0.2em}\hrefWithoutArrow{https://linkedin.com/in/abdellatif-laghjaj}{linkedin.com/in/abdellatif-laghjaj}\\[1pt]
-			\faGithub\hspace{0.2em}\hrefWithoutArrow{https://github.com/abdellatif-laghjaj}{github.com/abdellatif-laghjaj}
-		\end{minipage}
-	\end{minipage}%
-	\hfill%
-	\begin{minipage}[t]{0.25\textwidth}
-		\raggedleft
-		\vspace{-20pt}
-		\roundedimage[2.8cm]{profile.jpg}
-	\end{minipage}
-\end{modernheader}
+% ==================== TWO COLUMN LAYOUT ====================
+\setlength{\columnsep}{0.5cm}
+\begin{paracol}{2}
 
-\vspace{-2pt}
+% ==================== LEFT COLUMN ====================
 
-% ==================== SUMMARY ====================
-\section{\MakeUppercase{Profile}}
-\begin{onecolentry}
-	Master’s graduate in Big Data and Artificial Intelligence with strong expertise in building scalable, data-driven applications. Skilled in full-stack and AI-powered systems development, achieving measurable performance and efficiency gains. Experienced in microservices architecture, modern frameworks, and data-centric solutions.
-\end{onecolentry}
+\section{PROFILE}
+Master's graduate in Big Data and Artificial Intelligence with strong expertise in building scalable, data-driven applications. Skilled in full-stack and AI-powered systems development, achieving measurable performance and efficiency gains.
 
-% ==================== EXPERIENCE ====================
-\section{\MakeUppercase{Experience}}
+\section{EXPERIENCE}
 
-\begin{twocolentry}{Feb 2025 – Jun 2025}
-	\textbf{AI Developer}, IRF-SIC Laboratory
-\end{twocolentry}
-\vspace{0.02cm}
-\begin{onecolentry}
-	Designed and implemented an AI-powered team monitoring platform using Flask, Next.js, and PostgreSQL microservices, reducing team-management overhead by 40\%.
-\end{onecolentry}
+\experienceitem{AI Developer}{IRF-SIC Laboratory}{Feb 2025 – Jul 2025}{}
+{\small
+\begin{itemize}[nosep, leftmargin=12pt]
+    \item Developed AI-powered DevOps performance monitoring platform integrating Git, Jenkins, and Discord data
+    \item Implemented LLM agents using OpenAI/Gemini APIs to analyze DORA metrics and generate actionable insights
+    \item Built scalable system with Flask backend, Next.js frontend, and ETL pipeline using PostgreSQL and Redis
+\end{itemize}
+}
+\vspace{0.15cm}
 
-\vspace{0.1cm}
+\experienceitem{Data Enumerator}{Haut Commissariat au Plan}{Aug 2024 – Sep 2024}{}
+{\small
+\begin{itemize}[nosep, leftmargin=12pt]
+    \item Collected and managed demographic data for national census, ensuring data quality and confidentiality
+    \item Coordinated with local authorities and optimized survey routes for maximum coverage efficiency
+\end{itemize}
+}
+\vspace{0.15cm}
 
-\begin{twocolentry}{Aug 2024 – Sep 2024}
-	\textbf{Data Enumerator}, Haut-Commissariat au Plan
-\end{twocolentry}
-\vspace{0.02cm}
-\begin{onecolentry}
-	Collected and validated large-scale demographic data, achieving $100\%$ accuracy and compliance.
-\end{onecolentry}
+\experienceitem{Full Stack Developer Intern}{Accesspoint IT Solutions}{Apr 2023 – Sep 2023}{}
+{\small
+\begin{itemize}[nosep, leftmargin=12pt]
+    \item Architected comprehensive business management system with desktop, mobile, and web applications
+    \item Integrated e-commerce functionality using Vue.js, Laravel, and MySQL with Git version control
+    \item Engineered restaurant management and POS system across multiple platforms
+    \item Utilized Flutter for mobile development, Vue.js for web interface, and Laravel for backend API
+\end{itemize}
+}
+\vspace{0.15cm}
 
-\vspace{0.1cm}
+\experienceitem{Full Stack Developer Intern}{Université Ibn Zohr}{Jul 2022 – Oct 2022}{}
+{\small
+\begin{itemize}[nosep, leftmargin=12pt]
+    \item Enhanced digital platform for students by introducing advanced features that streamline faculty management
+    \item Improved communication systems and supported a more efficient academic environment
+\end{itemize}
+}
 
-\begin{twocolentry}{Apr 2023 – Sep 2023}
-	\textbf{Full-Stack Developer Intern}, Accesspoint IT Solutions
-\end{twocolentry}
-\vspace{0.02cm}
-\begin{onecolentry}
-	Developed integrated business management and restaurant POS systems using Vue.js, Laravel, and Flutter, improving operational efficiency by 25\%.
-\end{onecolentry}
+\section{TECHNICAL SKILLS}
 
-% ==================== EDUCATION ====================
-\section{\MakeUppercase{Education}}
+\skillcategory{Languages}{Python, JavaScript, TypeScript, PHP, SQL, Java}
 
-\begin{twocolentry}{2023 – 2025}
-	\textbf{Master’s in Big Data and Artificial Intelligence}, Ibn Zohr University
-\end{twocolentry}
+\skillcategory{Frontend}{React, Next.js, Vue.js, HTML5, CSS3, Tailwind CSS, Bootstrap, Streamlit, Shadcn/UI}
 
-\vspace{0.05cm}
+\skillcategory{Backend \& APIs}{Node.js, Express.js, Laravel, FastAPI, Flask, Spring Boot, REST APIs}
 
-\begin{twocolentry}{2020 – 2023}
-	\textbf{Bachelor’s in Computer Engineering}, Ibn Zohr University
-\end{twocolentry}
+\skillcategory{AI \& ML}{TensorFlow, PyTorch, Scikit-Learn, Pandas, NumPy, OpenAI API, Gemini API, LLM Agents, NLP, RAG}
 
-% ==================== TECHNICAL SKILLS ====================
-\section{\MakeUppercase{Technical Skills}}
+\skillcategory{Databases \& Cloud}{PostgreSQL, MySQL, MongoDB, Firebase, Supabase, Redis, OCI}
 
-\begin{onecolentry}
-	\textbf{Languages:} Python, JavaScript, TypeScript, PHP, SQL, Java
-\end{onecolentry}
+\skillcategory{DevOps \& Big Data}{Git/GitHub, Docker, Jenkins, CI/CD, Linux, Apache Kafka, Apache Spark, Hadoop}
 
-\vspace{0.05cm}
-\begin{onecolentry}
-	\textbf{Frontend:} React, Next.js, Vue.js, HTML5, CSS3, Tailwind CSS, Bootstrap, Streamlit, Shadcn/UI
-\end{onecolentry}
+% ==================== RIGHT COLUMN ====================
+\switchcolumn
 
-\vspace{0.05cm}
-\begin{onecolentry}
-	\textbf{Backend \& APIs:} Node.js, Express.js, Laravel, FastAPI, Flask, Spring Boot, REST APIs
-\end{onecolentry}
+\section{EDUCATION}
 
-\vspace{0.05cm}
-\begin{onecolentry}
-	\textbf{AI \& ML:} TensorFlow, PyTorch, Scikit-Learn, Pandas, NumPy, OpenAI API, Gemini API, LLM Agents, NLP, RAG
-\end{onecolentry}
+\educationitem{Master's in Big Data \& AI}{Ibn Zohr University}{2023 – 2025}
 
-\vspace{0.05cm}
-\begin{onecolentry}
-	\textbf{Databases \& Cloud:} PostgreSQL, MySQL, MongoDB, Firebase, Supabase, Redis, OCI, Cloud Architecture
-\end{onecolentry}
+\educationitem{Bachelor's in Computer Engineering}{Ibn Zohr University}{2020 – 2023}
 
-\vspace{0.05cm}
-\begin{onecolentry}
-	\textbf{DevOps \& Big Data:} Git/GitHub, Docker, Jenkins, CI/CD, Linux, Apache Kafka, Apache Spark, Hadoop
-\end{onecolentry}
+\section{PROJECTS}
 
-% ==================== PROJECTS ====================
-\section{\MakeUppercase{Projects}}
+\projectitem{DevOps Analytics Platform}{AI, DORA Metrics, LLM Agents, GPT-4/Gemini}{AI-driven team performance monitoring system with LLM agents providing actionable insights, reducing manual analysis effort and achieving 50\% faster processing.}
 
-\begin{onecolentry}
-	\textbf{DevOps Monitoring Platform} | \textit{AI, DORA Metrics, LLM Agents, DevOps}\\
-	Developed an AI-driven Team Performance monitoring system with GPT-4/Gemini integration.
+\projectitem{Arabic NLP Sentiment Analysis}{Kafka, Spark, LSTM/BiLSTM, Real-time NLP}{Real-time Arabic sentiment analysis pipeline using Kafka and LSTM models, achieving 86\% accuracy on Arabic text classification.}
 
-	\vspace{0.1cm}
-	\textbf{Hespress Sentiment Analysis} | \textit{Big Data, NLP, Real-time Processing}\\
-	Built a real-time Arabic NLP pipeline using Kafka, Spark, and LSTM models for sentiment classification.
+\projectitem{Cherry Tomato Sorting System}{Computer Vision, YOLOv11, Real-time Detection}{Automated quality control system using custom-trained YOLOv11 model for real-time object detection and sorting.}
 
-	\vspace{0.1cm}
-	\textbf{Cherry Tomato Sorting System} | \textit{Computer Vision, YOLOv11, Real-time Detection}\\
-	Built real-time automated classification system using YOLOv11 for IP camera feeds.
+\projectitem{ML Salary Prediction System}{Random Forest, Ensemble ML, Data Analysis}{Ensemble ML pipeline analyzing 65K+ developer profiles for salary predictions, achieving R² of 0.58.}
 
-	\vspace{0.1cm}
-	\textbf{Laravel Car Marketplace} | \textit{Full-Stack Development, Laravel, E-commerce}\\
-	Created a feature-rich e-commerce platform with secure authentication and advanced location-based search.
+\projectitem{VisioCraft Educational Platform}{Hadoop, Apache Spark, ML, Computer Vision}{Analytics platform for large-scale educational data processing with ML-driven insights and computer vision capabilities.}
 
-	\vspace{0.1cm}
-	\textbf{VisioCraft Educational Platform} | \textit{Big Data, Image Processing, Distributed Systems}\\
-	Developed an analytics platform with Hadoop and Spark for large data processing and computer vision tasks.
-\end{onecolentry}
+\projectitem{AQUANOVA IoT Monitoring}{IoT, ESP32, Real-time Monitoring}{IoT water monitoring system using ESP32 sensors, reducing water waste by 30\%.}
 
-% ==================== CERTIFICATIONS ====================
-\section{\MakeUppercase{Certifications}}
+\projectitem{Laravel Car Marketplace}{Laravel, Full-Stack, E-commerce, Location-based}{Full-stack e-commerce platform with secure authentication, advanced search, and location-based listings.}
 
-\begin{twocolentry}{Sep 2025}
-	\textbf{OCI 2025 Certified Data Science Professional} -- Oracle
-\end{twocolentry}
+\section{CERTIFICATIONS}
 
-\vspace{0.05cm}
-\begin{twocolentry}{Dec 2021}
-	\textbf{Computer Networking Fundamentals} -- Google
-\end{twocolentry}
+\textbf{OCI 2025 Data Science Professional}\\
+{\small Oracle, Sep 2025}\\[6pt]
 
-% ==================== LANGUAGES ====================
-\section{\MakeUppercase{Languages}}
-\begin{onecolentry}
-	\textbf{Arabic:} Native \AND \textbf{English:} Professional Working Proficiency \AND \textbf{French:} Intermediate
-\end{onecolentry}
+\textbf{Computer Networking Fundamentals}\\
+{\small Google, Dec 2021}
+
+\section{LANGUAGES}
+
+\textbf{Arabic:} Native\\[3pt]
+\textbf{English:} Professional\\[3pt]
+\textbf{French:} Intermediate
+
+\end{paracol}
 
 \end{document}
