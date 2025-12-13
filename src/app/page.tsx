@@ -29,8 +29,11 @@ const Certifications = dynamic(
   { ssr: true },
 );
 
-// Keep Hackathons component as a regular import since it's used directly
-import Hackathons from "@/components/views/hackathons";
+// Dynamically import the Hackathons component to reduce the initial bundle size.
+const Hackathons = dynamic(
+  () => import("@/components/views/hackathons"),
+  { ssr: true },
+);
 
 export default function Page() {
   return (
