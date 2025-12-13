@@ -158,11 +158,6 @@ export const DATA = {
       icon: Icons.home,
       label: "Home",
     },
-    {
-      href: "/blog",
-      icon: Icons.notebook,
-      label: "Blog",
-    },
   ],
   contact: {
     email: "abdelatiflaghjaj@gmail.com",
