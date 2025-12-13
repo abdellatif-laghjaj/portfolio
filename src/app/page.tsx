@@ -35,7 +35,7 @@ import Hackathons from "@/components/views/hackathons";
 export default function Page() {
   return (
     <main className="flex flex-col min-h-dvh space-y-10 relative">
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={null}>
         {/* Hero */}
         <Hero />
 
