@@ -29,8 +29,13 @@ const Certifications = dynamic(
   { ssr: true },
 );
 
-// Keep Hackathons component as a regular import since it's used directly
-import Hackathons from "@/components/views/hackathons";
+// ⚡ Bolt: The Hackathons component is dynamically imported to reduce the initial
+// JavaScript bundle size. This improves the page's Time to Interactive (TTI)
+// by code-splitting this component into a separate chunk that is loaded on demand.
+const Hackathons = dynamic(
+  () => import("@/components/views/hackathons"),
+  { ssr: true },
+);
 
 export default function Page() {
   return (
