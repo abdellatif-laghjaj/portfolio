@@ -15,10 +15,12 @@ export default function Hero() {
             </p>
           </div>
           <Avatar className="size-28 border border-gray-300 dark:border-border/20">
+            {/* ⚡ Bolt: Prioritize loading of the LCP image to improve page load performance. */}
             <AvatarImage
               alt={DATA.name}
               src={DATA.avatarUrl}
               className="object-cover"
+              priority
             />
             <AvatarFallback>{DATA.initials}</AvatarFallback>
           </Avatar>
