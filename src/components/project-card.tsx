@@ -9,6 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 import Markdown from "react-markdown";
 
 interface Props {
@@ -29,7 +30,8 @@ interface Props {
   className?: string;
 }
 
-export function ProjectCard({
+// ⚡ Bolt: Memoized ProjectCard to prevent unnecessary re-renders
+export const ProjectCard = memo(function ProjectCard({
   title,
   href,
   description,
@@ -135,4 +137,4 @@ export function ProjectCard({
       </CardFooter>
     </Card>
   );
-}
+});
