@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
@@ -22,14 +23,40 @@ Avatar.displayName = AvatarPrimitive.Root.displayName;
 
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={cn("aspect-square h-full w-full", className)}
-    {...props}
-  />
-));
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & {
+    asChild?: boolean;
+  }
+>(({ className, asChild = true, ...props }, ref) => {
+  const { src, alt, ...rest } = props;
+  if (asChild) {
+    return (
+      <AvatarPrimitive.Image asChild ref={ref} {...props}>
+        {/*
+         * ⚡ Bolt: Using next/image with the asChild prop to leverage Next.js's
+         * image optimization features. This improves performance by serving
+         * optimized images and enabling priority loading.
+         */}
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        <Image
+          className={cn("aspect-square h-full w-full", className)}
+          fill
+          src={src!}
+          alt={alt!}
+          {...rest}
+        />
+      </AvatarPrimitive.Image>
+    );
+  }
+
+  return (
+    <AvatarPrimitive.Image
+      ref={ref}
+      className={cn("aspect-square h-full w-full", className)}
+      {...props}
+    />
+  );
+});
+
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const AvatarFallback = React.forwardRef<

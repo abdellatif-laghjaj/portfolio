@@ -15,10 +15,17 @@ export default function Hero() {
             </p>
           </div>
           <Avatar className="size-28 border border-gray-300 dark:border-border/20">
+            {/*
+             * ⚡ Bolt: Adding the `priority` prop to the `AvatarImage` component
+             * to prioritize the loading of the hero image. This improves the
+             * Largest Contentful Paint (LCP) score by ensuring the main image
+             * is loaded as quickly as possible.
+             */}
             <AvatarImage
               alt={DATA.name}
               src={DATA.avatarUrl}
               className="object-cover"
+              priority
             />
             <AvatarFallback>{DATA.initials}</AvatarFallback>
           </Avatar>
