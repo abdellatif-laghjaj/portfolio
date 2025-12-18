@@ -1,4 +1,3 @@
-
 import Markdown from "react-markdown";
 import { DATA } from "@/data/resume";
 

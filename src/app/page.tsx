@@ -28,10 +28,9 @@ const Certifications = dynamic(
   () => import("@/components/views/certifications"),
   { ssr: true },
 );
-const Hackathons = dynamic(
-  () => import("@/components/views/hackathons"),
-  { ssr: true },
-);
+const Hackathons = dynamic(() => import("@/components/views/hackathons"), {
+  ssr: true,
+});
 
 export default function Page() {
   return (

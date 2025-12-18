@@ -14,10 +14,10 @@ export default function Hackathons() {
               I like building things
             </h2>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              During my time in university, I attended{" "}
-              {DATA.hackathons.length}+ hackathons. People from around Morocco
-              would come together and build incredible things in 2-3 days.
-              Here are some of the projects I worked on.
+              During my time in university, I attended {DATA.hackathons.length}+
+              hackathons. People from around Morocco would come together and
+              build incredible things in 2-3 days. Here are some of the projects
+              I worked on.
             </p>
           </div>
         </div>

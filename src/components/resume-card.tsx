@@ -88,7 +88,7 @@ export const ResumeCard = ({
           <div
             className={cn(
               "mt-2 text-xs sm:text-sm overflow-hidden transition-all duration-300 ease-in-out",
-              isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0",
             )}
           >
             {description}
