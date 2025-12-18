@@ -11,6 +11,8 @@ const nextConfig = {
   },
   bundlePagesRouterDependencies: true,
   outputFileTracingRoot: process.cwd(),
+  // Resolve Next.js 16 build conflict between Webpack and Turbopack
+  turbopack: {},
   // Add webpack config to handle CSS processing issues
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
