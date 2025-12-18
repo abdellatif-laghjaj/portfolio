@@ -47,7 +47,7 @@ export default function Projects() {
               <Link
                 href={DATA.contact.social.GitHub.url}
                 target="_blank"
-                className="text-blue-500 hover:underline"
+                className="text-blue-500 underline hover:no-underline"
               >
                 GitHub profile
               </Link>{" "}

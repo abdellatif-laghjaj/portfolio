@@ -9,7 +9,7 @@ export default function Skills() {
         {Object.entries(DATA.skills).map(
           ([category, { label, skills }], index) => (
             <div key={category}>
-              <h6 className="text-md font-semibold mb-1">{label}</h6>
+              <h3 className="text-md font-semibold mb-1">{label}</h3>
               <div className="flex flex-wrap gap-1">
                 {skills.map(({ name, icon }, id) => (
                   <Badge
