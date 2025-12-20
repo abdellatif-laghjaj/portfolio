@@ -17,7 +17,7 @@ import {
 const CATEGORIES = [
   "All",
   "AI & Big Data",
-  "Web Development",
+  "Web Dev",
   "Mobile & IoT",
 ] as const;
 
