@@ -7,9 +7,6 @@ export default function Contact() {
     <section id="contact">
       <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pb-12">
         <div className="space-y-3">
-          <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-            Contact
-          </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
             Get In Touch
           </h2>
