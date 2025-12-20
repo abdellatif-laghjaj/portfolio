@@ -105,7 +105,7 @@ export const ProjectCard = memo(function ProjectCard({
                   e.preventDefault();
                   setIsExpanded(!isExpanded);
                 }}
-                className="text-blue-500 hover:underline font-medium ml-1 inline"
+                className="text-primary hover:underline font-medium ml-1 inline"
               >
                 {isExpanded ? "Read Less" : "Read More"}
               </button>
