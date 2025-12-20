@@ -48,8 +48,7 @@ export const DATA = {
   url: "https://abdellatif.vercel.app/",
   location: "El Guerdane, Taroudant, Morocco",
   locationLink: "https://goo.gl/maps/R89tV652zC8546tQ7",
-  description:
-    "AI Engineer & Software Developer",
+  description: "AI Engineer & Software Developer",
   summary:
     "AI Engineer and Full-Stack Developer building data-driven products. Proven in delivering AI-powered solutions that reduce costs by 40% and boost performance by 50%. Expert in end-to-end development across web, mobile, and IoT.",
   keywords:
