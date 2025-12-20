@@ -17,12 +17,18 @@ export default function Hero() {
             </p>
             <div className="flex gap-4 pt-4">
               <Link href="#projects">
-                <Button variant="default" className="rounded-full px-6">
+                <Button
+                  variant="default"
+                  className="rounded-full px-4 text-xs font-light md:px-6 md:text-base md:font-normal"
+                >
                   View Projects
                 </Button>
               </Link>
               <Link href="#contact">
-                <Button variant="outline" className="rounded-full px-6">
+                <Button
+                  variant="outline"
+                  className="rounded-full px-4 text-xs font-light md:px-6 md:text-base md:font-normal"
+                >
                   Contact Me
                 </Button>
               </Link>

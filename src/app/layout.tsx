@@ -4,7 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Merriweather as FontSans, Caveat as FontHandwritten } from "next/font/google";
+import {
+  Merriweather as FontSans,
+  Caveat as FontHandwritten,
+} from "next/font/google";
 import "./globals.css";
 
 const fontSans = FontSans({
