@@ -6,6 +6,7 @@
   --font-sans:
     var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-handwritten: var(--font-handwritten), cursive;
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));

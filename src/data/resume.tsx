@@ -176,12 +176,12 @@ export const DATA = {
   },
   work: [
     {
-      company: "Ibn Zohr University",
-      href: "http://www.fpt.ac.ma/",
+      company: "IRF-SIC Laboratory",
+      href: "https://www.linkedin.com/company/irf-sic/",
       badges: [],
       location: "Taroudant, Morocco",
       title: "AI Developer",
-      logoUrl: "/icons/fpt.webp",
+      logoUrl: "/icons/irf.webp",
       start: "February 2025",
       end: "June 2025",
       description:
