@@ -249,6 +249,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       private: true,
+      category: "AI & Big Data",
       description:
         "Engineered comprehensive decision-support platform for monitoring development team performance using DORA metrics and LLM agents. Built AI-powered analytics system with multi-model support (GPT-4o, Gemini 2.0, Llama 3.1) for team performance prediction and workflow optimization. Integrated Jenkins CI/CD pipeline monitoring, Discord analytics, and Google Docs portfolio tracking with secure OAuth authentication.",
       technologies: [
@@ -278,6 +279,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       private: false,
+      category: "Web Development",
       description:
         "Comprehensive car marketplace web application built with Laravel 11 and Tailwind CSS. Features advanced search & filtering by make, model, year, and location, user authentication, favorites system, and responsive design. Includes image galleries, location-based listings, and soft deletes for safe data management.",
       technologies: [
@@ -307,6 +309,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       private: false,
+      category: "AI & Big Data",
       description:
         "Architected big data pipeline using Apache Kafka, Spark, HDFS, and MongoDB for real-time sentiment analysis. Trained deep learning model with LSTM and BiLSTM achieving optimal accuracy on Arabic text classification. Built Flask dashboard with live analytics providing insights into public opinion trends and engagement metrics.",
       technologies: [
@@ -336,6 +339,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       private: false,
+      category: "AI & Big Data",
       description:
         "Developed intelligent computer vision system for automated tomato sorting by ripeness and size using YOLOv11. Implemented real-time IP camera integration with Streamlit dashboard for continuous monitoring. Created multi-class classification system (Unripe/Semi-ripe/Ripe) with live analytics and performance metrics.",
       technologies: [
@@ -362,6 +366,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       private: false,
+      category: "AI & Big Data",
       description:
         "Built end-to-end ML application predicting software developer salaries using Stack Overflow survey data. Developed interactive Streamlit interface with Random Forest model achieving high prediction accuracy. Implemented automated data preprocessing pipeline with real-time predictions and confidence indicators.",
       technologies: [
@@ -389,6 +394,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       private: true,
+      category: "Mobile & IoT",
       description:
         "Designed IoT water monitoring system with ESP32 sensors and cloud-connected analytics dashboard. Built Next.js/Express.js application reducing water waste by 30% through actionable insights. Implemented real-time data collection and wireless sensor integration for environmental monitoring.",
       technologies: [
@@ -415,6 +421,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       private: false,
+      category: "AI & Big Data",
       description:
         "Engineered educational analytics platform using Hadoop and Apache Spark for large-scale data processing. Integrated Apache Kafka for real-time streaming and advanced computer vision for educational insights. Developed distributed architecture supporting scalable image processing and analytics capabilities.",
       technologies: [
@@ -442,6 +449,7 @@ export const DATA = {
       dates: "2023",
       active: true,
       private: true,
+      category: "Web Development",
       description:
         "Engineered comprehensive restaurant management system across web, mobile, and desktop platforms. Built real-time order processing with Laravel WebSocket enabling instant kitchen-server communication. Developed Flutter mobile app for servers, Vue.js admin dashboard, and automated inventory management.",
       technologies: [
@@ -467,6 +475,7 @@ export const DATA = {
       dates: "2023",
       active: true,
       private: false,
+      category: "Web Development",
       description:
         "Developed a robust Rental Management System to streamline the complexities of managing rental properties. The system efficiently handles tenant information, lease agreements, payments, and maintenance requests, ensuring a seamless experience for property owners and tenants alike.",
       technologies: ["Java", "Spring Boot", "Vue.js", "Daisy UI", "MySQL"],
@@ -486,6 +495,7 @@ export const DATA = {
       dates: "2023",
       active: true,
       private: false,
+      category: "Mobile & IoT",
       description:
         "Designed and implemented a user-friendly mobile application that simplifies the often-tedious task of tracking student absences. This intuitive app empowers teachers to efficiently manage attendance records and generate comprehensive reports with ease.",
       technologies: ["Kotlin", "Android", "Firebase", "Figma"],

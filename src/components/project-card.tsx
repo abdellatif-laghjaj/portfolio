@@ -9,7 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { memo } from "react";
+import { memo, useState } from "react";
 import Markdown from "react-markdown";
 
 interface Props {
@@ -44,6 +44,13 @@ export const ProjectCard = memo(function ProjectCard({
   private: isPrivate,
   className,
 }: Props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const isLongDescription = description.length > 50;
+  const displayDescription =
+    isLongDescription && !isExpanded
+      ? `${description.slice(0, 100)}...`
+      : description;
+
   return (
     <Card
       className={
@@ -85,7 +92,20 @@ export const ProjectCard = memo(function ProjectCard({
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
           <div className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            <Markdown>{description}</Markdown>
+            <span className="inline">
+              <Markdown>{displayDescription}</Markdown>
+            </span>
+            {isLongDescription && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsExpanded(!isExpanded);
+                }}
+                className="text-blue-500 hover:underline font-medium ml-1 inline-block"
+              >
+                {isExpanded ? "Read Less" : "Read More"}
+              </button>
+            )}
           </div>
         </div>
       </CardHeader>

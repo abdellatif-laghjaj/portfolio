@@ -1,6 +1,14 @@
 import { DATA } from "@/data/resume";
 import { ProjectCard } from "@/components/project-card";
 import Link from "next/link";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const CATEGORIES = [
+  "All",
+  "AI & Big Data",
+  "Web Development",
+  "Mobile & IoT",
+] as const;
 
 export default function Projects() {
   return (
@@ -20,22 +28,41 @@ export default function Projects() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-          {DATA.projects.map((project, id) => (
-            <ProjectCard
-              href={project.href}
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              dates={project.dates}
-              tags={project.technologies}
-              image={project.image}
-              video={project.video}
-              links={project.links}
-              private={project.private}
-            />
+
+        <Tabs defaultValue="All" className="w-full flex flex-col items-center">
+          <TabsList className="mb-8">
+            {CATEGORIES.map((category) => (
+              <TabsTrigger key={category} value={category}>
+                {category}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          {CATEGORIES.map((category) => (
+            <TabsContent key={category} value={category} className="w-full">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+                {DATA.projects
+                  .filter(
+                    (project) =>
+                      category === "All" || project.category === category,
+                  )
+                  .map((project) => (
+                    <ProjectCard
+                      href={project.href}
+                      key={project.title}
+                      title={project.title}
+                      description={project.description}
+                      dates={project.dates}
+                      tags={project.technologies}
+                      image={project.image}
+                      video={project.video}
+                      links={project.links}
+                      private={project.private}
+                    />
+                  ))}
+              </div>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
 
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full">
           <div className="space-y-3">
