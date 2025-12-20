@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Markdown from "react-markdown";
 
 interface Props {
   title: string;
@@ -40,9 +41,9 @@ export function HackathonCard({
           <p className="text-sm text-muted-foreground">{location}</p>
         )}
         {description && (
-          <span className="prose dark:prose-invert text-sm text-muted-foreground">
-            {description}
-          </span>
+          <div className="prose dark:prose-invert text-pretty font-sans text-xs text-muted-foreground">
+            <Markdown>{description}</Markdown>
+          </div>
         )}
       </div>
       {links && links.length > 0 && (

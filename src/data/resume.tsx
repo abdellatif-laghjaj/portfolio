@@ -185,7 +185,7 @@ export const DATA = {
       start: "February 2025",
       end: "June 2025",
       description:
-        "Built AI-powered team monitoring platform with LLM agents, reducing management effort by 40%.\n- Engineered scalable microservices with Flask and Next.js, achieving 50% faster processing.\n- Led design with SUS score of 77.",
+        "- Built AI-powered team monitoring platform with LLM agents, reducing management effort by 40%.\n- Engineered scalable microservices with Flask and Next.js, achieving 50% faster processing.\n- Led design with SUS score of 77.",
     },
     {
       company: "Haut-Commissariat au Plan",
@@ -197,7 +197,7 @@ export const DATA = {
       start: "August 2024",
       end: "September 2024",
       description:
-        "Managed high-volume demographic data collection ensuring 100% quality compliance.\n- Optimized survey routes, improving coverage efficiency for census operations.",
+        "- Managed high-volume demographic data collection ensuring 100% quality compliance.\n- Optimized survey routes, improving coverage efficiency for census operations.",
     },
     {
       company: "Accesspoint IT Solutions",
@@ -209,7 +209,7 @@ export const DATA = {
       start: "June 2023",
       end: "September 2023",
       description:
-        "Developed multi-platform business management system using Vue.js, Laravel, and MySQL.\n- Collaborated in Agile environment contributing to sprint planning and code reviews.",
+        "- Developed multi-platform business management system using Vue.js, Laravel, and MySQL.\n- Collaborated in Agile environment contributing to sprint planning and code reviews.",
     },
     {
       company: "Accesspoint IT Solutions",
@@ -221,7 +221,7 @@ export const DATA = {
       start: "April 2023",
       end: "June 2023",
       description:
-        "Improved operational efficiency by 25% through a custom restaurant POS system.\n- Implemented seamless Flutter and Vue.js integration with Laravel APIs.",
+        "- Improved operational efficiency by 25% through a custom restaurant POS system.\n\n- Implemented seamless Flutter and Vue.js integration with Laravel APIs.",
     },
   ],
   education: [

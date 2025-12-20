@@ -6,6 +6,7 @@ import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
+import Markdown from "react-markdown";
 import React from "react";
 
 interface ResumeCardProps {
@@ -91,7 +92,11 @@ export const ResumeCard = ({
               isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0",
             )}
           >
-            {description}
+            {description && (
+              <div className="prose dark:prose-invert text-pretty font-sans text-xs text-muted-foreground">
+                <Markdown>{description}</Markdown>
+              </div>
+            )}
           </div>
         </div>
       </Card>
