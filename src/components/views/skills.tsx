@@ -5,8 +5,8 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="flex min-h-0 flex-col gap-y-6">
-        <h2 className="text-xl font-bold tracking-tighter sm:text-3xl">
-          Skills
+        <h2 className="text-xl font-bold tracking-tighter">
+          → Skills
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {Object.entries(DATA.skills).map(
