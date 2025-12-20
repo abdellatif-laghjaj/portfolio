@@ -48,94 +48,68 @@ export const DATA = {
   url: "https://abdellatif.vercel.app/",
   location: "El Guerdane, Taroudant, Morocco",
   locationLink: "https://goo.gl/maps/R89tV652zC8546tQ7",
-  description: "AI Engineer, Software Developer",
+  description:
+    "AI Engineer & Software Developer",
   summary:
-    "AI Engineer and Full-Stack Developer with expertise in machine learning, big data processing, and cloud-native applications. Proven track record of delivering AI-powered DevOps solutions, reducing operational costs by 40% and improving system performance by 50%. Experienced in end-to-end product development from research to deployment across web, mobile, and IoT platforms.",
+    "AI Engineer and Full-Stack Developer building data-driven products. Proven in delivering AI-powered solutions that reduce costs by 40% and boost performance by 50%. Expert in end-to-end development across web, mobile, and IoT.",
   keywords:
     "Abdellatif Laghjaj, Abdellatif, Laghjaj, abdelatif-laghjaj, Abdellatif Laghjaj Portfolio, Abdellatif Laghjaj Blog, Abdellatif Laghjaj Resume, Abdellatif Laghjaj CV, Abdellatif Laghjaj Projects, Abdellatif Laghjaj Contact, Abdellatif Laghjaj About, Abdellatif Laghjaj Home, Abdellatif Laghjaj Skills, Abdellatif Laghjaj Education, Abdellatif Laghjaj Work, AbdelLatif Laghjaj Experience, abdelatif, laghjaj, AI Engineer, Software Developer, Machine Learning, Big Data, Artificial Intelligence, Full Stack Developer, Python, JavaScript, React, Vue.js, Laravel, IoT, Computer Vision, NLP",
   avatarUrl: "/icons/me.webp",
   birthDate: "2002-08-11",
   skills: {
-    programmingLanguages: {
-      label: "Programming Languages",
+    core: {
+      label: "Core Expertise",
       skills: [
+        { name: "AI/ML", icon: <SiTensorflow /> },
+        { name: "Big Data", icon: <SiApachespark /> },
         { name: "Python", icon: <FaPython /> },
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "TypeScript", icon: <SiTypescript /> },
-        { name: "PHP", icon: <FaPhp /> },
-        { name: "SQL", icon: <TbSql /> },
-        { name: "Java", icon: <FaJava /> },
-        { name: "Dart", icon: <SiDart /> },
-        { name: "Kotlin", icon: <SiKotlin /> },
-      ],
-    },
-    frontend: {
-      label: "Frontend Technologies",
-      skills: [
-        { name: "React", icon: <FaReact /> },
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "Vue.js", icon: <FaVuejs /> },
-        { name: "HTML5", icon: <SiHtml5 /> },
-        { name: "CSS3", icon: <SiCss3 /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-        { name: "Bootstrap", icon: <SiBootstrap /> },
-        { name: "Streamlit", icon: <SiStreamlit /> },
-      ],
-    },
-    backend: {
-      label: "Backend & APIs",
-      skills: [
-        { name: "Node.js", icon: <FaNodeJs /> },
-        { name: "Express.js", icon: <SiExpress /> },
-        { name: "Laravel", icon: <SiLaravel /> },
         { name: "FastAPI", icon: <FaPython /> },
-        { name: "Flask", icon: <FaPython /> },
-        { name: "Spring Boot", icon: <SiSpringboot /> },
-      ],
-    },
-    aiMl: {
-      label: "AI/ML Technologies",
-      skills: [
-        { name: "TensorFlow", icon: <SiTensorflow /> },
-        { name: "PyTorch", icon: <SiPytorch /> },
-        { name: "Scikit-Learn", icon: <FaPython /> },
-        { name: "Pandas", icon: <FaPython /> },
-        { name: "NumPy", icon: <FaPython /> },
-        { name: "OpenAI API", icon: <FaPython /> },
         { name: "NLP", icon: <FaPython /> },
         { name: "LLM Agents", icon: <FaPython /> },
       ],
     },
-    databases: {
-      label: "Databases & Cloud",
+    frontend: {
+      label: "Frontend",
       skills: [
-        { name: "PostgreSQL", icon: <SiPostgresql /> },
-        { name: "MySQL", icon: <SiMysql /> },
-        { name: "MongoDB", icon: <SiMongodb /> },
-        { name: "Firebase", icon: <TbBrandFirebase /> },
-        { name: "Supabase", icon: <RiSupabaseLine /> },
-        { name: "Redis", icon: <SiRedis /> },
-        { name: "Oracle Cloud Infrastructure", icon: <FaDatabase /> },
+        { name: "React", icon: <FaReact /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
       ],
     },
-    devops: {
-      label: "DevOps & Big Data",
+    backend: {
+      label: "Backend",
       skills: [
-        { name: "Git/GitHub", icon: <FaGitAlt /> },
+        { name: "Node.js", icon: <FaNodeJs /> },
+        { name: "Laravel", icon: <SiLaravel /> },
+        { name: "FastAPI", icon: <FaPython /> },
+        { name: "Flask", icon: <FaPython /> },
+      ],
+    },
+    database: {
+      label: "Database",
+      skills: [
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "MongoDB", icon: <FaDatabase /> },
+        { name: "Redis", icon: <SiRedis /> },
+      ],
+    },
+    cloud: {
+      label: "DevOps & Cloud",
+      skills: [
         { name: "Docker", icon: <FaDocker /> },
         { name: "Jenkins", icon: <SiJenkins /> },
-        { name: "Linux", icon: <FaLinux /> },
-        { name: "Apache Kafka", icon: <SiApachekafka /> },
-        { name: "Apache Spark", icon: <SiApachespark /> },
-        { name: "Hadoop", icon: <FaDatabase /> },
+        { name: "Git & GitHub", icon: <FaGitAlt /> },
+        { name: "OCI", icon: <FaDatabase /> },
       ],
     },
     mobile: {
-      label: "Mobile Development",
+      label: "Mobile",
       skills: [
         { name: "Flutter", icon: <TbBrandFlutter /> },
-        { name: "React Native", icon: <FaReact /> },
-        { name: "Android", icon: <SiKotlin /> },
+        { name: "Kotlin", icon: <SiKotlin /> },
+        { name: "React Native", icon: <FaJs /> },
       ],
     },
   },
@@ -212,7 +186,7 @@ export const DATA = {
       start: "February 2025",
       end: "June 2025",
       description:
-        "Architected AI-powered team performance monitoring platform with Git, Jenkins, Discord and Google Docs integration. Built LLM agents using OpenAI/Gemini APIs, reducing project management effort by 40%. Engineered scalable microservices with Flask, Next.js, PostgreSQL achieving 50% faster processing. Led end-to-end product development achieving SUS score of 77 through user-centered design.",
+        "Built AI-powered team monitoring platform with LLM agents, reducing management effort by 40%.\n- Engineered scalable microservices with Flask and Next.js, achieving 50% faster processing.\n- Led design with SUS score of 77.",
     },
     {
       company: "Haut-Commissariat au Plan",
@@ -224,7 +198,7 @@ export const DATA = {
       start: "August 2024",
       end: "September 2024",
       description:
-        "Managed high-volume demographic data collection ensuring 100% quality compliance. Optimized survey routes and coordinated with authorities improving coverage efficiency. Collected demographic and socio-economic data from households while ensuring data confidentiality and managing census rounds.",
+        "Managed high-volume demographic data collection ensuring 100% quality compliance.\n- Optimized survey routes, improving coverage efficiency for census operations.",
     },
     {
       company: "Accesspoint IT Solutions",
@@ -236,7 +210,7 @@ export const DATA = {
       start: "June 2023",
       end: "September 2023",
       description:
-        "Developed comprehensive business management system across desktop, mobile, web platforms. Built e-commerce functionality using Vue.js, Laravel, MySQL delivering scalable solutions. Collaborated in Agile environment contributing to sprint planning and code reviews.",
+        "Developed multi-platform business management system using Vue.js, Laravel, and MySQL.\n- Collaborated in Agile environment contributing to sprint planning and code reviews.",
     },
     {
       company: "Accesspoint IT Solutions",
@@ -248,14 +222,14 @@ export const DATA = {
       start: "April 2023",
       end: "June 2023",
       description:
-        "Developed restaurant management and POS system improving operational efficiency by 25%. Implemented Flutter mobile app, Vue.js web interface, Laravel API with seamless integration. Designed real-time inventory tracking and analytics enhancing business intelligence.",
+        "Improved operational efficiency by 25% through a custom restaurant POS system.\n- Implemented seamless Flutter and Vue.js integration with Laravel APIs.",
     },
   ],
   education: [
     {
       school: "Ibn Zohr University, Taroudant",
       href: "http://www.fpt.ac.ma/",
-      degree: "Master of Science in Big Data and Artificial Intelligence",
+      degree: "MS in Big Data and Artificial Intelligence",
       logoUrl: "/icons/fpt.webp",
       start: "2023",
       end: "2025",
@@ -263,18 +237,10 @@ export const DATA = {
     {
       school: "Ibn Zohr University, Taroudant",
       href: "http://www.fpt.ac.ma/",
-      degree: "Bachelor of Science in Computer Engineering",
+      degree: "BS in Computer Engineering",
       logoUrl: "/icons/fpt.webp",
       start: "2020",
       end: "2023",
-    },
-    {
-      school: "El Irfane High School, Sebt El Guerdane",
-      href: "#",
-      degree: "Baccalaureat in Physical and Chemical Sciences",
-      logoUrl: "",
-      start: "2020",
-      end: "2021",
     },
   ],
   projects: [
