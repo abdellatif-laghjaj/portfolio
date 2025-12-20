@@ -48,7 +48,7 @@ export const ProjectCard = memo(function ProjectCard({
   const isLongDescription = description.length > 50;
   const displayDescription =
     isLongDescription && !isExpanded
-      ? `${description.slice(0, 100)}...`
+      ? `${description.slice(0, 200)}...`
       : description;
 
   return (
@@ -92,16 +92,20 @@ export const ProjectCard = memo(function ProjectCard({
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
           <div className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            <span className="inline">
-              <Markdown>{displayDescription}</Markdown>
-            </span>
+            <Markdown
+              components={{
+                p: ({ children }) => <span className="inline">{children}</span>,
+              }}
+            >
+              {displayDescription}
+            </Markdown>
             {isLongDescription && (
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   setIsExpanded(!isExpanded);
                 }}
-                className="text-blue-500 hover:underline font-medium ml-1 inline-block"
+                className="text-blue-500 hover:underline font-medium ml-1 inline"
               >
                 {isExpanded ? "Read Less" : "Read More"}
               </button>
