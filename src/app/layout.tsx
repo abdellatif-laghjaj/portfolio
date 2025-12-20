@@ -4,7 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Merriweather as FontSans, Caveat as FontHandwritten } from "next/font/google";
+import {
+  Merriweather as FontSans,
+  Caveat as FontHandwritten,
+} from "next/font/google";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -66,7 +69,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6 overflow-hidden",
           fontSans.variable,
           fontHandwritten.variable,
         )}
