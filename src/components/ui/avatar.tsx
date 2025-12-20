@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import Image, { type ImageProps } from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -20,16 +21,30 @@ const Avatar = React.forwardRef<
 ));
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
+// ⚡ Bolt: Refactor to use next/image for optimized image loading.
+// The `asChild` prop allows us to compose Radix's Avatar with Next.js's Image component,
+// enabling optimizations like priority loading for LCP elements.
+// The `src` prop is made optional in the type definition to prevent build errors
+// when the image source is undefined, while a runtime check ensures `next/image`
+// only receives a valid `src`.
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={cn("aspect-square h-full w-full", className)}
-    {...props}
-  />
-));
+  Omit<ImageProps, "asChild" | "src"> & { src?: ImageProps["src"] }
+>(({ className, src, ...props }, ref) => {
+  if (!src) {
+    return null;
+  }
+  return (
+    <AvatarPrimitive.Image ref={ref} asChild>
+      <Image
+        className={cn("aspect-square", className)}
+        fill
+        src={src}
+        {...props}
+      />
+    </AvatarPrimitive.Image>
+  );
+});
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const AvatarFallback = React.forwardRef<
