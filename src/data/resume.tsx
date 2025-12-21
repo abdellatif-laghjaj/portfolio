@@ -279,7 +279,7 @@ export const DATA = {
       dates: "2025",
       active: true,
       private: false,
-      category: "Web Dev",
+      category: "Web",
       description:
         "Comprehensive car marketplace web application built with Laravel 11 and Tailwind CSS. Features advanced search & filtering by make, model, year, and location, user authentication, favorites system, and responsive design. Includes image galleries, location-based listings, and soft deletes for safe data management.",
       technologies: [
@@ -449,7 +449,7 @@ export const DATA = {
       dates: "2023",
       active: true,
       private: true,
-      category: "Web Dev",
+      category: "Web",
       description:
         "Engineered comprehensive restaurant management system across web, mobile, and desktop platforms. Built real-time order processing with Laravel WebSocket enabling instant kitchen-server communication. Developed Flutter mobile app for servers, Vue.js admin dashboard, and automated inventory management.",
       technologies: [
@@ -475,7 +475,7 @@ export const DATA = {
       dates: "2023",
       active: true,
       private: false,
-      category: "Web Dev",
+      category: "Web",
       description:
         "Developed a robust Rental Management System to streamline the complexities of managing rental properties. The system efficiently handles tenant information, lease agreements, payments, and maintenance requests, ensuring a seamless experience for property owners and tenants alike.",
       technologies: ["Java", "Spring Boot", "Vue.js", "Daisy UI", "MySQL"],

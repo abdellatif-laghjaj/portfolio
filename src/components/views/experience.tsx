@@ -5,7 +5,7 @@ export default function Experience() {
   return (
     <section id="work">
       <div className="flex min-h-0 flex-col gap-y-3">
-        <h2 className="text-xl font-bold">→ Work Experience</h2>
+        <h2 className="text-xl font-bold">→ Experience</h2>
         {DATA.work.map((work, id) => (
           <ResumeCard
             key={`${work.company}-${work.start}-${id}`}
