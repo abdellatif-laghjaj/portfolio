@@ -15,7 +15,7 @@ export default function Hero() {
             <p className="max-w-[600px] md:text-xl text-foreground/80 font-medium">
               {DATA.description}
             </p>
-            <div className="flex flex-wrap gap-3 pt-4">
+            <div className="flex gap-3 pt-4">
               <Link href="#projects">
                 <Button
                   variant="default"
