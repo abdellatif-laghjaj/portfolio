@@ -39,6 +39,7 @@ export default function Hero() {
               alt={DATA.name}
               src={DATA.avatarUrl}
               className="object-cover"
+              priority
             />
             <AvatarFallback>{DATA.initials}</AvatarFallback>
           </Avatar>

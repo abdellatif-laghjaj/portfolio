@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -20,16 +21,34 @@ const Avatar = React.forwardRef<
 ));
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
+// ⚡ Bolt: Use next/image to optimize LCP
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={cn("aspect-square h-full w-full", className)}
-    {...props}
-  />
-));
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & {
+    priority?: boolean;
+  }
+>(({ className, priority, src, alt, ...props }, ref) => {
+  if (!src || typeof src !== "string") {
+    return null;
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { width, height, ...rest } = props;
+  return (
+    <AvatarPrimitive.Image
+      ref={ref}
+      asChild
+      className={cn("aspect-square h-full w-full", className)}
+    >
+      <Image
+        fill
+        priority={priority}
+        src={src}
+        alt={alt || ""}
+        {...rest}
+      />
+    </AvatarPrimitive.Image>
+  );
+});
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const AvatarFallback = React.forwardRef<
