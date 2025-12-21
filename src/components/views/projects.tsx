@@ -14,12 +14,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-const CATEGORIES = [
-  "All",
-  "AI & Big Data",
-  "Web",
-  "Mobile & IoT",
-] as const;
+const CATEGORIES = ["All", "AI & Big Data", "Web", "Mobile & IoT"] as const;
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] =
