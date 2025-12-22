@@ -1,45 +1,27 @@
 import { Icons } from "@/components/icons";
 import {
-  FaVuejs,
   FaReact,
   FaNodeJs,
   FaDocker,
   FaPython,
   FaJs,
   FaDatabase,
-  FaPhp,
-  FaJava,
   FaGitAlt,
-  FaLinux,
 } from "react-icons/fa";
 import {
-  SiDart,
   SiMysql,
-  SiFigma,
   SiTypescript,
   SiLaravel,
   SiPostgresql,
-  SiMongodb,
   SiKotlin,
   SiTensorflow,
-  SiPytorch,
-  SiApachekafka,
   SiApachespark,
   SiRedis,
-  SiFirebase,
-  SiSupabase,
-  SiHtml5,
-  SiCss3,
   SiTailwindcss,
-  SiBootstrap,
-  SiExpress,
-  SiSpringboot,
   SiJenkins,
-  SiStreamlit,
   SiNextdotjs,
 } from "react-icons/si";
-import { TbBrandFirebase, TbBrandFlutter, TbSql } from "react-icons/tb";
-import { RiSupabaseLine } from "react-icons/ri";
+import { TbBrandFlutter } from "react-icons/tb";
 
 export const DATA = {
   name: "ABDELLATIF LAGHJAJ",

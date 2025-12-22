@@ -1,4 +1,3 @@
-import { DATA } from "@/data/resume";
 
 export const metadata = {
   title: "Page Not Found",

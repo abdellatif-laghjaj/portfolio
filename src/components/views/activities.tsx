@@ -1,5 +1,4 @@
 import { MyStats } from "@/components/my-stats";
-import { DATA } from "@/data/resume";
 
 export default function Activities() {
   return (
