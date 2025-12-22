@@ -226,7 +226,7 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Ibn Zohr University, Taroudant",
+      school: "Ibn Zohr University",
       href: "http://www.fpt.ac.ma/",
       degree: "MS in Big Data and Artificial Intelligence",
       logoUrl: "/icons/fpt.webp",
@@ -234,7 +234,7 @@ export const DATA = {
       end: "2025",
     },
     {
-      school: "Ibn Zohr University, Taroudant",
+      school: "Ibn Zohr University",
       href: "http://www.fpt.ac.ma/",
       degree: "BS in Computer Engineering",
       logoUrl: "/icons/fpt.webp",
