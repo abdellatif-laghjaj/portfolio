@@ -6,7 +6,7 @@ export default function Certifications() {
     <section id="certifications">
       <div className="flex min-h-0 flex-col gap-y-3">
         <h2 className="text-xl font-bold">→ Certifications</h2>
-        {DATA.certifications.map((cert, id) => (
+        {DATA.certifications.map((cert) => (
           <ResumeCard
             key={cert.name}
             href={cert.href}

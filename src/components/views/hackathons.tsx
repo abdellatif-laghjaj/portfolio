@@ -19,7 +19,7 @@ export default function Hackathons() {
           </div>
         </div>
         <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-          {DATA.hackathons.map((project, id) => (
+          {DATA.hackathons.map((project) => (
             <HackathonCard
               key={project.title + project.dates}
               title={project.title}

@@ -19,6 +19,12 @@ const calculateAge = (birthDate: Date) => {
 
 const birthDate = new Date(DATA.birthDate);
 
+interface GithubRepo {
+  stargazers_count: number;
+  forks_count: number;
+  language: string | null;
+}
+
 export function MyStats({ className }: { className?: string }) {
   const [age, setAge] = useState(calculateAge(birthDate));
   const [githubData, setGithubData] = useState({
@@ -56,15 +62,15 @@ export function MyStats({ className }: { className?: string }) {
       .then((response) => response.json())
       .then((data) => {
         const stars = data.reduce(
-          (acc: number, repo: any) => acc + repo.stargazers_count,
+          (acc: number, repo: GithubRepo) => acc + repo.stargazers_count,
           0,
         );
         const forks = data.reduce(
-          (acc: number, repo: any) => acc + repo.forks_count,
+          (acc: number, repo: GithubRepo) => acc + repo.forks_count,
           0,
         );
         const languages = new Set(
-          data.map((repo: any) => repo.language).filter(Boolean),
+          data.map((repo: GithubRepo) => repo.language).filter(Boolean),
         ).size;
 
         setGithubData((prevState) => ({
