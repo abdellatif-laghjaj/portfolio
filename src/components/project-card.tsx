@@ -12,7 +12,6 @@ import Link from "next/link";
 import { memo, useState } from "react";
 import Markdown from "react-markdown";
 import { ProjectModal } from "@/components/project-modal";
-import { Eye } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 import {
@@ -121,13 +120,18 @@ export const ProjectCard = memo(function ProjectCard({
   className,
 }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const truncatedDescription =
-    description.length > 150 ? `${description.slice(0, 150)}...` : description;
+  const [isExpanded, setIsExpanded] = useState(false);
+  const isLongDescription = description.length > 150;
+  const displayDescription =
+    isLongDescription && !isExpanded
+      ? `${description.slice(0, 150)}...`
+      : description;
 
   return (
     <Card
+      onClick={() => setIsModalOpen(true)}
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full cursor-pointer"
       }
     >
       <Link
@@ -170,8 +174,19 @@ export const ProjectCard = memo(function ProjectCard({
                 p: ({ children }) => <span className="inline">{children}</span>,
               }}
             >
-              {truncatedDescription}
+              {displayDescription}
             </Markdown>
+            {isLongDescription && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsExpanded(!isExpanded);
+                }}
+                className="text-primary hover:underline font-medium ml-1 inline"
+              >
+                {isExpanded ? "Read Less" : "Read More"}
+              </button>
+            )}
           </div>
         </div>
       </CardHeader>
@@ -202,19 +217,16 @@ export const ProjectCard = memo(function ProjectCard({
           </TooltipProvider>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2 flex flex-col gap-2">
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="w-full px-3 py-2 text-xs font-medium text-primary border border-primary/20 rounded-md hover:bg-primary/10 transition-colors flex items-center justify-center gap-2"
-        >
-          <Eye className="w-3.5 h-3.5" />
-          View Details
-        </button>
-
+      <CardFooter className="px-2 pb-2">
         {!isPrivate && links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1 w-full">
+          <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
+              <Link
+                href={link?.href}
+                key={idx}
+                target="_blank"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
                   {link.icon}
                   {link.type}

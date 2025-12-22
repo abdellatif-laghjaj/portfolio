@@ -193,7 +193,7 @@ export function ProjectModal({
                     <TooltipTrigger asChild>
                       <Badge
                         variant="secondary"
-                        className="px-3 py-1.5 flex items-center gap-2 hover:bg-primary/10 transition-colors cursor-default"
+                        className="px-3 py-1.5 flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                       >
                         <Icon className="w-3.5 h-3.5" />
                         <span className="text-xs font-medium">{tech}</span>
