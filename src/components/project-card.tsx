@@ -12,6 +12,81 @@ import Link from "next/link";
 import { memo, useState } from "react";
 import Markdown from "react-markdown";
 
+import { Icons } from "@/components/icons";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+const techIconMap: Record<string, keyof typeof Icons> = {
+  python: "python",
+  flask: "flask",
+  "next.js": "nextjs",
+  postgresql: "postgresql",
+  redis: "redis",
+  docker: "docker",
+  jenkins: "jenkins",
+  "openai api": "openai",
+  openai: "openai",
+  "google gemini": "google",
+  "google docs api": "google",
+  "discord api": "discord",
+  "ai/ml": "brain",
+  ai: "brain",
+  ml: "brain",
+  "machine learning": "brain",
+  nlp: "brain",
+  "llm agents": "robot",
+  "dora metrics": "chart",
+  devops: "infinity",
+  laravel: "laravel",
+  php: "php",
+  "tailwind css": "tailwindcss",
+  tailwindcss: "tailwindcss",
+  sqlite: "sqlite",
+  mysql: "mysql",
+  vite: "vite",
+  "pest php": "php",
+  composer: "composer",
+  "apache kafka": "kafka",
+  kafka: "kafka",
+  "apache spark": "spark",
+  spark: "spark",
+  hdfs: "database",
+  hadoop: "hadoop",
+  mongodb: "mongodb",
+  "computer vision": "eye",
+  yolov11: "eye",
+  streamlit: "streamlit",
+  iot: "microchip",
+  esp32: "microchip",
+  "express.js": "express",
+  express: "express",
+  "vue.js": "vue",
+  vue: "vue",
+  flutter: "flutter",
+  dart: "dart",
+  java: "java",
+  "spring boot": "springboot",
+  kotlin: "kotlin",
+  android: "android",
+  firebase: "firebase",
+  figma: "figma",
+  typescript: "typescript",
+  javascript: "javascript",
+  js: "javascript",
+  react: "react",
+  "react native": "react",
+  nodejs: "nodejs",
+  "node.js": "nodejs",
+  "data science": "chart",
+  "big data": "database",
+  git: "git",
+  github: "source",
+};
+
 interface Props {
   title: string;
   href?: string;
@@ -30,7 +105,6 @@ interface Props {
   className?: string;
 }
 
-// ⚡ Bolt: Memoized ProjectCard to prevent unnecessary re-renders
 export const ProjectCard = memo(function ProjectCard({
   title,
   href,
@@ -115,17 +189,29 @@ export const ProjectCard = memo(function ProjectCard({
       </CardHeader>
       <CardContent className="mt-auto flex flex-col px-2">
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
-            {tags?.map((tag) => (
-              <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
-                key={tag}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
+          <TooltipProvider>
+            <div className="mt-2 flex flex-wrap gap-1">
+              {tags?.map((tag) => {
+                const iconKey = techIconMap[tag.toLowerCase()];
+                const Icon = iconKey ? Icons[iconKey] : Icons.terminal;
+
+                return (
+                  <Tooltip key={tag}>
+                    <TooltipTrigger asChild>
+                      <div className="flex items-center justify-center">
+                        <Badge className="p-1" variant="outline">
+                          <Icon className="size-3" />
+                        </Badge>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="text-[10px]">{tag}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              })}
+            </div>
+          </TooltipProvider>
         )}
       </CardContent>
       <CardFooter className="px-2 pb-2">
