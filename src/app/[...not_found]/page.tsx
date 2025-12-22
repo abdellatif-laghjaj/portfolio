@@ -1,4 +1,3 @@
-
 export const metadata = {
   title: "Page Not Found",
   description: "This page does not exist. Please check the URL and try again.",
