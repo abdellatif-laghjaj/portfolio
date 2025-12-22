@@ -48,8 +48,13 @@ function CustomLink({
   return <a href={href} target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props: React.ComponentPropsWithoutRef<typeof Image>) {
-  return <Image className="rounded-lg" {...props} alt="Image" />;
+interface RoundedImageProps
+  extends React.ComponentPropsWithoutRef<typeof Image> {
+  alt: string;
+}
+
+function RoundedImage({ alt, ...props }: RoundedImageProps) {
+  return <Image alt={alt} className="rounded-lg" {...props} />;
 }
 
 // This replaces rehype-slug
