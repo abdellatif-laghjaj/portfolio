@@ -52,12 +52,12 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="space-y-12 w-full py-12">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent">
               Check out my latest work
             </h2>
-            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed animate-slide-up opacity-0 [animation-delay:0.2s]">
               I&apos;ve worked on a variety of projects, from simple websites to
               complex web applications. Here are a few of my favorites.
             </p>

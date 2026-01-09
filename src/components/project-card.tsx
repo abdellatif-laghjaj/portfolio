@@ -128,12 +128,12 @@ export const ProjectCard = memo(function ProjectCard({
   return (
     <Card
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+        "flex flex-col overflow-hidden border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out h-full group"
       }
     >
       <Link
         href={href || "#"}
-        className={cn("block cursor-pointer", className)}
+        className={cn("block cursor-pointer overflow-hidden", className)}
       >
         {video && (
           <video
@@ -142,7 +142,7 @@ export const ProjectCard = memo(function ProjectCard({
             loop
             muted
             playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            className="pointer-events-none mx-auto h-40 w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
           />
         )}
         {image && (
@@ -151,7 +151,7 @@ export const ProjectCard = memo(function ProjectCard({
             alt={title}
             width={400}
             height={200}
-            className="h-40 w-full overflow-hidden object-cover object-top"
+            className="h-40 w-full overflow-hidden object-cover object-top transition-transform duration-300 group-hover:scale-105"
             priority={false}
             unoptimized={false}
             suppressHydrationWarning

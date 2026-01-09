@@ -35,6 +35,7 @@ const Hackathons = dynamic(() => import("@/components/views/hackathons"), {
 export default function Page() {
   return (
     <main className="flex flex-col min-h-dvh space-y-10 relative">
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-background via-background to-muted/20 pointer-events-none" />
       <Suspense fallback={null}>
         {/* Hero */}
         <Hero />
