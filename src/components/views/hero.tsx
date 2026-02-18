@@ -16,7 +16,6 @@ const DECORATIONS = [
   "/images/decorations/mister-fantastic.png",
   "/images/decorations/pink-flowers.png",
   "/images/decorations/sakura-warrior.png",
-  "/images/decorations/shy.png",
   "/images/decorations/skill-issue.png",
   "/images/decorations/soul-leaving-body.png",
   "/images/decorations/the-mark.png",
