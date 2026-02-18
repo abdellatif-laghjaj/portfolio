@@ -34,7 +34,7 @@ export default function Hero() {
         setDecorationIndex((prev) => (prev + 1) % DECORATIONS.length);
         setIsFading(false);
       }, 400);
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
