@@ -48,8 +48,9 @@ function CustomLink({
   return <a href={href} target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-interface RoundedImageProps
-  extends React.ComponentPropsWithoutRef<typeof Image> {
+interface RoundedImageProps extends React.ComponentPropsWithoutRef<
+  typeof Image
+> {
   alt: string;
 }
 
