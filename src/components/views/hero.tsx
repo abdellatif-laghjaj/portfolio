@@ -1,9 +1,45 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { DATA } from "@/data/resume";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
+const DECORATIONS = [
+  "/images/decorations/atlas-guntles.png",
+  "/images/decorations/dark-1.png",
+  "/images/decorations/fire.png",
+  "/images/decorations/hallucination.png",
+  "/images/decorations/katana.png",
+  "/images/decorations/mister-fantastic.png",
+  "/images/decorations/pink-flowers.png",
+  "/images/decorations/sakura-warrior.png",
+  "/images/decorations/shy.png",
+  "/images/decorations/skill-issue.png",
+  "/images/decorations/soul-leaving-body.png",
+  "/images/decorations/the-mark.png",
+  "/images/decorations/thunder.png",
+  "/images/decorations/yunara.png",
+];
+
 export default function Hero() {
+  const [decorationIndex, setDecorationIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setDecorationIndex((prev) => (prev + 1) % DECORATIONS.length);
+        setIsFading(false);
+      }, 400);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="hero">
       <div className="mx-auto w-full max-w-2xl space-y-8">
@@ -34,14 +70,28 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <Avatar className="size-28 border border-gray-300 dark:border-border/20 shrink-0">
-            <AvatarImage
-              alt={DATA.name}
-              src={DATA.avatarUrl}
-              className="object-cover"
-            />
-            <AvatarFallback>{DATA.initials}</AvatarFallback>
-          </Avatar>
+          <div className="relative shrink-0 size-28">
+            <Avatar className="size-28 border border-gray-300 dark:border-border/20">
+              <AvatarImage
+                alt={DATA.name}
+                src={DATA.avatarUrl}
+                className="object-cover"
+              />
+              <AvatarFallback>{DATA.initials}</AvatarFallback>
+            </Avatar>
+            <div
+              className="absolute -inset-3 pointer-events-none transition-opacity duration-400"
+              style={{ opacity: isFading ? 0 : 1 }}
+            >
+              <Image
+                src={DECORATIONS[decorationIndex]}
+                alt="Decoration"
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
