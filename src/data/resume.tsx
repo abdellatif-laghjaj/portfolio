@@ -158,6 +158,18 @@ export const DATA = {
   },
   work: [
     {
+      company: "Domaine DB",
+      href: "#",
+      badges: [],
+      location: "Morocco",
+      title: "Junior ERP Developer and Technical Consultant",
+      logoUrl: "/icons/domaine-db.webp",
+      start: "February 2026",
+      end: "Present",
+      description:
+        "- Developing and implementing ERP solutions to streamline business processes.\n- Providing technical consultation for system optimization and integration.",
+    },
+    {
       company: "IRF-SIC Laboratory",
       href: "https://www.linkedin.com/company/irf-sic/",
       badges: [],
