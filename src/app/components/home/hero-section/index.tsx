@@ -26,7 +26,7 @@ const HeroSection = () => {
         <div className="">
           <div className="w-full h-72">
             <Image
-              src={"/images/hero-sec/banner-bg-img.png"}
+              src={"/images/hero-sec/banner-bg-img.webp"}
               alt="banner-img"
               width={1080}
               height={267}
