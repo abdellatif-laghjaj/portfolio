@@ -1,6 +1,7 @@
 import Divider from "./components/divider";
 import AboutMe from "./components/home/about-me";
 import Education from "./components/home/education";
+import Certifications from "./components/home/certifications";
 import Experience from "./components/home/experience";
 import FeaturedWork from "./components/home/featured-work";
 import HeroSection from "./components/home/hero-section";
@@ -18,6 +19,8 @@ const page = () => {
       <Experience />
       <Divider />
       <Education />
+      <Divider />
+      <Certifications />
       <Divider />
       <ProjectOverview />
       <Divider />

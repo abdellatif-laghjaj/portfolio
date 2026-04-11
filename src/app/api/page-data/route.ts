@@ -63,6 +63,37 @@ const educationData = [
   },
 ];
 
+const certifications = [
+  {
+    name: "OCI 2025 Certified Data Science Professional",
+    issuer: "Oracle",
+    date: "September 2025",
+    href: "#",
+    logoUrl: "/images/icon/oracle.webp",
+  },
+  {
+    name: "Introduction to Artificial Intelligence",
+    issuer: "Simplilearn",
+    date: "December 2024",
+    href: "#",
+    logoUrl: "/images/icon/simplilearn.webp",
+  },
+  {
+    name: "Web Scraping with Beautiful Soup",
+    issuer: "Simplilearn",
+    date: "July 2022",
+    href: "#",
+    logoUrl: "/images/icon/simplilearn.webp",
+  },
+  {
+    name: "Computer Networking Fundamentals",
+    issuer: "Google",
+    date: "December 2021",
+    href: "#",
+    logoUrl: "/images/icon/google.webp",
+  },
+];
+
 const projectOverview = {
   caseStudies: [
     { name: "Wellnest", url: "#" },
@@ -80,6 +111,7 @@ export const GET = async () => {
   return NextResponse.json({
     experienceData,
     educationData,
+    certifications,
     projectOverview,
   });
 };
