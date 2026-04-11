@@ -37,7 +37,7 @@ const HeroSection = () => {
             <div className="relative flex flex-col xs:flex-row items-center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
               <div className="absolute top-0 transform -translate-y-1/2">
                 <Image
-                  src={"/images/hero-sec/user-img.png"}
+                  src={"/images/hero-sec/user-img.jpg"}
                   alt="user-img"
                   width={145}
                   height={145}
