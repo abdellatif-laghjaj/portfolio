@@ -5,14 +5,14 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState, useMemo, memo } from "react";
 
 const DECORATIONS = [
-  "/images/decorations/atlas-guntles.png",
+  "/images/decorations/katana.png",
+  "/images/decorations/sakura-warrior.png",
   "/images/decorations/dark-1.png",
   "/images/decorations/fire.png",
   "/images/decorations/hallucination.png",
-  "/images/decorations/katana.png",
   "/images/decorations/mister-fantastic.png",
   "/images/decorations/pink-flowers.png",
-  "/images/decorations/sakura-warrior.png",
+  "/images/decorations/atlas-guntles.png",
   "/images/decorations/skill-issue.png",
   "/images/decorations/soul-leaving-body.png",
   "/images/decorations/the-mark.png",
