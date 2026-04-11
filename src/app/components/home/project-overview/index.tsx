@@ -50,50 +50,6 @@ const ProjectOverview = () => {
                 })}
               </div>
             </div>
-
-            <div className="flex flex-col xs:flex-row items-start gap-5 xs:gap-10 md:gap-28 lg:gap-5">
-              <p className="max-w-fit lg:max-w-2xs w-full text-sm tracking-[2px] text-primary uppercase font-medium">
-                Side Projects
-              </p>
-              <div className="flex flex-col gap-2.5">
-                {projectData?.sideProjects?.map((value: any, index: any) => {
-                  const isComingSoon = value?.comingSoon;
-
-                  const content = (
-                    <div className="group flex flex-wrap items-center gap-2">
-                      <h4
-                        className={`${isComingSoon ? "text-muted-foreground" : "text-primary"}`}
-                      >
-                        {value?.name}
-                      </h4>
-                      {!isComingSoon ? (
-                        <Image
-                          src={"/images/icon/tile-arrow-icon.svg"}
-                          alt="tile-icon"
-                          width={24}
-                          height={24}
-                          className="group-hover:translate-x-1.5 group-hover:rotate-45 transition-all duration-300 ease-in"
-                        />
-                      ) : (
-                        <div className="py-1.5 px-3 bg-muted rounded-lg">
-                          <p className="text-xs md:text-base font-normal text-muted-foreground">
-                            Coming Soon
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  );
-
-                  return isComingSoon ? (
-                    <div key={index}>{content}</div>
-                  ) : (
-                    <Link key={index} href="/" className="group">
-                      {content}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
           </div>
         </div>
       </div>

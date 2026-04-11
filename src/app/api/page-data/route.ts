@@ -96,14 +96,9 @@ const certifications = [
 
 const projectOverview = {
   caseStudies: [
-    { name: "Wellnest", url: "#" },
-    { name: "ScoutHire", url: "#" },
-  ],
-  sideProjects: [
-    { name: "Formless", url: "#" },
-    { name: "Gridsnap", comingSoon: true },
-    { name: "OrbitPay Mobile App", comingSoon: true },
-    { name: "Siteflow Page Builder", comingSoon: true },
+    { name: "DevOps Monitoring Platform", url: "#" },
+    { name: "Restaurant POS System", url: "#" },
+    { name: "Odoo ERP Migration", url: "#" },
   ],
 };
 
