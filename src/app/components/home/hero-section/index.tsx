@@ -5,19 +5,24 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   const socialIcon = [
     {
+      img: "/images/icon/github-icon.svg",
+      href: "https://github.com/abdellatif-laghjaj",
+      icon: "GitHub",
+    },
+    {
+      img: "/images/icon/linkedin-icon.svg",
+      href: "https://www.linkedin.com/in/abdellatif-laghjaj/",
+      icon: "LinkedIn",
+    },
+    {
       img: "/images/icon/twitter-icon.svg",
       href: "https://www.twitter.com/abdellatif_kira",
       icon: "X",
     },
     {
-      img: "/images/icon/behance-icon.svg",
-      href: "https://github.com/abdellatif-laghjaj",
-      icon: "GitHub",
-    },
-    {
-      img: "/images/icon/dribble-icon.svg",
-      href: "https://www.linkedin.com/in/abdellatif-laghjaj/",
-      icon: "LinkedIn",
+      img: "/images/icon/instagram-icon.svg",
+      href: "https://www.instagram.com/abdellatif.ai/",
+      icon: "Instagram",
     },
   ];
   return (
