@@ -1,11 +1,7 @@
 import AnnouncementBar from "./announcementBar";
 
 const Header = () => {
-  return (
-    <header>
-      <AnnouncementBar />
-    </header>
-  );
+  return <header></header>;
 };
 
 export default Header;

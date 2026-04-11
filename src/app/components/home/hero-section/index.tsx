@@ -1,8 +1,41 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const DECORATIONS = [
+    "/images/decorations/atlas-guntles.png",
+    "/images/decorations/dark-1.png",
+    "/images/decorations/fire.png",
+    "/images/decorations/hallucination.png",
+    "/images/decorations/katana.png",
+    "/images/decorations/mister-fantastic.png",
+    "/images/decorations/pink-flowers.png",
+    "/images/decorations/sakura-warrior.png",
+    "/images/decorations/skill-issue.png",
+    "/images/decorations/soul-leaving-body.png",
+    "/images/decorations/the-mark.png",
+    "/images/decorations/thunder.png",
+    "/images/decorations/yunara.png",
+  ];
+
+  const [decorationIndex, setDecorationIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setDecorationIndex((prev) => (prev + 1) % DECORATIONS.length);
+        setIsFading(false);
+      }, 400);
+    }, 5000); // Change every 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
+
   const socialIcon = [
     {
       img: "/images/icon/github-icon.svg",
@@ -41,14 +74,29 @@ const HeroSection = () => {
           <div className="border-x border-primary/10">
             <div className="relative flex flex-col xs:flex-row items-center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
               <div className="absolute top-0 transform -translate-y-1/2">
-                <Image
-                  src={"/images/hero-sec/user-img.jpg"}
-                  alt="user-img"
-                  width={145}
-                  height={145}
-                  className="border-4 border-white rounded-full"
-                />
-                <span className="absolute bottom-2.5 right-5 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
+                <div className="relative w-[145px] h-[145px]">
+                  <Image
+                    src={"/images/hero-sec/user-img.jpg"}
+                    alt="user-img"
+                    width={145}
+                    height={145}
+                    className="border-4 border-white rounded-full"
+                  />
+                  <span className="absolute bottom-2.5 right-5 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-10" />
+                  {/* Random Decoration */}
+                  <div
+                    className="absolute -inset-8 pointer-events-none transition-opacity duration-400"
+                    style={{ opacity: isFading ? 0 : 1 }}
+                  >
+                    <Image
+                      src={DECORATIONS[decorationIndex]}
+                      alt="Decoration"
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                </div>
               </div>
               <div className="flex flex-col gap-2 sm:gap-3 items-center text-center xs:items-start">
                 <h1>Abdellatif Laghjaj</h1>
