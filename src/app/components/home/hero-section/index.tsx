@@ -85,7 +85,7 @@ const HeroSection = () => {
                   <span className="absolute bottom-2.5 right-5 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-10" />
                   {/* Random Decoration */}
                   <div
-                    className="absolute -inset-8 pointer-events-none transition-opacity duration-400"
+                    className="absolute -inset-4 pointer-events-none transition-opacity duration-400"
                     style={{ opacity: isFading ? 0 : 1 }}
                   >
                     <Image
