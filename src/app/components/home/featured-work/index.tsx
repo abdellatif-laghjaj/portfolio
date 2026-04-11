@@ -1,11 +1,28 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { Button } from "@/components/ui/button";
 
+interface Technology {
+  name: string;
+}
+
+interface FeaturedWorkItem {
+  title: string;
+  href: string;
+  dates: string;
+  category: string;
+  description: string;
+  technologies: string[];
+  image: string;
+}
+
 const FeaturedWork = () => {
-  const [featureWork, setFeatureWork] = useState<any>(null);
+  const [featureWork, setFeatureWork] = useState<FeaturedWorkItem[] | null>(
+    null,
+  );
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,12 +32,31 @@ const FeaturedWork = () => {
         const data = await res.json();
         setFeatureWork(data?.featureWork);
       } catch (error) {
-        console.error("Error fetching services:", error);
+        console.error("Error fetching featured work:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <section>
+        <div className="container">
+          <div className="border-x border-primary/10">
+            <div className="max-w-3xl mx-auto px-4 sm:px-7 py-10">
+              <div className="animate-pulse space-y-4">
+                <div className="h-4 bg-primary/10 rounded w-1/4"></div>
+                <div className="h-64 bg-primary/10 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section>
@@ -39,24 +75,24 @@ const FeaturedWork = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 border-t border-primary/10">
-            {featureWork?.map((value: any, index: number) => {
+            {featureWork?.map((value, index) => {
               const isRightCol = index % 2 === 1;
 
               return (
-                <div
-                  key={index}
+                <article
+                  key={`${value.title}-${index}`}
                   className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? "md:border-l md:border-primary/10" : ""}`}
                 >
                   <Link
                     href={value?.href || "/"}
-                    className="overflow-hidden rounded-lg"
+                    className="overflow-hidden rounded-lg relative aspect-video"
                   >
                     <Image
                       src={value?.image}
                       alt={value?.title}
-                      width={490}
-                      height={300}
-                      className="w-full h-full group-hover:scale-105 transition-all duration-300 ease-in-out"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
                     />
                   </Link>
                   <div className="flex flex-col gap-2 sm:gap-3 px-2">
@@ -79,9 +115,9 @@ const FeaturedWork = () => {
                     <div className="flex flex-wrap gap-2 mt-1">
                       {value?.technologies
                         ?.slice(0, 5)
-                        .map((tech: string, techIndex: number) => (
+                        .map((tech, techIndex) => (
                           <span
-                            key={techIndex}
+                            key={`${tech}-${techIndex}`}
                             className="text-xs px-2 py-1 bg-primary/5 text-primary rounded-md"
                           >
                             {tech}
@@ -94,7 +130,7 @@ const FeaturedWork = () => {
                       )}
                     </div>
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
@@ -104,4 +140,4 @@ const FeaturedWork = () => {
   );
 };
 
-export default FeaturedWork;
+export default memo(FeaturedWork);
