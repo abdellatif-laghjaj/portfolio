@@ -40,29 +40,31 @@ const Certifications = () => {
                     key={index}
                     className="flex flex-col gap-5 border-dashed border-b border-primary/10 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="border border-primary/10 rounded-lg p-2">
-                        <Image
-                          src={cert?.logoUrl}
-                          alt={cert?.issuer}
-                          width={48}
-                          height={48}
-                          className="object-contain"
-                        />
+                    <div className="flex flex-col xs:flex-row items-start xs:items-center gap-4">
+                      <div className="flex items-center gap-4 flex-1 min-w-0">
+                        <div className="border border-primary/10 rounded-lg p-2 shrink-0">
+                          <Image
+                            src={cert?.logoUrl}
+                            alt={cert?.issuer}
+                            width={48}
+                            height={48}
+                            className="object-contain"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <Link
+                            href={cert?.href}
+                            className="hover:text-primary transition-colors"
+                          >
+                            <h5 className="mb-1 break-words">{cert?.name}</h5>
+                          </Link>
+                          <p className="text-sm text-muted-foreground break-words">
+                            {cert?.issuer}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <Link
-                          href={cert?.href}
-                          className="hover:text-primary transition-colors"
-                        >
-                          <h5 className="mb-1">{cert?.name}</h5>
-                        </Link>
-                        <p className="text-sm text-muted-foreground">
-                          {cert?.issuer}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3">
-                        <p className="text-sm xs:text-base text-primary">
+                      <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3 shrink-0">
+                        <p className="text-sm xs:text-base text-primary whitespace-nowrap">
                           {cert?.date}
                         </p>
                       </div>

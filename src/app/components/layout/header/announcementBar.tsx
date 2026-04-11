@@ -9,7 +9,7 @@ const AnnouncementBar = () => {
         </div>
         <div className="relative z-10 container">
           <div className="py-2.5 flex items-center justify-center gap-2">
-            <p className="text-sm sm:text-base text-white">
+            <p className="text-sm sm:text-base text-white text-center break-words px-2">
               From the river to the sea, Palestine will be free. #freepalestine
               🍉
             </p>
