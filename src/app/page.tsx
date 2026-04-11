@@ -1,71 +1,54 @@
-"use client";
-
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
+import Divider from "./components/divider";
+import AboutMe from "./components/home/about-me";
+import Education from "./components/home/education";
+import Certifications from "./components/home/certifications";
+import Experience from "./components/home/experience";
+import FeaturedWork from "./components/home/featured-work";
+import HeroSection from "./components/home/hero-section";
+import ProjectOverview from "./components/home/project-overview";
 
-// Use Next.js dynamic imports for better SSR support
-const Hero = dynamic(() => import("@/components/views/hero"), { ssr: true });
-const About = dynamic(() => import("@/components/views/about"), { ssr: true });
-const Experience = dynamic(() => import("@/components/views/experience"), {
-  ssr: true,
-});
-const Education = dynamic(() => import("@/components/views/education"), {
-  ssr: true,
-});
-const Skills = dynamic(() => import("@/components/views/skills"), {
-  ssr: true,
-});
-const Projects = dynamic(() => import("@/components/views/projects"), {
-  ssr: true,
-});
-const Activities = dynamic(() => import("@/components/views/activities"), {
-  ssr: true,
-});
-const Contact = dynamic(() => import("@/components/views/contact"), {
-  ssr: true,
-});
-const Certifications = dynamic(
-  () => import("@/components/views/certifications"),
-  { ssr: true },
+// Loading fallback component
+const SectionLoader = () => (
+  <div className="container">
+    <div className="border-x border-primary/10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-7 py-10">
+        <div className="animate-pulse space-y-4">
+          <div className="h-4 bg-primary/10 rounded w-1/4"></div>
+          <div className="h-8 bg-primary/10 rounded w-3/4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 );
-const Hackathons = dynamic(() => import("@/components/views/hackathons"), {
-  ssr: true,
-});
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-dvh space-y-10 relative">
-      <Suspense fallback={null}>
-        {/* Hero */}
-        <Hero />
-
-        {/* About */}
-        <About />
-
-        {/* Experience */}
-        <Experience />
-
-        {/* Education */}
-        <Education />
-
-        {/* Skills */}
-        <Skills />
-
-        {/* Projects */}
-        <Projects />
-
-        {/* Certifications */}
-        <Certifications />
-
-        {/* Hackathons */}
-        <Hackathons />
-
-        {/* Activities */}
-        <Activities />
-
-        {/* Contact */}
-        <Contact />
+    <main>
+      <HeroSection />
+      <Divider />
+      <AboutMe />
+      <Divider />
+      <Suspense fallback={<SectionLoader />}>
+        <FeaturedWork />
       </Suspense>
+      <Divider />
+      <Suspense fallback={<SectionLoader />}>
+        <Experience />
+      </Suspense>
+      <Divider />
+      <Suspense fallback={<SectionLoader />}>
+        <Education />
+      </Suspense>
+      <Divider />
+      <Suspense fallback={<SectionLoader />}>
+        <Certifications />
+      </Suspense>
+      <Divider />
+      <Suspense fallback={<SectionLoader />}>
+        <ProjectOverview />
+      </Suspense>
+      <Divider />
     </main>
   );
 }
