@@ -1,71 +1,28 @@
-"use client";
+import Divider from "./components/divider";
+import AboutMe from "./components/home/about-me";
+import Education from "./components/home/education";
+import Experience from "./components/home/experience";
+import FeaturedWork from "./components/home/featured-work";
+import HeroSection from "./components/home/hero-section";
+import ProjectOverview from "./components/home/project-overview";
 
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
-
-// Use Next.js dynamic imports for better SSR support
-const Hero = dynamic(() => import("@/components/views/hero"), { ssr: true });
-const About = dynamic(() => import("@/components/views/about"), { ssr: true });
-const Experience = dynamic(() => import("@/components/views/experience"), {
-  ssr: true,
-});
-const Education = dynamic(() => import("@/components/views/education"), {
-  ssr: true,
-});
-const Skills = dynamic(() => import("@/components/views/skills"), {
-  ssr: true,
-});
-const Projects = dynamic(() => import("@/components/views/projects"), {
-  ssr: true,
-});
-const Activities = dynamic(() => import("@/components/views/activities"), {
-  ssr: true,
-});
-const Contact = dynamic(() => import("@/components/views/contact"), {
-  ssr: true,
-});
-const Certifications = dynamic(
-  () => import("@/components/views/certifications"),
-  { ssr: true },
-);
-const Hackathons = dynamic(() => import("@/components/views/hackathons"), {
-  ssr: true,
-});
-
-export default function Page() {
+const page = () => {
   return (
-    <main className="flex flex-col min-h-dvh space-y-10 relative">
-      <Suspense fallback={null}>
-        {/* Hero */}
-        <Hero />
-
-        {/* About */}
-        <About />
-
-        {/* Experience */}
-        <Experience />
-
-        {/* Education */}
-        <Education />
-
-        {/* Skills */}
-        <Skills />
-
-        {/* Projects */}
-        <Projects />
-
-        {/* Certifications */}
-        <Certifications />
-
-        {/* Hackathons */}
-        <Hackathons />
-
-        {/* Activities */}
-        <Activities />
-
-        {/* Contact */}
-        <Contact />
-      </Suspense>
+    <main>
+      <HeroSection />
+      <Divider />
+      <AboutMe />
+      <Divider />
+      <FeaturedWork />
+      <Divider />
+      <Experience />
+      <Divider />
+      <Education />
+      <Divider />
+      <ProjectOverview />
+      <Divider />
     </main>
   );
-}
+};
+
+export default page;
