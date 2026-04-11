@@ -1,6 +1,6 @@
 # ABDELLATIF LAGHJAJ - Portfolio
 
-Welcome to the official repository for my personal portfolio. I am an **AI Engineer & Software Developer** passionate about building data-driven products and AI-powered solutions.
+Welcome to the official repository for my personal portfolio. I am an **ERP & Software Engineer** passionate about building data-driven products and AI-powered solutions.
 
 [![Website](https://img.shields.io/badge/Website-abdellatif.vercel.app-blue?style=flat-square&logo=vercel)](https://abdellatif.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Abdellatif_Laghjaj-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/abdellatif-laghjaj/)
@@ -12,9 +12,9 @@ This portfolio showcases my professional journey, technical skills, and projects
 
 ### Key Features
 
-- **Dynamic Content**: Powered by a central data structure (`src/data/resume.tsx`) for easy updates.
-- **Modern UI/UX**: Built with Tailwind CSS 4, Framer Motion (inherited components), and Lucide icons.
-- **Optimized Performance**: Leverages Next.js 16 features like App Router, dynamic imports, and Turbopack.
+- **Component-Based Architecture**: Modular sections including Hero, About, Experience, Education, Certifications, and Projects.
+- **Modern UI/UX**: Built with Tailwind CSS 4, Radix UI components, and Lucide icons.
+- **Optimized Performance**: Leverages Next.js 16 features like App Router, Suspense, and Turbopack.
 - **Responsive Design**: Fully mobile-responsive and accessible.
 - **Dark Mode Support**: Seamless theme switching with `next-themes`.
 
@@ -23,24 +23,38 @@ This portfolio showcases my professional journey, technical skills, and projects
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
 - **Library**: [React 19](https://reactjs.org/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)
-- **Typography**: [Geist Sans](https://vercel.com/font)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/), [SVGL React](https://svgl.app/)
+- **Typography**: [Inter](https://fonts.google.com/specimen/Inter)
+- **Markdown**: [React Markdown](https://github.com/remarkjs/react-markdown)
+- **Syntax Highlighting**: [Shiki](https://shiki.style/)
 - **Package Manager**: [Bun](https://bun.sh/)
 - **Deployment**: [Vercel](https://vercel.com/)
 
 ## 📂 Project Structure
 
 ```text
-├── public/          # Static assets (images, icons, etc.)
+├── public/                    # Static assets (images, icons, hackathons, projects)
 ├── src/
-│   ├── app/         # Next.js App Router (pages and layouts)
-│   ├── components/  # Reusable UI components and section views
-│   ├── data/        # Central data store (resume.tsx)
-│   ├── lib/         # Utility functions and shared logic
-│   └── index.css    # Global styles and Tailwind configuration
-├── bun.lock         # Bun lockfile
-├── next.config.mjs  # Next.js configuration
-└── package.json     # Project dependencies and scripts
+│   ├── app/
+│   │   ├── components/        # Layout and page components
+│   │   │   ├── divider/       # Section divider component
+│   │   │   ├── home/          # Home page sections
+│   │   │   │   ├── about-me/
+│   │   │   │   ├── certifications/
+│   │   │   │   ├── education/
+│   │   │   │   ├── experience/
+│   │   │   │   ├── featured-work/
+│   │   │   │   ├── hero-section/
+│   │   │   │   └── project-overview/
+│   │   │   └── layout/        # Header and footer
+│   │   ├── globals.css        # Global styles
+│   │   ├── layout.tsx         # Root layout with metadata
+│   │   └── page.tsx           # Home page
+│   └── lib/                   # Utility functions
+├── bun.lock                   # Bun lockfile
+├── next.config.ts             # Next.js configuration
+└── package.json               # Project dependencies and scripts
 ```
 
 ## 🛠️ Getting Started
@@ -76,10 +90,11 @@ bun run build
 
 ## 👤 About Me
 
-I am an AI Engineer specializing in end-to-end development across web, mobile, and IoT. My expertise includes:
+I am an ERP Engineer and Full-Stack Developer specializing in Odoo migrations, AI-integrated internal tools, and agri-tech systems. My expertise includes:
 
-- **AI/ML**: TensorFlow, PyTorch, LLM Agents, NLP.
-- **Full-Stack**: Next.js, FastAPI, Laravel, Node.js.
+- **ERP Development**: Odoo customization and migrations.
+- **AI/ML**: TensorFlow, PyTorch, LLM Agents, NLP, Computer Vision.
+- **Full-Stack**: Next.js, FastAPI, Laravel, Node.js, React.
 - **Big Data**: Apache Spark, Kafka, Hadoop.
 - **Mobile**: Flutter, React Native, Kotlin.
 
