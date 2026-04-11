@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 const experienceData = [
   {
     icon: "/images/icon/domainedb.jpeg",
-    role: "ERP & Full-Stack Developer, DomaineDB",
+    role: "ERP & Software Engineer, DomaineDB",
     location: "Agadir, Morocco",
-    startYear: "2025",
+    startYear: "Feb 2026",
     endYear: "Present",
     bulletPoints: [
       "Leading Odoo ERP migrations from legacy versions to modern releases, including data integrity validation and custom module adaptation",
