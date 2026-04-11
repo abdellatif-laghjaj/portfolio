@@ -2,17 +2,21 @@ import { Badge } from "@/components/ui/badge";
 
 const AboutMe = () => {
   const servicesBedge = [
-    "Graphic Design",
-    "User Experience",
-    "Mobile App Design",
-    "Brand Identity",
-    "Responsive Design",
-    "Prototyping",
-    "Illustration",
-    "Motion Graphics",
-    "Print Design",
-    "UI Development",
-    "Interactive Media",
+    "AI/ML",
+    "Big Data",
+    "Python",
+    "FastAPI",
+    "NLP",
+    "LLM Agents",
+    "Odoo ERP",
+    "PostgreSQL",
+    "Docker",
+    "React",
+    "Next.js",
+    "Laravel",
+    "Node.js",
+    "Flutter",
+    "Git & GitHub",
   ];
   return (
     <section>
@@ -24,22 +28,24 @@ const AboutMe = () => {
                 About Me
               </p>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px]">
-                Hey there. I'm Elena — UX/UI designer based in Brooklyn,
-                currently{" "}
+                Hey there. I'm Abdellatif — ERP Engineer and Full-Stack
+                Developer based in Agadir, currently{" "}
                 <span className="bg-[linear-gradient(90deg,_rgba(243,202,77,0.4)_0%,_rgba(243,202,77,0.05)_100%)]">
-                  crafting digital products
+                  building AI-powered solutions
                 </span>{" "}
-                at <span className="border-b-2">WrapPixel</span>, a SaaS startup
-                focused on productivity tools.
+                at <span className="border-b-2">DomaineDB</span>, specializing
+                in Odoo migrations and agri-tech systems.
               </h2>
               <h5 className="text-secondary font-normal">
-                Previously at Oak Studio, and creator of DesignKit and
-                MentalWell.
+                I specialize in Odoo ERP migrations, AI-integrated internal
+                tools, and full-stack development with Laravel, React, and
+                Docker — delivering end-to-end solutions that streamline
+                operations and drive real business value.
               </h5>
             </div>
             <div className="flex flex-col gap-4">
               <p className="text-sm text-primary uppercase font-medium">
-                Services
+                Core Skills
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {servicesBedge?.map((value, index) => {

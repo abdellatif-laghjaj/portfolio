@@ -10,8 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Typefolio",
-  description: "Typefolio - Nextjs Templates",
+  title: "Abdellatif Laghjaj - ERP & Software Engineer",
+  description:
+    "ERP Engineer and Full-Stack Developer specializing in Odoo migrations, AI-integrated internal tools, and agri-tech systems. Proven in delivering end-to-end solutions that streamline operations and drive real business value.",
+  keywords:
+    "Abdellatif Laghjaj, Abdellatif, Laghjaj, abdelatif-laghjaj, AI Engineer, ERP Developer, Odoo Developer, Software Developer, Machine Learning, Big Data, Artificial Intelligence, Full Stack Developer, Python, JavaScript, React, Laravel, Odoo, Agriculture Tech, Computer Vision, NLP",
 };
 
 export default function RootLayout({

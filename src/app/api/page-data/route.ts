@@ -2,46 +2,64 @@ import { NextResponse } from "next/server";
 
 const experienceData = [
   {
-    icon: "/images/icon/tailwind-icon.svg",
-    role: "Product Designer, Tailwind",
-    location: "Remote",
-    startYear: "2022",
+    icon: "/images/icon/domainedb.jpeg",
+    role: "ERP & Full-Stack Developer, DomaineDB",
+    location: "Morocco",
+    startYear: "2025",
     endYear: "Present",
     bulletPoints: [
-      "Led end-to-end redesign of dashboard UI, improving user retention by 23%",
-      "Collaborated with engineers and product managers to ship features faster",
-      "Designed components used in a system adopted by 4+ internal teams",
+      "Leading Odoo ERP migrations from legacy versions to modern releases, including data integrity validation and custom module adaptation",
+      "Developing and maintaining internal tools and business software using Laravel, React, Docker, and Redis tailored to agri-business workflows",
+      "Integrating AI capabilities into internal platforms to automate and optimize agricultural operations",
     ],
   },
   {
-    icon: "/images/icon/asana-icon.svg",
-    role: "UI/UX Designer - Asana",
-    location: "New York, NY",
-    startYear: "2019",
-    endYear: "2022",
+    icon: "/images/icon/irf.webp",
+    role: "AI Developer - IRF-SIC Laboratory",
+    location: "Taroudant, Morocco",
+    startYear: "Feb 2025",
+    endYear: "Jun 2025",
     bulletPoints: [
-      "Created design systems for client projects across finance and healthcare",
-      "Conducted user testing and research to validate designs",
-      "Helped junior designers grow via mentorship",
+      "Built AI-powered team monitoring platform with LLM agents, reducing management effort by 40%",
+      "Engineered scalable microservices with Flask and Next.js, achieving 50% faster processing",
+      "Led design with SUS score of 77",
+    ],
+  },
+  {
+    icon: "/images/icon/hcp.webp",
+    role: "Data Enumerator - Haut-Commissariat au Plan",
+    location: "Morocco",
+    startYear: "Aug 2024",
+    endYear: "Sep 2024",
+    bulletPoints: [
+      "Managed high-volume demographic data collection ensuring 100% quality compliance",
+      "Optimized survey routes, improving coverage efficiency for census operations",
+    ],
+  },
+  {
+    icon: "/images/icon/accesspoint.webp",
+    role: "Full Stack Developer Intern - Accesspoint IT Solutions",
+    location: "Taroudant, Morocco",
+    startYear: "Jun 2023",
+    endYear: "Sep 2023",
+    bulletPoints: [
+      "Developed multi-platform business management system using Vue.js, Laravel, and MySQL",
+      "Improved operational efficiency by 25% through a custom restaurant POS system",
+      "Collaborated in Agile environment contributing to sprint planning and code reviews",
     ],
   },
 ];
 
 const educationData = [
   {
-    date: "Sep 2015 - May 2019",
-    title: "B.F.A. in Graphic Design",
-    subtitle: "Pratt Institute — Brooklyn, NY",
+    date: "2023 - 2025",
+    title: "MS in Big Data and Artificial Intelligence",
+    subtitle: "Ibn Zohr University — Taroudant, Morocco",
   },
   {
-    date: "Mar 2021 - Aug 2021",
-    title: "UX Design Certificate",
-    subtitle: "Google UX Design - Coursera",
-  },
-  {
-    date: "Jan 2020 - Mar 2020",
-    title: "Front-End Web Development Bootcamp",
-    subtitle: "General Assembly — New York, NY",
+    date: "2020 - 2023",
+    title: "BS in Computer Engineering",
+    subtitle: "Ibn Zohr University — Taroudant, Morocco",
   },
 ];
 
