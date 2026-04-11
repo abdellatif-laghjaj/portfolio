@@ -39,21 +39,28 @@ const Experience = () => {
                     key={index}
                     className="flex flex-col gap-5 border-dashed border-b border-primary/10 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
                   >
-                    <Image
-                      src={value?.icon}
-                      alt="icon"
-                      width={32}
-                      height={19}
-                    />
-                    <div className="flex flex-wrap gap-5 items-center justify-between">
-                      <h5>{value?.role}</h5>
+                    <div className="flex items-center gap-4">
+                      <div className="border border-primary/10 rounded-lg p-2">
+                        <Image
+                          src={value?.icon}
+                          alt="icon"
+                          width={48}
+                          height={48}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="mb-1">{value?.role}</h5>
+                        <p className="text-sm text-muted-foreground">
+                          {value?.location}
+                        </p>
+                      </div>
                       <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3">
                         <div
                           className={`w-4 h-2 rounded-sm ${value?.endYear == "Present" ? "bg-primary" : "bg-primary/10"} `}
                         />
                         <p className="text-sm xs:text-base text-primary">
-                          {value?.startYear} – {value?.endYear} ·{" "}
-                          {value?.location}
+                          {value?.startYear} – {value?.endYear}
                         </p>
                       </div>
                     </div>

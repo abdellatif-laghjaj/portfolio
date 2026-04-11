@@ -4,7 +4,7 @@ const experienceData = [
   {
     icon: "/images/icon/domainedb.jpeg",
     role: "ERP & Full-Stack Developer, DomaineDB",
-    location: "Morocco",
+    location: "Agadir, Morocco",
     startYear: "2025",
     endYear: "Present",
     bulletPoints: [
@@ -15,7 +15,7 @@ const experienceData = [
   },
   {
     icon: "/images/icon/irf.webp",
-    role: "AI Developer - IRF-SIC Laboratory",
+    role: "AI Developer, IRF-SIC Laboratory",
     location: "Taroudant, Morocco",
     startYear: "Feb 2025",
     endYear: "Jun 2025",
@@ -27,7 +27,7 @@ const experienceData = [
   },
   {
     icon: "/images/icon/hcp.webp",
-    role: "Data Enumerator - Haut-Commissariat au Plan",
+    role: "Data Enumerator, HCP",
     location: "Morocco",
     startYear: "Aug 2024",
     endYear: "Sep 2024",
@@ -38,7 +38,7 @@ const experienceData = [
   },
   {
     icon: "/images/icon/accesspoint.webp",
-    role: "Full Stack Developer Intern - Accesspoint IT Solutions",
+    role: "Full Stack Developer Intern, Accesspoint IT Solutions",
     location: "Taroudant, Morocco",
     startYear: "Jun 2023",
     endYear: "Sep 2023",
