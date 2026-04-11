@@ -47,21 +47,51 @@ const FeaturedWork = () => {
                   key={index}
                   className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? "md:border-l md:border-primary/10" : ""}`}
                 >
-                  <Link href={"/"} className="overflow-hidden">
+                  <Link
+                    href={value?.href || "/"}
+                    className="overflow-hidden rounded-lg"
+                  >
                     <Image
                       src={value?.image}
-                      alt="Image"
+                      alt={value?.title}
                       width={490}
                       height={300}
                       className="w-full h-full group-hover:scale-105 transition-all duration-300 ease-in-out"
                     />
                   </Link>
-                  <div className="flex flex-col gap-1 sm:gap-2 px-2">
-                    <Link href={"/"}>
-                      <h4>{value?.title}</h4>
+                  <div className="flex flex-col gap-2 sm:gap-3 px-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-medium text-primary uppercase tracking-wider">
+                        {value?.category}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        • {value?.dates}
+                      </span>
+                    </div>
+                    <Link href={value?.href || "/"}>
+                      <h4 className="hover:text-primary transition-colors">
+                        {value?.title}
+                      </h4>
                     </Link>
-                    <div className="flex">
-                      <p>{value?.roles?.join(", ")}</p>
+                    <p className="text-sm text-secondary line-clamp-3">
+                      {value?.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      {value?.technologies
+                        ?.slice(0, 5)
+                        .map((tech: string, techIndex: number) => (
+                          <span
+                            key={techIndex}
+                            className="text-xs px-2 py-1 bg-primary/5 text-primary rounded-md"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      {value?.technologies?.length > 5 && (
+                        <span className="text-xs px-2 py-1 text-muted-foreground">
+                          +{value?.technologies?.length - 5} more
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
