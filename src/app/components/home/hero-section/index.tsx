@@ -55,12 +55,13 @@ const HeroSection = () => {
           timeZone: "Africa/Casablanca",
           hour: "2-digit",
           minute: "2-digit",
+          second: "2-digit",
           hour12: true,
         }),
       );
     };
     updateTime();
-    const timeInterval = setInterval(updateTime, 60000);
+    const timeInterval = setInterval(updateTime, 1000);
     return () => clearInterval(timeInterval);
   }, []);
 
