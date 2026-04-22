@@ -46,6 +46,23 @@ const SOCIAL_ICONS = [
 const HeroSection = () => {
   const [decorationIndex, setDecorationIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
+  const [localTime, setLocalTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      setLocalTime(
+        new Date().toLocaleTimeString("en-US", {
+          timeZone: "Africa/Casablanca",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }),
+      );
+    };
+    updateTime();
+    const timeInterval = setInterval(updateTime, 60000);
+    return () => clearInterval(timeInterval);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -118,6 +135,12 @@ const HeroSection = () => {
                     height={20}
                   />
                   <p className="text-primary">Agadir, Morocco</p>
+                  {localTime && (
+                    <>
+                      <span className="text-muted-foreground">·</span>
+                      <p className="text-secondary tabular-nums">{localTime}</p>
+                    </>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-4">
