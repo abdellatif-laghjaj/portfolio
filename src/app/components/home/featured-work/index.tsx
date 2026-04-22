@@ -85,7 +85,7 @@ const FeaturedWork = () => {
                       alt={value?.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300 ease-[cubic-bezier(0.2,0,0,1)] outline outline-1 outline-black/10 dark:outline-white/10"
                     />
                   </Link>
                   <div className="flex flex-col gap-2 sm:gap-3 px-2">

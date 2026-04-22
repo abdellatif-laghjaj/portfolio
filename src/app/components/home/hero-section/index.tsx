@@ -88,12 +88,12 @@ const HeroSection = () => {
                     width={145}
                     height={145}
                     priority
-                    className="border-4 border-white rounded-full"
+                    className="border-4 border-white rounded-full outline outline-1 outline-black/10 dark:outline-white/10"
                   />
                   <span className="absolute bottom-2.5 right-5 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-10" />
                   {/* Random Decoration */}
                   <div
-                    className="absolute -inset-4 pointer-events-none transition-opacity duration-400"
+                    className="absolute -inset-4 pointer-events-none transition-opacity duration-400 ease-[cubic-bezier(0.2,0,0,1)]"
                     style={{ opacity: isFading ? 0 : 1 }}
                   >
                     <Image
@@ -127,7 +127,7 @@ const HeroSection = () => {
                     <Link
                       href={value.href}
                       key={index}
-                      className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/10 rounded-full transition-colors"
+                      className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/10 rounded-full transition-[color,background-color,transform] active:scale-[0.96] min-w-[40px] min-h-[40px] flex items-center justify-center"
                       aria-label={value.icon}
                       target="_blank"
                       rel="noopener noreferrer"

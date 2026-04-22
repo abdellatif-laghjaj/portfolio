@@ -47,6 +47,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -67,31 +69,31 @@ body {
 
 @layer base {
   h1 {
-    @apply text-2xl md:text-3xl lg:text-[32px] font-normal text-primary;
+    @apply text-2xl md:text-3xl lg:text-[32px] font-normal text-primary text-balance;
   }
 
   h2 {
-    @apply text-3xl font-normal text-primary;
+    @apply text-3xl font-normal text-primary text-balance;
   }
 
   h3 {
-    @apply text-2xl font-normal text-primary;
+    @apply text-2xl font-normal text-primary text-balance;
   }
 
   h4 {
-    @apply text-lg sm:text-xl font-medium text-primary;
+    @apply text-lg sm:text-xl font-medium text-primary text-balance;
   }
 
   h5 {
-    @apply text-base sm:text-lg font-medium text-primary;
+    @apply text-base sm:text-lg font-medium text-primary text-balance;
   }
 
   h6 {
-    @apply text-base font-normal text-primary;
+    @apply text-base font-normal text-primary text-balance;
   }
 
   p {
-    @apply text-base font-normal text-secondary;
+    @apply text-base font-normal text-secondary text-pretty;
   }
 }
 

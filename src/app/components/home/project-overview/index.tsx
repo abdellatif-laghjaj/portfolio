@@ -43,7 +43,7 @@ const ProjectOverview = () => {
                         alt="tile-icon"
                         width={24}
                         height={24}
-                        className="group-hover:translate-x-1.5 group-hover:rotate-45 transition-all duration-300 ease-in"
+                        className="group-hover:translate-x-1.5 group-hover:rotate-45 transition-transform duration-300 ease-[cubic-bezier(0.2,0,0,1)]"
                       />
                     </Link>
                   );
