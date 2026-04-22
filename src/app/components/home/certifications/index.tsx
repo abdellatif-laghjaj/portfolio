@@ -1,26 +1,8 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { certifications, type CertificationItem } from "@/lib/data";
 
 const Certifications = () => {
-  const [certifications, setCertifications] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/api/page-data");
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setCertifications(data?.certifications);
-      } catch (error) {
-        console.error("Error fetching certifications:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <section>
       <div className="container">
@@ -34,7 +16,7 @@ const Certifications = () => {
           </div>
           <div className="border-t border-primary/10">
             <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16">
-              {certifications?.map((cert: any, index: any) => {
+              {certifications.map((cert: CertificationItem, index: number) => {
                 return (
                   <div
                     key={index}
@@ -44,8 +26,8 @@ const Certifications = () => {
                       <div className="flex items-center gap-4 flex-1 min-w-0">
                         <div className="border border-primary/10 rounded-lg p-2 shrink-0">
                           <Image
-                            src={cert?.logoUrl}
-                            alt={cert?.issuer}
+                            src={cert.logoUrl}
+                            alt={cert.issuer}
                             width={48}
                             height={48}
                             className="object-contain"
@@ -53,19 +35,19 @@ const Certifications = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <Link
-                            href={cert?.href}
+                            href={cert.href}
                             className="hover:text-primary transition-colors"
                           >
-                            <h5 className="mb-1 break-words">{cert?.name}</h5>
+                            <h5 className="mb-1 break-words">{cert.name}</h5>
                           </Link>
                           <p className="text-sm text-muted-foreground break-words">
-                            {cert?.issuer}
+                            {cert.issuer}
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3 shrink-0">
                         <p className="text-sm xs:text-base text-primary whitespace-nowrap">
-                          {cert?.date}
+                          {cert.date}
                         </p>
                       </div>
                     </div>

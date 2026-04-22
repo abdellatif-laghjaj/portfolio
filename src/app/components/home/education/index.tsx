@@ -1,24 +1,6 @@
-"use client";
-import { useEffect, useState } from "react";
+import { educationData, type EducationItem } from "@/lib/data";
 
 const Education = () => {
-  const [educationData, setEducationData] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/api/page-data");
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setEducationData(data?.educationData);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <section>
       <div className="container">
@@ -36,7 +18,7 @@ const Education = () => {
               <div className="hidden sm:flex absolute left-5 sm:left-[15.9rem] sm:translate-x-1/2 top-0 bottom-0 w-px bg-primary/10" />
 
               <div className="relative">
-                {educationData?.map((item: any, index: any) => (
+                {educationData.map((item: EducationItem, index: number) => (
                   <div
                     key={index}
                     className={`relative flex flex-col sm:flex-row sm:items-start gap-4 ${

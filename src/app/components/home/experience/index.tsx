@@ -1,25 +1,7 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { experienceData, type ExperienceItem } from "@/lib/data";
 
 const Experience = () => {
-  const [experienceData, setExperienceData] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/api/page-data");
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setExperienceData(data?.experienceData);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <section>
       <div className="container">
@@ -33,7 +15,7 @@ const Experience = () => {
           </div>
           <div className="border-t border-primary/10">
             <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16 ">
-              {experienceData?.map((value: any, index: any) => {
+              {experienceData.map((value: ExperienceItem, index: number) => {
                 return (
                   <div
                     key={index}
@@ -43,7 +25,7 @@ const Experience = () => {
                       <div className="flex items-center gap-4 flex-1 min-w-0">
                         <div className="border border-primary/10 rounded-lg p-2 shrink-0">
                           <Image
-                            src={value?.icon}
+                            src={value.icon}
                             alt="icon"
                             width={48}
                             height={48}
@@ -51,35 +33,37 @@ const Experience = () => {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h5 className="mb-1 break-words">{value?.role}</h5>
+                          <h5 className="mb-1 break-words">{value.role}</h5>
                           <p className="text-sm text-muted-foreground break-words">
-                            {value?.location}
+                            {value.location}
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3 shrink-0">
                         <div
-                          className={`w-4 h-2 rounded-sm ${value?.endYear == "Present" ? "bg-primary" : "bg-primary/10"} `}
+                          className={`w-4 h-2 rounded-sm ${value.endYear === "Present" ? "bg-primary" : "bg-primary/10"} `}
                         />
                         <p className="text-sm xs:text-base text-primary whitespace-nowrap">
-                          {value?.startYear} – {value?.endYear}
+                          {value.startYear} – {value.endYear}
                         </p>
                       </div>
                     </div>
                     <ul>
-                      {value?.bulletPoints?.map((point: any, index: any) => {
-                        return (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 text-base font-normal text-secondary"
-                          >
-                            <span className="w-2.5 h-2.5 text-secondary">
-                              •
-                            </span>
-                            {point}
-                          </li>
-                        );
-                      })}
+                      {value.bulletPoints.map(
+                        (point: string, index: number) => {
+                          return (
+                            <li
+                              key={index}
+                              className="flex items-start gap-2 text-base font-normal text-secondary"
+                            >
+                              <span className="w-2.5 h-2.5 text-secondary">
+                                •
+                              </span>
+                              {point}
+                            </li>
+                          );
+                        },
+                      )}
                     </ul>
                   </div>
                 );
