@@ -72,7 +72,7 @@ const HeroSection = () => {
         setDecorationIndex((prev) => (prev + 1) % DECORATIONS.length);
         setIsFading(false);
       }, 400);
-    }, 60000); // Change every 1 minute
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -135,7 +135,7 @@ const HeroSection = () => {
                     width={20}
                     height={20}
                   />
-                  <p className="text-primary">Agadir, Morocco</p>
+                  <p className="text-primary">Morocco</p>
                   {localTime && (
                     <>
                       <span className="text-muted-foreground">·</span>
