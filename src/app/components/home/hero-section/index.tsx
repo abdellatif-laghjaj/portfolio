@@ -101,7 +101,7 @@ const HeroSection = () => {
               <div className="absolute top-0 transform -translate-y-1/2">
                 <div className="relative w-[145px] h-[145px]">
                   <Image
-                    src="/images/hero-sec/user-img.jpg"
+                    src="/images/hero-sec/user-img.png"
                     alt="Abdellatif Laghjaj"
                     width={145}
                     height={145}
