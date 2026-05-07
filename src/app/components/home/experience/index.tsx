@@ -5,7 +5,7 @@ const Experience = () => {
   return (
     <section>
       <div className="container">
-        <div className="border-x border-primary/10">
+        <div className="border-x border-primary/20">
           <div className="flex flex-col max-w-3xl mx-auto py-10 px-4 sm:px-7">
             <div className="flex flex-col xs:flex-row gap-5 items-center justify-between">
               <p className="text-sm tracking-[2px] text-primary uppercase font-medium">
@@ -13,17 +13,17 @@ const Experience = () => {
               </p>
             </div>
           </div>
-          <div className="border-t border-primary/10">
+          <div className="border-t border-primary/20">
             <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16 ">
               {experienceData.map((value: ExperienceItem, index: number) => {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col gap-5 border-dashed border-b border-primary/10 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
+                    className="flex flex-col gap-5 border-dashed border-b border-primary/20 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
                   >
                     <div className="flex flex-col xs:flex-row items-start xs:items-center gap-4">
                       <div className="flex items-center gap-4 flex-1 min-w-0">
-                        <div className="border border-primary/10 rounded-lg p-2 shrink-0">
+                        <div className="border border-primary/20 rounded-lg p-2 shrink-0">
                           <Image
                             src={value.icon}
                             alt="icon"
@@ -39,7 +39,7 @@ const Experience = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3 shrink-0">
+                      <div className="flex items-center gap-2.5 border border-primary/20 rounded-lg py-1.5 px-3 shrink-0">
                         <div
                           className={`w-4 h-2 rounded-sm ${value.endYear === "Present" ? "bg-primary" : "bg-primary/10"} `}
                         />

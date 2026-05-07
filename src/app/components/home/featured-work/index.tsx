@@ -6,20 +6,20 @@ const FeaturedWork = () => {
   return (
     <section>
       <div className="container">
-        <div className="border-x border-primary/10">
+        <div className="border-x border-primary/20">
           <div className="flex flex-col max-w-3xl mx-auto py-10 px-4 sm:px-7">
             <p className="text-sm tracking-[2px] text-primary uppercase font-medium">
               Featured work
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-primary/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-primary/20">
             {featureWork.map((value: FeaturedWorkItem, index: number) => {
               const isRightCol = index % 2 === 1;
 
               return (
                 <article
                   key={`${value.title}-${index}`}
-                  className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? "md:border-l md:border-primary/10" : ""}`}
+                  className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? "md:border-l md:border-primary/20" : ""}`}
                 >
                   <Link
                     href={value.href || "/"}

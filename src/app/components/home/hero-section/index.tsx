@@ -96,7 +96,7 @@ const HeroSection = () => {
               className="object-cover"
             />
           </div>
-          <div className="border-x border-primary/10">
+          <div className="border-x border-primary/20">
             <div className="relative flex flex-col xs:flex-row items-center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
               <div className="absolute top-0 transform -translate-y-1/2">
                 <div className="relative w-[145px] h-[145px]">
@@ -150,7 +150,7 @@ const HeroSection = () => {
                     <Link
                       href={value.href}
                       key={index}
-                      className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/10 rounded-full transition-[color,background-color,transform] active:scale-[0.96] min-w-[40px] min-h-[40px] flex items-center justify-center"
+                      className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/20 rounded-full transition-[color,background-color,transform] active:scale-[0.96] min-w-[40px] min-h-[40px] flex items-center justify-center"
                       aria-label={value.icon}
                       target="_blank"
                       rel="noopener noreferrer"

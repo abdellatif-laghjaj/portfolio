@@ -4,7 +4,7 @@ const Education = () => {
   return (
     <section>
       <div className="container">
-        <div className="border-x border-primary/10">
+        <div className="border-x border-primary/20">
           <div className="flex flex-col max-w-3xl mx-auto py-10 px-4 sm:px-7">
             <div className="flex flex-col xs:flex-row gap-5 items-center justify-between">
               <p className="text-sm tracking-[2px] text-primary uppercase font-medium">
@@ -13,7 +13,7 @@ const Education = () => {
             </div>
           </div>
 
-          <div className="border-t border-primary/10">
+          <div className="border-t border-primary/20">
             <div className="relative max-w-3xl mx-auto px-4 sm:px-0 py-10">
               <div className="hidden sm:flex absolute left-5 sm:left-[15.9rem] sm:translate-x-1/2 top-0 bottom-0 w-px bg-primary/10" />
 
@@ -31,7 +31,7 @@ const Education = () => {
                       </p>
 
                       {/* Bullet Point */}
-                      <div className="absolute left-1.5 sm:left-auto sm:-right-3 top-0 z-10 p-1.5 border border-primary/10 rounded-full bg-white">
+                      <div className="absolute left-1.5 sm:left-auto sm:-right-3 top-0 z-10 p-1.5 border border-primary/20 rounded-full bg-white">
                         <div className="w-3 h-3 bg-primary rounded-full" />
                       </div>
                     </div>
