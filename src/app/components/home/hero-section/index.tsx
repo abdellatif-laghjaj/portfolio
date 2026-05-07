@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState, useMemo, memo } from "react";
+import ThemeToggle from "@/app/components/theme-toggle";
 
 const DECORATIONS = [
   "/images/decorations/katana.png",
@@ -134,6 +134,7 @@ const HeroSection = () => {
                     alt="map-icon"
                     width={20}
                     height={20}
+                    className="dark:invert"
                   />
                   <p className="text-primary">Morocco</p>
                   {localTime && (
@@ -160,28 +161,13 @@ const HeroSection = () => {
                         alt={value.icon}
                         width={18}
                         height={18}
+                        className="dark:invert"
                       />
                     </Link>
                   ))}
                 </div>
-                <Button asChild className="h-auto rounded-full p-0.5!">
-                  <Link
-                    href="mailto:abdelatiflaghjaj@gmail.com"
-                    className="inline-block p-0.5 rounded-full bg-[linear-gradient(96.09deg,#9282F8_12.17%,#F3CA4D_90.71%)]"
-                  >
-                    <span className="flex items-center gap-3 bg-primary hover:bg-[linear-gradient(96.09deg,#9282F8_12.17%,#F3CA4D_90.71%)] py-2.5 px-5 rounded-full transition-colors">
-                      <Image
-                        src="/images/icon/spark-icon.svg"
-                        alt="spark-icon"
-                        width={14}
-                        height={14}
-                      />
-                      <span className="text-sm sm:text-base font-semibold text-white">
-                        Get in touch
-                      </span>
-                    </span>
-                  </Link>
-                </Button>
+                <div className="w-px h-6 bg-primary/20" />
+                <ThemeToggle />
               </div>
             </div>
           </div>

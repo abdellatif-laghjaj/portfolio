@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
@@ -62,9 +63,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
