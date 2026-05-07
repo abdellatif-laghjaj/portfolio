@@ -31,7 +31,7 @@ const Education = () => {
                       </p>
 
                       {/* Bullet Point */}
-                      <div className="absolute left-1.5 sm:left-auto sm:-right-3 top-0 z-10 p-1.5 border border-primary/20 rounded-full bg-white">
+                      <div className="absolute left-1.5 sm:left-auto sm:-right-3 top-0 z-10 p-1.5 border border-primary/20 rounded-full bg-background">
                         <div className="w-3 h-3 bg-primary rounded-full" />
                       </div>
                     </div>
