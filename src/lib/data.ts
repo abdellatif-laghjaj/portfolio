@@ -9,18 +9,18 @@ export interface ExperienceItem {
 }
 
 export const experienceData: ExperienceItem[] = [
-  {
-    icon: "/images/icon/domainedb.jpeg",
-    role: "ERP & Software Engineer, DomaineDB",
-    location: "Agadir, Morocco",
-    startYear: "Feb 2026",
-    endYear: "Present",
-    bulletPoints: [
-      "Leading Odoo ERP migrations from legacy versions to modern releases, including data integrity validation and custom module adaptation",
-      "Developing and maintaining internal tools and business software using Laravel, React, Docker, and Redis tailored to agri-business workflows",
-      "Integrating AI capabilities into internal platforms to automate and optimize agricultural operations",
-    ],
-  },
+  // {
+  //   icon: "/images/icon/domainedb.jpeg",
+  //   role: "ERP & Software Engineer, DomaineDB",
+  //   location: "Agadir, Morocco",
+  //   startYear: "Feb 2026",
+  //   endYear: "Present",
+  //   bulletPoints: [
+  //     "Leading Odoo ERP migrations from legacy versions to modern releases, including data integrity validation and custom module adaptation",
+  //     "Developing and maintaining internal tools and business software using Laravel, React, Docker, and Redis tailored to agri-business workflows",
+  //     "Integrating AI capabilities into internal platforms to automate and optimize agricultural operations",
+  //   ],
+  // },
   {
     icon: "/images/icon/irf.webp",
     role: "AI Developer, IRF-SIC Laboratory",

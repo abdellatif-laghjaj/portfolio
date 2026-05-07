@@ -27,14 +27,29 @@ const AboutMe = () => {
               <p className="text-sm tracking-[2px] text-primary uppercase font-medium">
                 About Me
               </p>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px]">
-                Hey there. I'm Abdellatif — ERP Engineer and Full-Stack
-                Developer based in Agadir, currently{" "}
-                <span className="bg-[linear-gradient(90deg,_rgba(243,202,77,0.4)_0%,_rgba(243,202,77,0.05)_100%)]">
+              {/*<h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px]">
+                Hey there. I&apos;m Abdellatif — ERP Engineer and Full-Stack
+                Developer, currently{" "}
+                <span className="bg-[linear-gradient(90deg,rgba(243,202,77,0.4)_0%,rgba(243,202,77,0.05)_100%)]">
                   building AI-powered solutions
                 </span>{" "}
                 at <span className="border-b-2">DomaineDB</span>, specializing
                 in Odoo migrations and agri-tech systems.
+              </h2>
+              <h5 className="text-secondary font-normal">
+                I specialize in Odoo ERP migrations, AI-integrated internal
+                tools, and full-stack development with Laravel, React, and
+                Docker — delivering end-to-end solutions that streamline
+                operations and drive real business value.
+              </h5>*/}
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px]">
+                Hey there. I&apos;m Abdellatif — ERP Engineer and Full-Stack
+                Developer, currently{" "}
+                <span className="bg-[linear-gradient(90deg,rgba(243,202,77,0.4)_0%,rgba(243,202,77,0.05)_100%)]">
+                  building AI-powered solutions
+                </span>{" "}
+                at <span className="border-b-2">Unknown</span>, specializing in
+                Odoo migrations and agri-tech systems.
               </h2>
               <h5 className="text-secondary font-normal">
                 I specialize in Odoo ERP migrations, AI-integrated internal
