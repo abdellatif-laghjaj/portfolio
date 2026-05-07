@@ -145,7 +145,7 @@ const HeroSection = () => {
                   )}
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center gap-4">
+              <div className="flex flex-row items-center gap-4">
                 <div className="flex items-center gap-2">
                   {SOCIAL_ICONS.map((value, index) => (
                     <Link
