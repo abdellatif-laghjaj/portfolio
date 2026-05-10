@@ -12,6 +12,11 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/contribution-graph";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function GitHubContributions({
   contributions,
@@ -37,13 +42,23 @@ export function GitHubContributions({
         className="w-full"
       >
         {({ activity, dayIndex, weekIndex }) => (
-          <g>
-            <ContributionGraphBlock
-              activity={activity}
-              dayIndex={dayIndex}
-              weekIndex={weekIndex}
-            />
-          </g>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <g>
+                <ContributionGraphBlock
+                  activity={activity}
+                  dayIndex={dayIndex}
+                  weekIndex={weekIndex}
+                />
+              </g>
+            </TooltipTrigger>
+            <TooltipContent className="[&_p]:text-inherit">
+              <p>
+                {activity.count} contribution{activity.count !== 1 ? "s" : ""}{" "}
+                on {format(new Date(activity.date), "MMM dd, yyyy")}
+              </p>
+            </TooltipContent>
+          </Tooltip>
         )}
       </ContributionGraphCalendar>
 

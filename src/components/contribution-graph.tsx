@@ -391,7 +391,7 @@ export const ContributionGraphCalendar = ({
       >
         <title>{title}</title>
         {!hideMonthLabels && (
-          <g className="fill-current selection:fill-selection-foreground">
+          <g className="fill-foreground text-sm">
             {monthLabels.map(({ label, weekIndex }) => (
               <text
                 dominantBaseline="hanging"
