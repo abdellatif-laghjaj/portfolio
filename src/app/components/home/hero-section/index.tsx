@@ -99,14 +99,14 @@ const HeroSection = () => {
           <div className="border-x border-primary/20">
             <div className="relative flex flex-col xs:flex-row items-center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
               <div className="absolute top-0 transform -translate-y-1/2">
-                <div className="relative w-[145px] h-[145px]">
+                <div className="relative w-36.2 h-36.2">
                   <Image
                     src="/images/hero-sec/user-img.jpg"
                     alt="Abdellatif Laghjaj"
                     width={145}
                     height={145}
                     priority
-                    className="border-4 border-white rounded-full outline outline-1 outline-black/10 dark:outline-white/10"
+                    className="border-4 border-white rounded-full outline outline-black/10 dark:outline-white/10"
                   />
                   {/* Random Decoration */}
                   <div
@@ -125,7 +125,7 @@ const HeroSection = () => {
               </div>
               <div className="flex flex-col gap-2 sm:gap-3 items-center text-center xs:items-start">
                 <h1>Abdellatif Laghjaj</h1>
-                <p className="text-violet-700 font-normal">
+                <p className="text-orange-700 font-normal">
                   ERP & Software Engineer
                 </p>
                 <div className="flex items-center gap-2">
