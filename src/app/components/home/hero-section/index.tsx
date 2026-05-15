@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useMemo, memo } from "react";
+import { useEffect, useReducer, useState, useMemo, memo } from "react";
 import ThemeToggle from "@/app/components/theme-toggle";
 
 const DECORATIONS = [
@@ -43,9 +43,35 @@ const SOCIAL_ICONS = [
   },
 ] as const;
 
+type DecorationState = {
+  decorationIndex: number;
+  isFading: boolean;
+};
+
+type DecorationAction = { type: "START_FADE" } | { type: "COMPLETE_FADE" };
+
+const decorationReducer = (
+  state: DecorationState,
+  action: DecorationAction,
+): DecorationState => {
+  switch (action.type) {
+    case "START_FADE":
+      return { ...state, isFading: true };
+    case "COMPLETE_FADE":
+      return {
+        decorationIndex: (state.decorationIndex + 1) % DECORATIONS.length,
+        isFading: false,
+      };
+    default:
+      return state;
+  }
+};
+
 const HeroSection = () => {
-  const [decorationIndex, setDecorationIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
+  const [decorationState, dispatch] = useReducer(decorationReducer, {
+    decorationIndex: 0,
+    isFading: false,
+  });
   const [localTime, setLocalTime] = useState("");
 
   useEffect(() => {
@@ -67,10 +93,9 @@ const HeroSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsFading(true);
+      dispatch({ type: "START_FADE" });
       setTimeout(() => {
-        setDecorationIndex((prev) => (prev + 1) % DECORATIONS.length);
-        setIsFading(false);
+        dispatch({ type: "COMPLETE_FADE" });
       }, 400);
     }, 10000);
 
@@ -78,8 +103,8 @@ const HeroSection = () => {
   }, []);
 
   const currentDecoration = useMemo(
-    () => DECORATIONS[decorationIndex],
-    [decorationIndex],
+    () => DECORATIONS[decorationState.decorationIndex],
+    [decorationState.decorationIndex],
   );
 
   return (
@@ -99,7 +124,7 @@ const HeroSection = () => {
           <div className="border-x border-primary/20">
             <div className="relative flex flex-col xs:flex-row items-center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
               <div className="absolute top-0 transform -translate-y-1/2">
-                <div className="relative w-36.2 h-36.2">
+                <div className="relative size-36.2">
                   <Image
                     src="/images/hero-sec/user-img.jpg"
                     alt="Abdellatif Laghjaj"
@@ -111,12 +136,13 @@ const HeroSection = () => {
                   {/* Random Decoration */}
                   <div
                     className="absolute -inset-4 pointer-events-none transition-opacity duration-400 ease-[cubic-bezier(0.2,0,0,1)]"
-                    style={{ opacity: isFading ? 0 : 1 }}
+                    style={{ opacity: decorationState.isFading ? 0 : 1 }}
                   >
                     <Image
                       src={currentDecoration}
                       alt="Decoration"
                       fill
+                      sizes="145px"
                       className="object-contain"
                       unoptimized
                     />
@@ -147,10 +173,10 @@ const HeroSection = () => {
               </div>
               <div className="flex flex-row items-center gap-4">
                 <div className="flex items-center gap-2">
-                  {SOCIAL_ICONS.map((value, index) => (
+                  {SOCIAL_ICONS.map((value) => (
                     <Link
                       href={value.href}
-                      key={index}
+                      key={value.icon}
                       className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/20 rounded-full transition-[color,background-color,transform] active:scale-[0.96] min-w-[40px] min-h-[40px] flex items-center justify-center"
                       aria-label={value.icon}
                       target="_blank"

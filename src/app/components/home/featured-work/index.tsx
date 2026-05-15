@@ -18,7 +18,7 @@ const FeaturedWork = () => {
 
               return (
                 <article
-                  key={`${value.title}-${index}`}
+                  key={value.title}
                   className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? "md:border-l md:border-primary/20" : ""}`}
                 >
                   <Link
@@ -55,7 +55,7 @@ const FeaturedWork = () => {
                         .slice(0, 5)
                         .map((tech: string, techIndex: number) => (
                           <span
-                            key={`${tech}-${techIndex}`}
+                            key={tech}
                             className="text-xs px-2 py-1 bg-primary/5 text-primary rounded-md"
                           >
                             {tech}

@@ -53,7 +53,7 @@ export function GitHubContributions({
               </g>
             </TooltipTrigger>
             <TooltipContent className="[&_p]:text-inherit">
-              <p>
+              <p suppressHydrationWarning>
                 {activity.count} contribution{activity.count !== 1 ? "s" : ""}{" "}
                 on {format(new Date(activity.date), "MMM dd, yyyy")}
               </p>
@@ -89,7 +89,7 @@ export function GitHubContributions({
 export function GitHubContributionsFallback() {
   return (
     <div className="flex h-40 w-full items-center justify-center">
-      <div className="text-muted-foreground">Loading contributions...</div>
+      <div className="text-muted-foreground">Loading contributions…</div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ const Experience = () => {
               {experienceData.map((value: ExperienceItem, index: number) => {
                 return (
                   <div
-                    key={index}
+                    key={value.role}
                     className="flex flex-col gap-5 border-dashed border-b border-primary/20 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
                   >
                     <div className="flex flex-col xs:flex-row items-start xs:items-center gap-4">
@@ -53,12 +53,10 @@ const Experience = () => {
                         (point: string, index: number) => {
                           return (
                             <li
-                              key={index}
+                              key={point}
                               className="flex items-start gap-2 text-base font-normal text-secondary"
                             >
-                              <span className="w-2.5 h-2.5 text-secondary">
-                                •
-                              </span>
+                              <span className="size-2.5 text-secondary">•</span>
                               {point}
                             </li>
                           );

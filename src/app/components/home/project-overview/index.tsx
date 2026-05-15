@@ -17,7 +17,7 @@ const ProjectOverview = () => {
                   (value: CaseStudy, index: number) => {
                     return (
                       <Link
-                        key={index}
+                        key={value.name}
                         href={value.url}
                         className="group flex items-center gap-2"
                       >

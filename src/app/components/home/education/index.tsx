@@ -20,7 +20,7 @@ const Education = () => {
               <div className="relative">
                 {educationData.map((item: EducationItem, index: number) => (
                   <div
-                    key={index}
+                    key={item.title}
                     className={`relative flex flex-col sm:flex-row sm:items-start gap-4 ${
                       index !== educationData.length - 1 ? "mb-8 sm:mb-16" : ""
                     }`}
@@ -32,7 +32,7 @@ const Education = () => {
 
                       {/* Bullet Point */}
                       <div className="absolute left-1.5 sm:left-auto sm:-right-3 top-0 z-10 p-1.5 border border-primary/20 rounded-full bg-background">
-                        <div className="w-3 h-3 bg-primary rounded-full" />
+                        <div className="size-3 bg-primary rounded-full" />
                       </div>
                     </div>
 

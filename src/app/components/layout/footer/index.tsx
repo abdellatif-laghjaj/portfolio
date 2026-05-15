@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="border-x border-primary/20">
           <div className="max-w-3xl mx-auto  gap-10 sm:gap-16 px-4 sm:px-7 py-4 md:py-7">
-            <p>2026 © Abdellatif Laghjaj — All rights reserved</p>
+            <p>2026 © Abdellatif Laghjaj · All rights reserved</p>
             <p>
               ERP & Software Engineer ·{" "}
               <Link

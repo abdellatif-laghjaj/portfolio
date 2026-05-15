@@ -28,7 +28,7 @@ const AboutMe = () => {
                 About Me
               </p>
               {/*<h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px]">
-                Hey there. I&apos;m Abdellatif — ERP Engineer and Full-Stack
+                Hey there. I&apos;m Abdellatif: ERP Engineer and Full-Stack
                 Developer, currently{" "}
                 <span className="bg-[linear-gradient(90deg,rgba(243,202,77,0.4)_0%,rgba(243,202,77,0.05)_100%)]">
                   building AI-powered solutions
@@ -39,11 +39,11 @@ const AboutMe = () => {
               <h5 className="text-secondary font-normal">
                 I specialize in Odoo ERP migrations, AI-integrated internal
                 tools, and full-stack development with Laravel, React, and
-                Docker — delivering end-to-end solutions that streamline
+                Docker: delivering end-to-end solutions that streamline
                 operations and drive real business value.
               </h5>*/}
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px]">
-                Hey there. I&apos;m Abdellatif — ERP Engineer and Full-Stack
+                Hey there. I&apos;m Abdellatif: ERP Engineer and Full-Stack
                 Developer, currently{" "}
                 <span className="bg-[linear-gradient(90deg,rgba(243,202,77,0.4)_0%,rgba(243,202,77,0.05)_100%)]">
                   building AI-powered solutions
@@ -54,7 +54,7 @@ const AboutMe = () => {
               <h5 className="text-secondary font-normal">
                 I specialize in Odoo ERP migrations, AI-integrated internal
                 tools, and full-stack development with Laravel, React, and
-                Docker — delivering end-to-end solutions that streamline
+                Docker: delivering end-to-end solutions that streamline
                 operations and drive real business value.
               </h5>
             </div>
@@ -63,11 +63,11 @@ const AboutMe = () => {
                 Core Skills
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
-                {servicesBedge?.map((value, index) => {
+                {servicesBedge?.map((value) => {
                   return (
                     <Badge
                       variant={"outline"}
-                      key={index}
+                      key={value}
                       className="py-1.5 px-3 rounded-lg"
                     >
                       <p className="text-xs sm:text-sm font-medium text-primary">

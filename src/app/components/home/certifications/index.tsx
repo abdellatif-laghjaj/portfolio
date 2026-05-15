@@ -19,7 +19,7 @@ const Certifications = () => {
               {certifications.map((cert: CertificationItem, index: number) => {
                 return (
                   <div
-                    key={index}
+                    key={cert.name}
                     className="flex flex-col gap-5 border-dashed border-b border-primary/20 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
                   >
                     <div className="flex flex-col xs:flex-row items-start xs:items-center gap-4">

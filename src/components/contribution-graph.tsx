@@ -18,7 +18,7 @@ import {
   Fragment,
   type HTMLAttributes,
   type ReactNode,
-  useContext,
+  use,
   useMemo,
 } from "react";
 
@@ -72,6 +72,8 @@ const DEFAULT_LABELS: Labels = {
   },
 };
 
+const EMPTY_STYLE: CSSProperties = {};
+
 const THEME = cn(
   'data-[level="0"]:fill-muted-foreground/5',
   'data-[level="1"]:fill-muted-foreground/20',
@@ -101,7 +103,7 @@ const ContributionGraphContext =
   createContext<ContributionGraphContextType | null>(null);
 
 const useContributionGraph = () => {
-  const context = useContext(ContributionGraphContext);
+  const context = use(ContributionGraphContext);
 
   if (!context) {
     throw new Error(
@@ -117,7 +119,7 @@ const fillHoles = (activities: Activity[]): Activity[] => {
     return [];
   }
 
-  const sortedActivities = [...activities].sort((a, b) =>
+  const sortedActivities = activities.toSorted((a, b) =>
     a.date.localeCompare(b.date),
   );
 
@@ -253,7 +255,7 @@ export const ContributionGraph = ({
   fontSize = 14,
   labels: labelsProp = undefined,
   maxLevel: maxLevelProp = 4,
-  style = {},
+  style = EMPTY_STYLE,
   totalCount: totalCountProp = undefined,
   weekStart = 0,
   className,
