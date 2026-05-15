@@ -52,8 +52,8 @@ export function GitHubContributions({
                 />
               </g>
             </TooltipTrigger>
-            <TooltipContent className="[&_p]:text-inherit">
-              <p suppressHydrationWarning>
+            <TooltipContent className="[&_p]:text-inherit" suppressHydrationWarning>
+              <p>
                 {activity.count} contribution{activity.count !== 1 ? "s" : ""}{" "}
                 on {format(new Date(activity.date), "MMM dd, yyyy")}
               </p>
