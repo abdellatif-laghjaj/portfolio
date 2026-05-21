@@ -62,6 +62,7 @@ const ClickSpark = ({
 
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
+    const container = containerRef.current;
     if (!canvas) {
       frameRef.current = null;
       return;
@@ -77,10 +78,14 @@ const ClickSpark = ({
     const { width, height } = sizeRef.current;
     const dpr = dprRef.current;
     const ease = easingMap[easing];
+    const resolvedSparkColor =
+      sparkColor === "currentColor" && container
+        ? window.getComputedStyle(container).color
+        : sparkColor;
     const activeSparks: Spark[] = [];
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = sparkColor;
+    ctx.strokeStyle = resolvedSparkColor;
     ctx.lineCap = "round";
     ctx.lineWidth = 2 * dpr;
 
