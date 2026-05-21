@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
+import ClickSpark from "@/components/ui/click-spark";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({
@@ -69,11 +70,13 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
         >
-          <TooltipProvider>
-            <Header />
-            {children}
-            <Footer />
-          </TooltipProvider>
+          <ClickSpark>
+            <TooltipProvider>
+              <Header />
+              {children}
+              <Footer />
+            </TooltipProvider>
+          </ClickSpark>
         </ThemeProvider>
       </body>
     </html>
