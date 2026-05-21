@@ -20,7 +20,9 @@ interface Spark {
   startTime: number;
 }
 
+// Controls how quickly spark tails shrink from start to end of the animation.
 const SPARK_LENGTH_DECAY_FACTOR = 0.55;
+const SPARK_LINE_WIDTH = 2;
 
 const easingMap: Record<NonNullable<ClickSparkProps["easing"]>, (t: number) => number> = {
   linear: (t) => t,
@@ -89,7 +91,7 @@ const ClickSpark = ({
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = resolvedSparkColor;
     ctx.lineCap = "round";
-    ctx.lineWidth = 2 * dpr;
+    ctx.lineWidth = SPARK_LINE_WIDTH * dpr;
 
     for (const spark of sparksRef.current) {
       const elapsed = now - spark.startTime;
