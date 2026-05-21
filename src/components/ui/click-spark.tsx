@@ -20,6 +20,8 @@ interface Spark {
   startTime: number;
 }
 
+const SPARK_LENGTH_DECAY_FACTOR = 0.55;
+
 const easingMap: Record<NonNullable<ClickSparkProps["easing"]>, (t: number) => number> = {
   linear: (t) => t,
   "ease-in": (t) => t * t,
@@ -96,7 +98,7 @@ const ClickSpark = ({
 
       const eased = ease(progress);
       const distance = eased * sparkRadius * extraScale;
-      const length = sparkSize * (1 - progress * 0.55) * extraScale;
+      const length = sparkSize * (1 - progress * SPARK_LENGTH_DECAY_FACTOR) * extraScale;
       const alpha = 1 - progress;
       const cos = Math.cos(spark.angle);
       const sin = Math.sin(spark.angle);
@@ -176,7 +178,7 @@ const ClickSpark = ({
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10"
+        className="pointer-events-none absolute inset-0"
       />
     </div>
   );
