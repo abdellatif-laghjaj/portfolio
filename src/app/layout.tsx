@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ClickSpark from "@/components/ui/click-spark";
 
 const inter = Inter({
   variable: "--font-inter-sans",
@@ -70,9 +71,19 @@ export default function RootLayout({
           enableSystem={false}
         >
           <TooltipProvider>
-            <Header />
-            {children}
-            <Footer />
+            <ClickSpark
+              sparkColor="currentColor"
+              sparkSize={9}
+              sparkRadius={22}
+              sparkCount={9}
+              duration={480}
+              easing="ease-out"
+              extraScale={1}
+            >
+              <Header />
+              {children}
+              <Footer />
+            </ClickSpark>
           </TooltipProvider>
         </ThemeProvider>
       </body>
