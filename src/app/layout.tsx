@@ -78,7 +78,6 @@ export default function RootLayout({
               sparkCount={9}
               duration={480}
               easing="ease-out"
-              extraScale={1}
             >
               <Header />
               {children}
