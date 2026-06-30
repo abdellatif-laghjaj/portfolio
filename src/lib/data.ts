@@ -14,7 +14,7 @@ export const experienceData: ExperienceItem[] = [
     role: "ERP & Software Engineer, DomaineDB",
     location: "Agadir, Morocco",
     startYear: "Feb 2026",
-    endYear: "Present",
+    endYear: "Jul 2026",
     bulletPoints: [
       "Leading Odoo ERP migrations from legacy versions to modern releases, including data integrity validation and custom module adaptation",
       "Developing and maintaining internal tools and business software using Laravel, React, Docker, and Redis tailored to agri-business workflows",
