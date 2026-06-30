@@ -13,7 +13,7 @@ This portfolio showcases my professional journey, technical skills, and projects
 ### Key Features
 
 - **Component-Based Architecture**: Modular sections including Hero, About, Experience, Education, Certifications, and Projects.
-- **Modern UI/UX**: Built with Tailwind CSS 4, Radix UI components, and Lucide icons.
+- **Modern UI/UX**: Built with Tailwind CSS 4 and native browser features.
 - **Optimized Performance**: Leverages Next.js 16 features like App Router, Suspense, and Turbopack.
 - **Responsive Design**: Fully mobile-responsive and accessible.
 - **Dark Mode Support**: Seamless theme switching with `next-themes`.
@@ -23,11 +23,8 @@ This portfolio showcases my professional journey, technical skills, and projects
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
 - **Library**: [React 19](https://reactjs.org/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **UI Components**: [Radix UI](https://www.radix-ui.com/)
-- **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/), [SVGL React](https://svgl.app/)
+- **Icons**: [Hugeicons](https://hugeicons.com/)
 - **Typography**: [Inter](https://fonts.google.com/specimen/Inter)
-- **Markdown**: [React Markdown](https://github.com/remarkjs/react-markdown)
-- **Syntax Highlighting**: [Shiki](https://shiki.style/)
 - **Package Manager**: [Bun](https://bun.sh/)
 - **Deployment**: [Vercel](https://vercel.com/)
 
@@ -44,7 +41,6 @@ This portfolio showcases my professional journey, technical skills, and projects
 │   │   │   │   ├── certifications/
 │   │   │   │   ├── education/
 │   │   │   │   ├── experience/
-│   │   │   │   ├── featured-work/
 │   │   │   │   ├── hero-section/
 │   │   │   │   └── project-overview/
 │   │   │   └── layout/        # Header and footer

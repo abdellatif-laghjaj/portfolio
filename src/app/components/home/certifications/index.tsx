@@ -16,7 +16,7 @@ const Certifications = () => {
           </div>
           <div className="border-t border-primary/20">
             <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16">
-              {certifications.map((cert: CertificationItem, index: number) => {
+              {certifications.map((cert: CertificationItem) => {
                 return (
                   <div
                     key={cert.name}

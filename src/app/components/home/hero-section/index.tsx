@@ -1,7 +1,15 @@
 "use client";
+import {
+  GithubIcon,
+  InstagramIcon,
+  Linkedin01Icon,
+  Location01Icon,
+  NewTwitterIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useReducer, useState, useMemo, memo } from "react";
+import { useEffect, useState } from "react";
 import ThemeToggle from "@/app/components/theme-toggle";
 
 const DECORATIONS = [
@@ -22,56 +30,30 @@ const DECORATIONS = [
 
 const SOCIAL_ICONS = [
   {
-    img: "/images/icon/github-icon.svg",
+    icon: GithubIcon,
     href: "https://github.com/abdellatif-laghjaj",
-    icon: "GitHub",
+    label: "GitHub",
   },
   {
-    img: "/images/icon/linkedin-icon.svg",
+    icon: Linkedin01Icon,
     href: "https://www.linkedin.com/in/abdellatif-laghjaj/",
-    icon: "LinkedIn",
+    label: "LinkedIn",
   },
   {
-    img: "/images/icon/twitter-icon.svg",
+    icon: NewTwitterIcon,
     href: "https://www.twitter.com/abdellatif_kira",
-    icon: "X",
+    label: "X",
   },
   {
-    img: "/images/icon/instagram-icon.svg",
+    icon: InstagramIcon,
     href: "https://www.instagram.com/abdellatif.ai/",
-    icon: "Instagram",
+    label: "Instagram",
   },
 ] as const;
 
-type DecorationState = {
-  decorationIndex: number;
-  isFading: boolean;
-};
-
-type DecorationAction = { type: "START_FADE" } | { type: "COMPLETE_FADE" };
-
-const decorationReducer = (
-  state: DecorationState,
-  action: DecorationAction,
-): DecorationState => {
-  switch (action.type) {
-    case "START_FADE":
-      return { ...state, isFading: true };
-    case "COMPLETE_FADE":
-      return {
-        decorationIndex: (state.decorationIndex + 1) % DECORATIONS.length,
-        isFading: false,
-      };
-    default:
-      return state;
-  }
-};
-
 const HeroSection = () => {
-  const [decorationState, dispatch] = useReducer(decorationReducer, {
-    decorationIndex: 0,
-    isFading: false,
-  });
+  const [decorationIndex, setDecorationIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
   const [localTime, setLocalTime] = useState("");
 
   useEffect(() => {
@@ -92,20 +74,20 @@ const HeroSection = () => {
   }, []);
 
   useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
     const interval = setInterval(() => {
-      dispatch({ type: "START_FADE" });
-      setTimeout(() => {
-        dispatch({ type: "COMPLETE_FADE" });
+      setIsFading(true);
+      timeout = setTimeout(() => {
+        setDecorationIndex((index) => (index + 1) % DECORATIONS.length);
+        setIsFading(false);
       }, 400);
     }, 10000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
   }, []);
-
-  const currentDecoration = useMemo(
-    () => DECORATIONS[decorationState.decorationIndex],
-    [decorationState.decorationIndex],
-  );
 
   return (
     <section>
@@ -136,10 +118,10 @@ const HeroSection = () => {
                   {/* Random Decoration */}
                   <div
                     className="absolute -inset-4 pointer-events-none transition-opacity duration-400 ease-[cubic-bezier(0.2,0,0,1)]"
-                    style={{ opacity: decorationState.isFading ? 0 : 1 }}
+                    style={{ opacity: isFading ? 0 : 1 }}
                   >
                     <Image
-                      src={currentDecoration}
+                      src={DECORATIONS[decorationIndex]}
                       alt="Decoration"
                       fill
                       sizes="145px"
@@ -155,12 +137,11 @@ const HeroSection = () => {
                   ERP & Software Engineer
                 </p>
                 <div className="flex items-center gap-2">
-                  <Image
-                    src="/images/icon/map-icon.svg"
-                    alt="map-icon"
-                    width={20}
-                    height={20}
-                    className="dark:invert"
+                  <HugeiconsIcon
+                    aria-hidden="true"
+                    icon={Location01Icon}
+                    size={20}
+                    strokeWidth={2}
                   />
                   <p className="text-primary">Morocco</p>
                   {localTime && (
@@ -176,18 +157,17 @@ const HeroSection = () => {
                   {SOCIAL_ICONS.map((value) => (
                     <Link
                       href={value.href}
-                      key={value.icon}
+                      key={value.label}
                       className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/20 rounded-full transition-[color,background-color,transform] active:scale-[0.96] min-w-[40px] min-h-[40px] flex items-center justify-center"
-                      aria-label={value.icon}
+                      aria-label={value.label}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Image
-                        src={value.img}
-                        alt={value.icon}
-                        width={18}
-                        height={18}
-                        className="dark:invert"
+                      <HugeiconsIcon
+                        aria-hidden="true"
+                        icon={value.icon}
+                        size={18}
+                        strokeWidth={1.8}
                       />
                     </Link>
                   ))}
@@ -203,4 +183,4 @@ const HeroSection = () => {
   );
 };
 
-export default memo(HeroSection);
+export default HeroSection;

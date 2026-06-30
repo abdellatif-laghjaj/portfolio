@@ -15,7 +15,7 @@ const Experience = () => {
           </div>
           <div className="border-t border-primary/20">
             <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16 ">
-              {experienceData.map((value: ExperienceItem, index: number) => {
+              {experienceData.map((value: ExperienceItem) => {
                 return (
                   <div
                     key={value.role}
@@ -49,19 +49,17 @@ const Experience = () => {
                       </div>
                     </div>
                     <ul>
-                      {value.bulletPoints.map(
-                        (point: string, index: number) => {
-                          return (
-                            <li
-                              key={point}
-                              className="flex items-start gap-2 text-base font-normal text-secondary"
-                            >
-                              <span className="size-2.5 text-secondary">•</span>
-                              {point}
-                            </li>
-                          );
-                        },
-                      )}
+                      {value.bulletPoints.map((point: string) => {
+                        return (
+                          <li
+                            key={point}
+                            className="flex items-start gap-2 text-base font-normal text-secondary"
+                          >
+                            <span className="size-2.5 text-secondary">•</span>
+                            {point}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 );

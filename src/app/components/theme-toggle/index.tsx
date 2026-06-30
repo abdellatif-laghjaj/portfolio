@@ -1,73 +1,41 @@
 "use client";
 
-import { LazyMotion, m, domAnimation } from "framer-motion";
+import { Moon02Icon, Sun03Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
-  const isDark = theme === "dark";
+  const isDark = mounted && resolvedTheme === "dark";
+  const visible = "scale-100 opacity-100 blur-0";
+  const hidden = "scale-[0.25] opacity-0 blur-[4px]";
 
   return (
     <button
       type="button"
-      aria-label="Toggle theme"
+      aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="w-fit p-2.5 sm:p-3.5 hover:bg-primary/5 border border-primary/20 rounded-full transition-[color,background-color,transform] active:scale-[0.96] min-w-[40px] min-h-[40px] flex items-center justify-center"
+      className="flex min-h-[40px] min-w-[40px] w-fit items-center justify-center rounded-full border border-primary/20 p-2.5 transition-[color,background-color,transform] hover:bg-primary/5 active:scale-[0.96] sm:p-3.5"
     >
-      {mounted ? (
-        <LazyMotion features={domAnimation}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            fill="currentColor"
-            strokeLinecap="round"
-            viewBox="0 0 32 32"
-            className="size-[18px]"
-          >
-            <clipPath id="theme-toggle-clip">
-              <m.path
-                animate={{ y: isDark ? 10 : 0, x: isDark ? -12 : 0 }}
-                transition={{ ease: "easeInOut", duration: 0.35 }}
-                d="M0-5h30a1 1 0 0 0 9 13v24H0Z"
-              />
-            </clipPath>
-            <g clipPath="url(#theme-toggle-clip)">
-              <m.circle
-                animate={{ r: isDark ? 10 : 8 }}
-                transition={{ ease: "easeInOut", duration: 0.35 }}
-                cx="16"
-                cy="16"
-              />
-              <m.g
-                animate={{
-                  rotate: isDark ? -100 : 0,
-                  scale: isDark ? 0.5 : 1,
-                  opacity: isDark ? 0 : 1,
-                }}
-                transition={{ ease: "easeInOut", duration: 0.35 }}
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M16 5.5v-4" />
-                <path d="M16 30.5v-4" />
-                <path d="M1.5 16h4" />
-                <path d="M26.5 16h4" />
-                <path d="m23.4 8.6 2.8-2.8" />
-                <path d="m5.7 26.3 2.9-2.9" />
-                <path d="m5.8 5.8 2.8 2.8" />
-                <path d="m23.4 23.4 2.9 2.9" />
-              </m.g>
-            </g>
-          </svg>
-        </LazyMotion>
-      ) : (
-        <div className="size-[18px]" />
-      )}
+      <span className="relative size-[18px]" aria-hidden="true">
+        <HugeiconsIcon
+          className={`absolute inset-0 size-full transition-[opacity,filter,scale] duration-300 ease-[cubic-bezier(0.2,0,0,1)] ${isDark ? visible : hidden}`}
+          icon={Moon02Icon}
+          size={18}
+          strokeWidth={2}
+        />
+        <HugeiconsIcon
+          className={`size-full transition-[opacity,filter,scale] duration-300 ease-[cubic-bezier(0.2,0,0,1)] ${isDark ? hidden : visible}`}
+          icon={Sun03Icon}
+          size={18}
+          strokeWidth={2}
+        />
+      </span>
     </button>
   );
 };

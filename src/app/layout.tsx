@@ -2,10 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
-import ClickSpark from "@/components/ui/click-spark";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import AnnouncementBar from "./components/layout/header/announcementBar";
 
 const inter = Inter({
   variable: "--font-inter-sans",
@@ -70,13 +68,11 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
         >
-          <ClickSpark>
-            <TooltipProvider>
-              <Header />
-              {children}
-              <Footer />
-            </TooltipProvider>
-          </ClickSpark>
+          <header>
+            <AnnouncementBar />
+          </header>
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
